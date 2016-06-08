@@ -1,0 +1,1095 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     39310,       1086]
+NotebookOptionsPosition[     36366,        984]
+NotebookOutlinePosition[     37130,       1009]
+CellTagsIndexPosition[     36966,       1003]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.6618838179269733`*^9, 3.661883820865142*^9}}],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.6618838225622387`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Fri 15 Jan 2016 22:57:02     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   \
+C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[49d44a08c64a146a010f8de46223ecea3699dedd]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.661883822731248*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.6618838229102583`*^9}],
+
+Cell[BoxData["\<\"Unloading repository: C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\
+\"\>"], "Print",
+ CellChangeTimes->{3.66188382294026*^9}],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\NounouW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.6618838243073387`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Fri 15 Jan 2016 22:57:05     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[2c919269f4d06d25ee73b3e07c732c110d1d4ea1]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6618838250423803`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+3cc31723ae141d3f2622c7f26ab9e5a96b19674c\\n  + current branch is: master\\n  \
++ remote names are: \
+https://ktakagaki@github.com/ktakagaki/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.6618838265454664`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NNTestOption1", "::", "usage"}], "=", 
+  "\"\<Hi there\>\""}]], "Input",
+ CellChangeTimes->{{3.6618822424688625`*^9, 3.6618822524784346`*^9}}],
+
+Cell[BoxData["\<\"Hi there\"\>"], "Output",
+ CellChangeTimes->{3.6618822536825037`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToExpression", "[", "\"\<NNTestOption2::usage=\\\"Hi there\\\"\>\"",
+   "]"}]], "Input",
+ CellChangeTimes->{{3.661882255425604*^9, 3.661882294166819*^9}}],
+
+Cell[BoxData["\<\"Hi there\"\>"], "Output",
+ CellChangeTimes->{3.6618823174571514`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NNTestOption1"}]], "Input",
+ CellChangeTimes->{{3.6618822962489386`*^9, 3.661882307095559*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Hi there\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.661882303865374*^9},
+ CellTags->"Info-60504544-47ac-4d08-9345-5af639dda3a3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NNTestOption2"}]], "Input",
+ CellChangeTimes->{{3.6618823094466934`*^9, 3.661882325663621*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Hi there\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.661882326274656*^9},
+ CellTags->"Info-43c9be76-c3b7-4c1e-aadc-4baff6c8afa0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymbolName", "[", " ", 
+   RowBox[{
+    RowBox[{"Rule", "[", " ", 
+     RowBox[{"NNTestOption1", ",", " ", "5"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}], " ", "]"}], " ", "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.661882335107161*^9, 3.661882393623508*^9}}],
+
+Cell["\"NNTestOption1\"", "Output",
+ CellChangeTimes->{{3.6618823585595026`*^9, 3.6618823938345203`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SymbolName", "[", " ", 
+   RowBox[{
+    RowBox[{"(", " ", 
+     RowBox[{"NNTestOption1", " ", "\[Rule]", "  ", "5"}], ")"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}], " ", "]"}], " ", "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.661882335107161*^9, 3.6618824127276006`*^9}}],
+
+Cell["\"NNTestOption1\"", "Output",
+ CellChangeTimes->{3.661882414777718*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Head", "[", 
+  RowBox[{
+   RowBox[{"(", " ", 
+    RowBox[{"NNTestOption1", " ", "\[Rule]", "  ", "5"}], ")"}], "[", 
+   RowBox[{"[", "2", "]"}], "]"}], "  ", "]"}]], "Input",
+ CellChangeTimes->{{3.661883131615719*^9, 3.66188318058352*^9}}],
+
+Cell[BoxData["Integer"], "Output",
+ CellChangeTimes->{3.661883148681695*^9, 3.6618831808645353`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Head", "[", 
+  RowBox[{
+   RowBox[{"(", " ", 
+    RowBox[{"NNTestOption1", " ", "\[Rule]", "  ", "NNTestOption2"}], ")"}], 
+   "[", 
+   RowBox[{"[", "2", "]"}], "]"}], "  ", "]"}]], "Input",
+ CellChangeTimes->{{3.661883131615719*^9, 3.661883194128294*^9}}],
+
+Cell[BoxData["Symbol"], "Output",
+ CellChangeTimes->{3.6618831944333115`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Head", "[", 
+   RowBox[{
+    RowBox[{"(", " ", 
+     RowBox[{"NNTestOption1", " ", "\[Rule]", "  ", "NNTestOption2"}], ")"}], 
+    "[", 
+    RowBox[{"[", "2", "]"}], "]"}], "  ", "]"}], " ", "===", " ", 
+  "Symbol"}]], "Input",
+ CellChangeTimes->{{3.661883131615719*^9, 3.661883201431712*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.661883201728729*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NameQ", "[", "\"\<NNTestOption1\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6618832087501307`*^9, 3.661883228480259*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.6618832162665606`*^9, 3.6618832292253017`*^9}}]
+}, Open  ]],
+
+Cell[BoxData["\"\<Hello <b>there</b>!\>\""], "Input",
+ CellChangeTimes->{{3.6618836241748915`*^9, 3.6618836402078085`*^9}, 
+   3.661883719352335*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6618838252633934`*^9, 3.661883883232709*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempObj", "=", 
+  RowBox[{"$NNSpanToNNRangeSpecifier", "[", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"4", " ", ";;", "6"}], ",", " ", "1"}], "}"}], " ", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.66188388972208*^9, 3.661883923305001*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRange"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject7766923496390657]], "Output",
+ CellChangeTimes->{{3.6618839174576664`*^9, 3.661883923519013*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tempObj", "@", 
+   RowBox[{
+    RowBox[{"getClass", "[", "]"}], "@", 
+    RowBox[{"getName", "[", "]"}]}]}], " ", "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.661883924385062*^9, 3.6618839330165563`*^9}, {
+  3.661884041600767*^9, 3.661884044400927*^9}}],
+
+Cell["\"nounou.ranges.NNRange\"", "Output",
+ CellChangeTimes->{{3.661883928404292*^9, 3.6618839334235797`*^9}, 
+   3.6618840450089617`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tempObj", "@", 
+   RowBox[{
+    RowBox[{"getClass", "[", "]"}], "@", 
+    RowBox[{"getSimpleName", "[", "]"}]}]}], " ", "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.661883924385062*^9, 3.6618839428881207`*^9}, {
+  3.6618840320402203`*^9, 3.66188404987324*^9}}],
+
+Cell["\"NNRange\"", "Output",
+ CellChangeTimes->{
+  3.6618839432281404`*^9, {3.6618840337673187`*^9, 3.661884050313265*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempObj", "@", 
+  RowBox[{
+   RowBox[{"getClass", "[", "]"}], "@", 
+   RowBox[{"getMethods", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6618846970972595`*^9, 3.6618847539295096`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject29279419642150913], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18046364155904001], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18046364155904002], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject2082560637140993], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject525863363805185], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject1836989993189377], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject1836989993189378], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18467364802658305], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18467364802658306], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject13676062277894145], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject13676062277894146], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject4838937302401025], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject4838937302401026], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject22035368383610881], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18160487040548865], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18160487040548866], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject522067250249729], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject32290911777980417], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject12041637320458241], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject5874857661169665], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject5874857661169666], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject29119999952027649], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject29119999952027650], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject9835973844140033], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject9835973844140034], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject9835978524983297], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject9835978524983298], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject3362114878046209], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject3362114878046210], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject33378890428710913], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject33378890428710914], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject33895998300356609], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject23175575531159553], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject26632381234413569], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject31441082839465985], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject23423762900713473], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject31362003381518337], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject31362003381518338], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject32730574594506753], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17837277916954625], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17837277916954626], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17837277916954627], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject32192574441652225], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject15662360735776769], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject21157036028854273], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject722452791427073], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject22014696873787393]}], "}"}]], "Output",
+ CellChangeTimes->{{3.661884700520455*^9, 3.6618847544105372`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"tempObj", "@", 
+     RowBox[{
+      RowBox[{"getClass", "[", "]"}], "@", 
+      RowBox[{"getMethods", "[", "]"}]}]}], ")"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "@", 
+  RowBox[{
+   RowBox[{"getClass", "[", "]"}], "@", 
+   RowBox[{"getMethods", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6618846970972595`*^9, 3.6618847850812917`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject20713527790534657], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18626705270767617], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject28977414570770433], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject2206512017571841], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject35739993754304513], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject3208922420740097], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject27430888232976385], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject32229352213053441], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject26373003998658561], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17617478033080321], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject14337094855950337], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18512639478988801], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject15373913567526913], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject32042746369802241], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject12594383673098241], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject27981352380923905], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17877201584128001], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject7767999788351489], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject35067413519138817], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject15395901367386113], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject7799532196724737], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject22866504349384705], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject23791396498440193], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject15504310318137345], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject10479484700459009], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject7567716000989185], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject9972728253644801], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject30024155764097025], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject7797344078659585], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject16063566129922049], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject10021580671287297], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject29377035222646785], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject31183706135724033], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject880998858358785], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject18441238902472705], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject25691133967335425], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject25691133967335426], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17837277916954634], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17837277916954635], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject17837277916954636], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject21157036028854276], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject722452791427076], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"java", ".", "lang", ".", "reflect", ".", "Method"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm2`JavaObject22014696873787396]}], "}"}]], "Output",
+ CellChangeTimes->{{3.6618847774348545`*^9, 3.661884785531317*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Methods", "[", "tempObj", "]"}]], "Input",
+ CellChangeTimes->{{3.6618847022105513`*^9, 3.661884708896934*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"static nounou.ranges.NNRangeSpecifier \
+convertArrayToSampleRange(int[], int)\"\>"},
+     {"\<\"boolean equals(Object)\"\>"},
+     {"\<\"int firstValid(int)\"\>"},
+     {"\<\"int firstValid(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"Class getClass()\"\>"},
+     {"\<\"nounou.ranges.NNRangeInstantiated \
+getInstantiatedRange(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"nounou.ranges.NNRangeInstantiated \
+getInstantiatedRange(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"int getInstantiatedSegment(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"int getInstantiatedSegment(nounou.elements.traits.NNTimingElement)\
+\"\>"},
+     {"\<\"int getInstantiatedStep(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"int \
+getInstantiatedStep(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"scala.Tuple3 getRangeValidPrePost(nounou.elements.traits.NNTiming)\
+\"\>"},
+     {"\<\"scala.Tuple3 \
+getRangeValidPrePost(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"nounou.ranges.NNRangeValid \
+getValidRange(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"nounou.ranges.NNRangeValid \
+getValidRange(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"int hashCode()\"\>"},
+     {"\<\"int intervalContains(int, int, int)\"\>"},
+     {"\<\"int intervalMod(int, int, int)\"\>"},
+     {"\<\"boolean isFullyValid(int)\"\>"},
+     {"\<\"boolean isFullyValid(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"int last()\"\>"},
+     {"\<\"int lastValidImpl(int)\"\>"},
+     {"\<\"int lastValid(int)\"\>"},
+     {"\<\"int lastValid(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"int length(int)\"\>"},
+     {"\<\"int length(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"com.typesafe.scalalogging.Logger logger()\"\>"},
+     {"\<\"com.typesafe.scalalogging.slf4j.Logger logger()\"\>"},
+     {"\<\"IllegalArgumentException loggerError(String, scala.collection.Seq)\
+\"\>"},
+     {"\<\"void loggerRequire(boolean, String, scala.collection.Seq) throws \
+IllegalArgumentException\"\>"},
+     {"\<\"void notify()\"\>"},
+     {"\<\"void notifyAll()\"\>"},
+     {"\<\"int postLength(int)\"\>"},
+     {"\<\"int preLength(int)\"\>"},
+     {"\<\"double[] readTimepointsMs(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"double[] \
+readTimepointsMs(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"int[] readTimepoints(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"int[] readTimepoints(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"java.math.BigInteger[] \
+readTimepointsTs(nounou.elements.traits.NNTiming)\"\>"},
+     {"\<\"java.math.BigInteger[] \
+readTimepointsTs(nounou.elements.traits.NNTimingElement)\"\>"},
+     {"\<\"int segment()\"\>"},
+     {"\<\"int start()\"\>"},
+     {"\<\"int step()\"\>"},
+     {"\<\"String toString()\"\>"},
+     {"\<\"void wait(long, int) throws InterruptedException\"\>"},
+     {"\<\"void wait(long) throws InterruptedException\"\>"},
+     {"\<\"void wait() throws InterruptedException\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6618847091679497`*^9}]
+}, Open  ]]
+},
+WindowSize->{950, 1134},
+WindowMargins->{{Automatic, 0}, {1138, Automatic}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-60504544-47ac-4d08-9345-5af639dda3a3"->{
+  Cell[4428, 153, 173, 3, 40, "Print",
+   CellTags->"Info-60504544-47ac-4d08-9345-5af639dda3a3"]},
+ "Info-43c9be76-c3b7-4c1e-aadc-4baff6c8afa0"->{
+  Cell[4765, 165, 173, 3, 40, "Print",
+   CellTags->"Info-43c9be76-c3b7-4c1e-aadc-4baff6c8afa0"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-60504544-47ac-4d08-9345-5af639dda3a3", 36697, 994},
+ {"Info-43c9be76-c3b7-4c1e-aadc-4baff6c8afa0", 36844, 997}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 120, 2, 31, "Input"],
+Cell[703, 26, 178, 2, 23, "Print"]
+}, Open  ]],
+Cell[896, 31, 959, 34, 118, "Text"],
+Cell[CellGroupData[{
+Cell[1880, 69, 118, 1, 23, "Print"],
+Cell[2001, 72, 136, 2, 23, "Print"],
+Cell[2140, 76, 176, 2, 23, "Print"]
+}, Open  ]],
+Cell[2331, 81, 953, 33, 118, "Text"],
+Cell[3287, 116, 380, 6, 119, "Print"],
+Cell[CellGroupData[{
+Cell[3692, 126, 177, 4, 31, "Input"],
+Cell[3872, 132, 87, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3996, 138, 178, 3, 31, "Input"],
+Cell[4177, 143, 87, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4301, 149, 124, 2, 31, "Input"],
+Cell[4428, 153, 173, 3, 40, "Print",
+ CellTags->"Info-60504544-47ac-4d08-9345-5af639dda3a3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4638, 161, 124, 2, 31, "Input"],
+Cell[4765, 165, 173, 3, 40, "Print",
+ CellTags->"Info-43c9be76-c3b7-4c1e-aadc-4baff6c8afa0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4975, 173, 314, 8, 31, "Input"],
+Cell[5292, 183, 105, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5434, 189, 320, 8, 31, "Input"],
+Cell[5757, 199, 77, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5871, 205, 263, 6, 31, "Input"],
+Cell[6137, 213, 100, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6274, 219, 280, 7, 31, "Input"],
+Cell[6557, 228, 77, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6671, 234, 328, 9, 31, "Input"],
+Cell[7002, 245, 73, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7112, 251, 146, 2, 31, "Input"],
+Cell[7261, 255, 101, 1, 31, "Output"]
+}, Open  ]],
+Cell[7377, 259, 149, 2, 31, "Input"],
+Cell[7529, 263, 94, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[7648, 268, 272, 7, 31, "Input"],
+Cell[7923, 277, 312, 7, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8272, 289, 296, 7, 31, "Input"],
+Cell[8571, 298, 139, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8747, 305, 306, 8, 31, "Input"],
+Cell[9056, 315, 124, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9217, 322, 212, 5, 31, "Input"],
+Cell[9432, 329, 11852, 285, 492, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21321, 619, 409, 12, 31, "Input"],
+Cell[21733, 633, 10860, 261, 452, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32630, 899, 134, 2, 31, "Input"],
+Cell[32767, 903, 3583, 78, 731, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

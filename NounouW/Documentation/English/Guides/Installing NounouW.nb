@@ -1,0 +1,458 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15350,        448]
+NotebookOptionsPosition[     12192,        359]
+NotebookOutlinePosition[     14032,        402]
+CellTagsIndexPosition[     13989,        399]
+WindowTitle->Installing NounouW
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["NOUNOU W GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {
+       RowBox[{
+        RowBox[{"{", "}"}], "\[LeftDoubleBracket]", "1", 
+        "\[RightDoubleBracket]"}]:>Documentation`HelpLookup[
+        If[
+         StringMatchQ[
+          Part[{}, 2], "paclet*"], 
+         Part[
+          Part[{{}, {}}, 1], 2], 
+         StringJoin["paclet:", 
+          Part[
+           Part[{{}, {}}, 1], 2]]]], 
+       RowBox[{
+        RowBox[{"{", "}"}], "\[LeftDoubleBracket]", "1", 
+        "\[RightDoubleBracket]"}]:>Documentation`HelpLookup[
+        If[
+         StringMatchQ[
+          Part[{}, 2], "paclet*"], 
+         Part[
+          Part[{{}, {}}, 2], 2], 
+         StringJoin["paclet:", 
+          Part[
+           Part[{{}, {}}, 2], 2]]]]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideTutorial"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"NounouW/guide/Installing NounouW\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["NounouW/guide/Installing NounouW"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/NounouW/guide/\
+Installing NounouW.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$1838], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "NounouW/guide/Installing NounouW", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Installing NounouW", "GuideTitle",
+ CellID->942062912],
+
+Cell[TextData[{
+ "Obtain a git client if you don't have one already (for simple use, \
+something like ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GitHub for Windows"]],"https://windows.github.com/"},
+   "WebLink",
+   BaseStyle->{"GuideAbstract"}]]],
+ " or ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["GitHub for Mac"]],"https://mac.github.com/"},
+   "WebLink",
+   BaseStyle->{"GuideAbstract"}]]],
+ " may be the best choice). Using git will allow you to use the up-to-date \
+version of NounouW at all times. It will also allow you to rewind to a \
+previous version, in case you want to reproduce a previous figure or analysis \
+exactly."
+}], "GuideAbstract",
+ CellID->36591412],
+
+Cell[TextData[{
+ "If you do serious programming, you likely have a git client already, and \
+you likely use the git commands on the command prompt. I personally use ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TortoiseGit"]],
+    "https://code.google.com/p/tortoisegit/wiki/SetupHowTo"},
+   "WebLink",
+   BaseStyle->{"GuideAbstract"}]]],
+ " for day-to-day git work on Windows."
+}], "GuideAbstract",
+ CellID->450126463],
+
+Cell[TextData[{
+ "The NounouW github repository is at the following address: ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["https://github.com/ktakagaki/nounouw"]],
+    "https://github.com/ktakagaki/nounouw"},
+   "WebLink",
+   BaseStyle->{"GuideAbstract"}]]],
+ ". This repository can be downloaded (i.e. \"cloned\") to your local \
+harddisk using the git client you set up in the previous step. The repository \
+includes all package code, including a runnable .jar file backend. The \
+repository address (",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["https://github.com/ktakagaki/nounouw"]],
+    "https://github.com/ktakagaki/nounouw"},
+   "WebLink",
+   BaseStyle->{"GuideAbstract"}]]],
+ ") is all you need to set to do a Git \"pull.\""
+}], "GuideAbstract",
+ CellID->731358795],
+
+Cell[TextData[{
+ StyleBox["For those planning to contribute to NounouW, please also download \
+the development repository (",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["https://github.com/ktakagaki/nounouw_dev"]],
+    "https://github.com/ktakagaki/nounouw_dev"},
+   "WebLink",
+   BaseStyle->{"GuideAbstract", FontSlant -> "Italic"}]]],
+ StyleBox["). This development repository is structured as a Wolfram \
+Workbench project, and includes some non-essential support code to facilitate \
+development. The devleopment repository is periodically deployed to the main \
+NounouW repository, and you can think of this as a \"release.\"",
+  FontSlant->"Italic"]
+}], "GuideAbstract",
+ CellID->397771843],
+
+Cell[TextData[{
+ "When you create a local repository, the easiest way is to put the local \
+repository on the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Path, so that it can be loaded as an application."
+}], "GuideAbstract",
+ CellID->2001916300],
+
+Cell["The best directory will usually be, for a Windows system,", \
+"GuideAbstract",
+ CellID->7180878],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$UserBaseDirectory", " ", "<>", " ", 
+  "\"\<\\\\Applications\>\""}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->151947100],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Kenta\\\\AppData\\\\Roaming\\\\Mathematica\\\
+\\Applications\"\>"], "Output",
+ CellLabel->"Out[0]=",
+ CellID->13076777]
+}, Open  ]],
+
+Cell["After this, the package can be invoked with", "GuideAbstract",
+ CellID->338114398],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->86779971],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Welcome to NounouW, the Wolfram Language/Mathematica \
+interface to nounou!\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->811744126],
+
+Cell[BoxData["\<\"      ( current Git HEAD:   )\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->17643324],
+
+Cell[BoxData["\<\"      ( http://github.org/ktakagaki/nounouw )\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->202689200],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->286459745]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Learning Resources"
+}], "GuideLearningResourcesSection",
+ WholeCellGroupOpener->True],
+
+Cell[BoxData[GridBox[{
+   {Cell[BoxData[GridBox[{
+       {Cell[BoxData[GridBox[{
+           {
+            GraphicsBox[RasterBox[CompressedData["
+1:eJztlOly2mYUhj2T2+ifTu+ol5AbyF0krZ04TZvNrDa7EGIVAoxBCIHYkYTZ
+wdhxiBcapz96A32FBMEfOEnT6Ux+5MyLRsNIzznnPefTj/cf/Hz/3tbW1k/4
+/YCfdv/39/jfQhDyuXXllhLWxa9oHXhzc+NwumNxbqF4jI1HDbGaYmzEUExT
+NBZe0YuXrwmgLCtWm33n8e7DR9sBJpjLi3NpdfKGtEqyhnJZXlPGEA/tmSwE
+8/We2e32Pn7y9NGvOxTN5MWCoEkUDLjB/0QKk9lKMOkAIyuK2+NLH2XEoiQW
+i2KhmDdUuCvFKt9kthFMj5dSFHX/wBkKR/F6QSrNJc35X5TCYrETTLPF5vVR
+T3afPfxl2x9gpHJZKpWLmkpFg39HClFPIVqs+wTTYrVbrLbfnv3x/OWrdCZb
+qlTnqkhlXYsUH/mlQvFWCqvtgGCGQpGrq6tIlK3W6hVd1VpZl8FfT3GrBbvd
+QTBdbi88d7l9bDyB12v1RlXXJ1KUb6XALAgmw4QDTAidb+/sJpKHjaZcbzRr
+uhZ8tGnwa7VFiuoiReXA4SKYlD/gdHn3zDa3l8IzSutYabVkVcV9Q1bqTRmE
+PbM1wwsfW6jXV1M4nJ5V4PX1jONSuEln+E6vD7W7veNOt9XupNIZl8eXL0hx
+LonV9dMML4gujzcSixNdwD2iTh8VOMpk3R4qHIkB2B8M8ev2B6VKDf/zuTwT
+ipyfn2eyORiO0bBcUlbUpqLoXcAonBeCGQzh28Bho35/jl3ih+OT4Wg8GI2l
+cvUwnbm8vLy4uHg3j+l0qrZaSFGQyoViST1uwyhZbXl9NMFk4xzKofwMThnK
+HE9OKVrLI5Uq/cFgNptdzwP7Bj4Kbnc6yVTaR9Gdbq/d7cIomg4SzFQq/eHD
+X0K+AJqu/nCEYhS19X4Rf85jNo+zszc0EwKwPxz2BkO4xAQj673DEF21elPH
+YlgeH/1+U7Q7XZZLjE4mI7g0PoFLGATBBAql6ky9WtSJr/FkcrqRicjyAtw2
++jqZRGPceu9oE2NqKqr+WLXWSB4exROpvFgkaEiUTB1hqDlBXHqFd9eZcGnV
+z2X7pXIVnLdvp7hiQPr9Ku0uJvyEbHYHPllY9eWTDVnFKmIng+EogOgXhuCK
+Fj7L9NMBrBOAJottOSMI9eAQwVvAw1FWR6nHnc/WiS1C76dnZ1hvvE48vMrv
+zFd3owgmnESRmBGXSC1n9G+1sXeUit5fvDLhxP13JroGE7LvO33+wOqMvpoJ
+P6fTd7jCz6b2tfkahcLkOVoWTKjb7dXrjS/URua3HP8Abdya4A==
+              "], {{0, 0}, {28, 35}}, {0, 255},
+              ColorFunction->RGBColor],
+             Background->GrayLevel[0.952941],
+             ImageSize->{28, 35},
+             PlotRange->{{0, 28}, {0, 35}}], GridBox[{
+              {""},
+              {Cell["Tutorials", "GuideTutorialsSection",
+                WholeCellGroupOpener->True]},
+              {Cell[BoxData[
+                TemplateBox[{Cell[
+                   Part[{}, 1]],If[
+                   StringMatchQ[
+                    Part[{}, 2], "paclet:*"], 
+                   Part[{}, 2], 
+                   StringJoin["paclet:", 
+                    Part[{}, 2]]]},
+                 "RefLink",
+                 BaseStyle->{"GuideTutorial"}]], "GuideTutorial"]},
+              {Cell[BoxData[
+                TemplateBox[{Cell[
+                   Part[{}, 1]],If[
+                   StringMatchQ[
+                    Part[{}, 2], "paclet:*"], 
+                   Part[{}, 2], 
+                   StringJoin["paclet:", 
+                    Part[{}, 2]]]},
+                 "RefLink",
+                 BaseStyle->{"GuideTutorial"}]], "GuideTutorial"]}
+             },
+             GridBoxDividers->{"Rows" -> {{False}}}]}
+          },
+          GridBoxAlignment->{"Rows" -> {{Top}}},
+          GridBoxSpacings->{"Columns" -> {{0.3}}}]], "GuideWebResource"]},
+       {""}
+      },
+      GridBoxSpacings->{"Rows" -> {{2}}}]], "GuideWebResource"]}
+  },
+  GridBoxAlignment->{
+   "Columns" -> {{Left, Center}}, 
+    "Rows" -> {{Top}}}]], "GuideLearningResourcesGrid"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Reference"
+}], "GuideReferenceSection",
+ WholeCellGroupOpener->True],
+
+Cell["", "SectionHeaderSpacer"]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 722},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Installing NounouW",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NounouW/guide/NounouW", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2015, 5, 11, 20, 17, 55.8845448}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Nounou W Guide", "language" -> "en", "paclet" -> "NounouW", "status" -> 
+    "None", "summary" -> 
+    "Obtain a git client if you don't have one already (for simple use, \
+something like GitHub for Windows or GitHub for Mac may be the best choice). \
+Using git will allow you to use the up-to-date version of NounouW at all \
+times. It will also allow you to rewind to a previous version, in case you \
+want to reproduce a previous figure or analysis exactly.", "synonyms" -> {}, 
+    "title" -> "Installing NounouW", "titlemodifier" -> "", "windowtitle" -> 
+    "Installing NounouW", "type" -> "Guide", "uri" -> 
+    "NounouW/guide/Installing NounouW"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "ShiftJIS"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[590, 21, 3618, 94, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4233, 119, 60, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[4296, 122, 695, 19, 70, "GuideAbstract",
+ CellID->36591412],
+Cell[4994, 143, 427, 11, 70, "GuideAbstract",
+ CellID->450126463],
+Cell[5424, 156, 792, 20, 70, "GuideAbstract",
+ CellID->731358795],
+Cell[6219, 178, 727, 16, 70, "GuideAbstract",
+ CellID->397771843],
+Cell[6949, 196, 257, 7, 70, "GuideAbstract",
+ CellID->2001916300],
+Cell[7209, 205, 102, 2, 70, "GuideAbstract",
+ CellID->7180878],
+Cell[CellGroupData[{
+Cell[7336, 211, 146, 4, 70, "Input",
+ CellID->151947100],
+Cell[7485, 217, 152, 3, 70, "Output",
+ CellID->13076777]
+}, Open  ]],
+Cell[7652, 223, 88, 1, 70, "GuideAbstract",
+ CellID->338114398],
+Cell[CellGroupData[{
+Cell[7765, 228, 94, 3, 70, "Input",
+ CellID->86779971],
+Cell[CellGroupData[{
+Cell[7884, 235, 173, 3, 70, "Print",
+ CellID->811744126],
+Cell[8060, 240, 126, 2, 70, "Print",
+ CellID->17643324],
+Cell[8189, 244, 143, 2, 70, "Print",
+ CellID->202689200],
+Cell[8335, 248, 138, 2, 70, "Print",
+ CellID->286459745]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8534, 257, 274, 11, 70, "GuideLearningResourcesSection"],
+Cell[8811, 270, 3011, 66, 70, "GuideLearningResourcesGrid"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11859, 341, 257, 11, 70, "GuideReferenceSection"],
+Cell[12119, 354, 31, 0, 70, "SectionHeaderSpacer"]
+}, Open  ]],
+Cell[12165, 357, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,987 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28516,        977]
+NotebookOptionsPosition[     22767,        778]
+NotebookOutlinePosition[     24783,        832]
+CellTagsIndexPosition[     24698,        827]
+WindowTitle->NNDetectorPlot
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["NOUNOU W SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"NounouW/ref/NNDetectorPlot\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["NounouW/ref/NNDetectorPlot"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/NounouW/ref/\
+NNDetectorPlot.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2877], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "NounouW/ref/NNDetectorPlot", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell["NNDetectorPlot", "ObjectName",
+ CellID->1224892054],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"NNDetectorPlot", "[", "]"}]], "InlineFormula"],
+     " \[LineSeparator]NNDetectorPlot"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->375423636],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->35934445],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->182887016],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 17:15:50 is \
+dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ Background->GrayLevel[0.85],
+ CellID->349551209],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 17:15:50 is \
+dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ Background->GrayLevel[0.85],
+ CellID->16295068],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], ":", 
+  " ", "\<\"Context \[NoBreak]\\!\\(\\\"HokahokaW`HokahokaW`\\\"\\)\[NoBreak] \
+was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->26520379],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["(origin)[https://ktakagaki@github.com/ktakagaki/NounouW.git]",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small],
+ "\n",
+ StyleBox["current Git HEAD:  a7b569f93d24f934eedde6a6ac130f15f8bd31fe\n\
+newest file:  Mon 6 Apr 2015 19:08:11 ",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ Background->GrayLevel[0.85],
+ CellID->373472672],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->1088287],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"layoutArr", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", " ", "15", ",", "14", ",", "13", ",", "12", 
+       ",", "11"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "10", ",", " ", "9", ",", " ", "8", ",", " ", "1", ",", " ", "0"}], 
+      "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", " ", "6", ",", " ", "5", ",", " ", "4"}], "}"}], ",", 
+     " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", " ", "3", ",", "2"}], "}"}]}], "}"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->121274972],
+
+Cell[BoxData[
+ RowBox[{"AllowRaggedArrays", "[", "True", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->514242286],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", " ", "=", 
+  RowBox[{"JavaNew", "[", 
+   RowBox[{
+   "\"\<nounou.elements.layouts.NNDataLayoutHexagonal\>\"", ",", " ", 
+    "layoutArr"}], "]"}]}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->687037852],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}],
+     "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject23456350864408577]], "Output",
+ ImageSize->{423, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->504254057]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", "@", 
+  RowBox[{"getChannelCount", "[", "]"}]}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->176169232],
+
+Cell[BoxData["16"], "Output",
+ ImageSize->{18, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[5]=",
+ CellID->220948255]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", "@", 
+  RowBox[{"getChannelRadius", "[", "]"}]}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->12581516],
+
+Cell[BoxData["50.`"], "Output",
+ ImageSize->{25, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[6]=",
+ CellID->194523598]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", "@", 
+  RowBox[{"layoutArray", "[", "]"}]}]], "Input",
+ CellLabel->"In[7]:=",
+ CellID->186302334],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "15", ",", "14", ",", "13", ",", "12", ",", 
+     "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "9", ",", "8", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "6", ",", "5", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "3", ",", "2"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{445, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[7]=",
+ CellID->714609180]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"layout", "@", 
+  RowBox[{"toJsonString", "[", "]"}]}]], "Input",
+ CellLabel->"In[8]:=",
+ CellID->32444361],
+
+Cell[BoxData["\<\"{\\\"layoutArray\\\":[[-1,15,14,13,12,11],[10,9,8,1,0],[7,6,\
+5,4],[-1,3,2]],\\\"channelRadius\\\":50.0,\\\"channelDistance\\\":100.0,\\\"\
+masked\\\":[],\\\"className\\\":\\\"nounou.elements.layouts.\
+NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
+674199eda7404048d811c228fb848bd74709fd6a\\\",\\\"version\\\":0.5,\\\"bitmap$0\
+\\\":false}\"\>"], "Output",
+ ImageSize->{551, 67},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[8]=",
+ CellID->96204095]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNDetectorPlot", "[", "layout", "]"}]], "Input",
+ CellLabel->"In[9]:=",
+ CellID->200294427],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NNToList", "::", "invalidArgs"}], "MessageName"], ":", 
+  " ", "\<\"Function called with invalid arguments \
+\[NoBreak]\\!\\({\\*InterpretationBox[\\(\[LeftGuillemet] \
+\\(\\(JavaObject[nounou.elements.layouts.NNDataLayoutHexagonal]\\)\\) \
+\[RightGuillemet]\\), JLink`Objects`vm2`JavaObject23456350864408577]}\\)\
+\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[9]:=",
+ CellID->203163290]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InstanceOf", "[", 
+  RowBox[{"layout", ",", " ", "$NNDataLayoutSpatialClass"}], "]"}]], "Input",
+ CellLabel->"In[10]:=",
+ CellID->410026117],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[10]=",
+ CellID->400834876]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"JavaObjectQ", "[", 
+  RowBox[{"layou", " ", "qt"}], "]"}]], "Input",
+ CellLabel->"In[11]:=",
+ CellID->590624524],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[11]=",
+ CellID->105287466]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HHJavaObjectQ", "[", 
+  RowBox[{"layout", ",", "$NNDataLayoutSpatialClass"}], "]"}]], "Input",
+ CellLabel->"In[12]:=",
+ CellID->469911287],
+
+Cell[BoxData["False"], "Output",
+ ImageSize->{39, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[12]=",
+ CellID->25647138]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HHJavaObjectQ", "[", 
+  RowBox[{
+  "layout", ",", "\"\<nounou.elements.layouts.NNDataLayoutHexagonal\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[13]:=",
+ CellID->72937],
+
+Cell[BoxData["False"], "Output",
+ ImageSize->{39, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[13]=",
+ CellID->58582956]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HHJavaObjectQ", "[", "layout", "]"}]], "Input",
+ CellLabel->"In[14]:=",
+ CellID->214773236],
+
+Cell[BoxData["False"], "Output",
+ ImageSize->{39, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[14]=",
+ CellID->145106188]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Definition", "[", "HHJavaObjectQ", "]"}]], "Input",
+ CellLabel->"In[15]:=",
+ CellID->171120571],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellLabel->"In[16]:=",
+ CellID->88241639],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+           RowBox[{
+           "HokahokaW`Java`Private`JavaObjectQ", "[", 
+            "HokahokaW`Java`Private`x", "]"}]}], "]"}], ":=", "True"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{
+           RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+            RowBox[{
+            "HokahokaW`Java`Private`JavaObjectQ", "[", 
+             "HokahokaW`Java`Private`x", "]"}]}], ",", 
+           "HokahokaW`Java`Private`className_String"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{
+            RowBox[{"Print", "[", "\<\"Hello\"\>", "]"}], ";", 
+            RowBox[{"HokahokaW`Java`Private`InstanceOf", "[", 
+             RowBox[{
+             "HokahokaW`Java`Private`x", ",", 
+              "HokahokaW`Java`Private`className"}], "]"}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", "___", "]"}], ":=", "False"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[HokahokaW`Java`HHJavaObjectQ],
+  Editable->False]], "Output",
+ ImageSize->{579, 166},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[16]=",
+ CellID->355031587]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"HHJavaObjectQ", "[", 
+     RowBox[{"x_", "/;", 
+      RowBox[{"JavaObjectQ", "[", "x", "]"}]}], "]"}], ":=", "True"}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"HHJavaObjectQ", "[", 
+     RowBox[{
+      RowBox[{"x_", "/;", 
+       RowBox[{"JavaObjectQ", "[", "x", "]"}]}], ",", "className_String"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<Hello\>\"", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"InstanceOf", "[", 
+        RowBox[{"x", ",", "className"}], "]"}]}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"HHJavaObjectQ", "[", "___", "]"}], ":=", "False"}], 
+  ";"}]}], "Input",
+ CellLabel->"In[17]:=",
+ CellID->2360046],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Definition", "[", "HHJavaObjectQ", "]"}]], "Input",
+ CellLabel->"In[18]:=",
+ CellID->47136202],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+           RowBox[{
+           "HokahokaW`Java`Private`JavaObjectQ", "[", 
+            "HokahokaW`Java`Private`x", "]"}]}], "]"}], ":=", "True"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{
+           RowBox[{"HokahokaW`Java`Private`x_", "/;", 
+            RowBox[{
+            "HokahokaW`Java`Private`JavaObjectQ", "[", 
+             "HokahokaW`Java`Private`x", "]"}]}], ",", 
+           "HokahokaW`Java`Private`className_String"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{
+            RowBox[{"Print", "[", "\<\"Hello\"\>", "]"}], ";", 
+            RowBox[{"HokahokaW`Java`Private`InstanceOf", "[", 
+             RowBox[{
+             "HokahokaW`Java`Private`x", ",", 
+              "HokahokaW`Java`Private`className"}], "]"}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{"x_", "/;", 
+           RowBox[{"JavaObjectQ", "[", "x", "]"}]}], "]"}], ":=", "True"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", 
+          RowBox[{
+           RowBox[{"x_", "/;", 
+            RowBox[{"JavaObjectQ", "[", "x", "]"}]}], ",", 
+           "className_String"}], "]"}], ":=", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", 
+           RowBox[{
+            RowBox[{"Print", "[", "\<\"Hello\"\>", "]"}], ";", 
+            RowBox[{"InstanceOf", "[", 
+             RowBox[{"x", ",", "className"}], "]"}]}]}], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"HHJavaObjectQ", "[", "___", "]"}], ":=", "False"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[HokahokaW`Java`HHJavaObjectQ],
+  Editable->False]], "Output",
+ ImageSize->{579, 248},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[18]=",
+ CellID->627200296]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Neat Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->589267740],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nngit", " ", "=", 
+  RowBox[{"LoadJavaClass", "[", 
+   RowBox[{"\"\<nounou.util.NNGit\>\"", ",", " ", 
+    RowBox[{"StaticsVisible", "\[Rule]", "True"}]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->200997102],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"JavaClass", "[", 
+   RowBox[{"nounou", ".", "util", ".", "NNGit"}], ",", "<>", "]"}],
+  JLink`JavaClass["nounou.util.NNGit", 14, {
+    JLink`JVM["vm2"]}, 1, "nounou`util`NNGit`", False, True]]], "Output",
+ ImageSize->{231, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->652428351]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Methods", "[", "nngit", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->280566528],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"String branch()\"\>"},
+     {"\<\"void branch_$eq(String)\"\>"},
+     {"\<\"static String contentText()\"\>"},
+     {"\<\"boolean equals(Object)\"\>"},
+     {"\<\"static boolean fileLoaded()\"\>"},
+     {"\<\"static void fileLoaded_$eq(boolean)\"\>"},
+     {"\<\"static String fileText()\"\>"},
+     {"\<\"Class getClass()\"\>"},
+     {"\<\"static String getGitHead()\"\>"},
+     {"\<\"String gitDirectory()\"\>"},
+     {"\<\"void gitDirectory_$eq(String)\"\>"},
+     {"\<\"static boolean gitFileLoaded()\"\>"},
+     {"\<\"static boolean gitRepoLoaded()\"\>"},
+     {"\<\"int hashCode()\"\>"},
+     {"\<\"String head()\"\>"},
+     {"\<\"void head_$eq(String)\"\>"},
+     {"\<\"static String infoPrintout()\"\>"},
+     {"\<\"void \
+initializeFromRepository(org.eclipse.jgit.lib.Repository)\"\>"},
+     {"\<\"static java.io.File jsonFile()\"\>"},
+     {"\<\"static java.io.File jsonResource()\"\>"},
+     {"\<\"void notify()\"\>"},
+     {"\<\"void notifyAll()\"\>"},
+     {"\<\"String[] remotes()\"\>"},
+     {"\<\"void remotes_$eq(String[])\"\>"},
+     {"\<\"static boolean repoLoaded()\"\>"},
+     {"\<\"static void repoLoaded_$eq(boolean)\"\>"},
+     {"\<\"static org.eclipse.jgit.lib.Repository repository()\"\>"},
+     {"\<\"static void repository_$eq(org.eclipse.jgit.lib.Repository)\"\>"},
+     {"\<\"static String repoText()\"\>"},
+     {"\<\"String toString()\"\>"},
+     {"\<\"void wait(long, int) throws InterruptedException\"\>"},
+     {"\<\"void wait(long) throws InterruptedException\"\>"},
+     {"\<\"void wait() throws InterruptedException\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ ImageSize->{438, 492},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//TableForm=",
+ CellID->282496226]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fields", "[", "nngit", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->144722191],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", "}"}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ ImageSize->{18, 15},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]//TableForm=",
+ CellID->384988149]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNGit`infoPrintout", "[", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->28537956],
+
+Cell[BoxData["\<\"Could not initialize GIT information with \
+.\\\\src\\\\main\\\\resources\\\\NNGit.gson.txt or current repository.\"\>"], \
+"Output",
+ ImageSize->{425, 33},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->390098434]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNGit`contentText", "[", "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->223484729],
+
+Cell[BoxData["\<\"  + current HEAD is: Head not initialized\\n  + current \
+branch is: Branch not initialized\\n  + remote names are: Remotes not \
+initialized\\n\"\>"], "Output",
+ ImageSize->{319, 67},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[5]=",
+ CellID->9266469]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 722},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"NNDetectorPlot",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NounouW/guide/NounouW", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, 
+  "ExamplePageLinks" -> {}, "NeedPlatMsgIn" -> None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2015, 5, 11, 20, 17, 57.6606464}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Nounou W Symbol", "language" -> "en", "paclet" -> "NounouW", "status" -> 
+    "None", "summary" -> "NNDetectorPlot[] NNDetectorPlot", "synonyms" -> {}, 
+    "title" -> "NNDetectorPlot", "titlemodifier" -> "", "windowtitle" -> 
+    "NNDetectorPlot", "type" -> "Symbol", "uri" -> 
+    "NounouW/ref/NNDetectorPlot"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.1 for Microsoft Windows (64-bit) (March 23, 2015)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.1 for Microsoft Windows (64-bit) (March 23, 2015)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[3286, 93, 387, 15, 31, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->375423636]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 24556, 820}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 2263, 52, 48, "AnchorBarGrid",
+ CellID->1],
+Cell[2852, 75, 57, 1, 43, "ObjectName",
+ CellID->1224892054],
+Cell[2912, 78, 349, 11, 81, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[3286, 93, 387, 15, 31, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->375423636],
+Cell[CellGroupData[{
+Cell[3698, 112, 194, 6, 25, "ExampleSection",
+ CellID->35934445],
+Cell[3895, 120, 95, 3, 28, "Input",
+ CellID->182887016],
+Cell[3993, 125, 595, 18, 119, "Text",
+ CellID->349551209],
+Cell[4591, 145, 594, 18, 119, "Text",
+ CellID->16295068],
+Cell[5188, 165, 497, 10, 20, "Message",
+ CellID->26520379],
+Cell[5688, 177, 597, 21, 131, "Text",
+ CellID->373472672],
+Cell[6288, 200, 136, 2, 23, "Print",
+ CellID->1088287],
+Cell[6427, 204, 652, 21, 28, "Input",
+ CellID->121274972],
+Cell[7082, 227, 116, 3, 70, "Input",
+ CellID->514242286],
+Cell[CellGroupData[{
+Cell[7223, 234, 234, 7, 70, "Input",
+ CellID->687037852],
+Cell[7460, 243, 414, 12, 36, "Output",
+ CellID->504254057]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7911, 260, 134, 4, 70, "Input",
+ CellID->176169232],
+Cell[8048, 266, 159, 5, 36, "Output",
+ CellID->220948255]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8244, 276, 134, 4, 70, "Input",
+ CellID->12581516],
+Cell[8381, 282, 161, 5, 36, "Output",
+ CellID->194523598]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8579, 292, 130, 4, 70, "Input",
+ CellID->186302334],
+Cell[8712, 298, 574, 18, 36, "Output",
+ CellID->714609180]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9323, 321, 130, 4, 70, "Input",
+ CellID->32444361],
+Cell[9456, 327, 505, 10, 88, "Output",
+ CellID->96204095]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9998, 342, 115, 3, 70, "Input",
+ CellID->200294427],
+Cell[10116, 347, 465, 10, 70, "Message",
+ CellID->203163290]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10618, 362, 164, 4, 70, "Input",
+ CellID->410026117],
+Cell[10785, 368, 162, 5, 36, "Output",
+ CellID->400834876]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10984, 378, 136, 4, 70, "Input",
+ CellID->590624524],
+Cell[11123, 384, 162, 5, 36, "Output",
+ CellID->105287466]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11322, 394, 162, 4, 70, "Input",
+ CellID->469911287],
+Cell[11487, 400, 162, 5, 36, "Output",
+ CellID->25647138]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11686, 410, 192, 6, 70, "Input",
+ CellID->72937],
+Cell[11881, 418, 162, 5, 36, "Output",
+ CellID->58582956]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12080, 428, 115, 3, 70, "Input",
+ CellID->214773236],
+Cell[12198, 433, 163, 5, 36, "Output",
+ CellID->145106188]
+}, Open  ]],
+Cell[12376, 441, 119, 3, 70, "Input",
+ CellID->171120571],
+Cell[CellGroupData[{
+Cell[12520, 448, 88, 2, 70, "Input",
+ CellID->88241639],
+Cell[12611, 452, 1882, 52, 187, "Output",
+ CellID->355031587]
+}, Open  ]],
+Cell[14508, 507, 891, 30, 70, "Input",
+ CellID->2360046],
+Cell[CellGroupData[{
+Cell[15424, 541, 118, 3, 70, "Input",
+ CellID->47136202],
+Cell[15545, 546, 2588, 73, 269, "Output",
+ CellID->627200296]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18182, 625, 194, 6, 70, "ExampleSection",
+ CellID->589267740],
+Cell[CellGroupData[{
+Cell[18401, 635, 241, 6, 70, "Input",
+ CellID->200997102],
+Cell[18645, 643, 380, 10, 36, "Output",
+ CellID->652428351]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19062, 658, 107, 3, 70, "Input",
+ CellID->280566528],
+Cell[19172, 663, 2249, 55, 527, "Output",
+ CellID->282496226]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21458, 723, 106, 3, 70, "Input",
+ CellID->144722191],
+Cell[21567, 728, 248, 9, 50, "Output",
+ CellID->384988149]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21852, 742, 108, 3, 70, "Input",
+ CellID->28537956],
+Cell[21963, 747, 282, 7, 54, "Output",
+ CellID->390098434]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22282, 759, 108, 3, 70, "Input",
+ CellID->223484729],
+Cell[22393, 764, 308, 7, 88, "Output",
+ CellID->9266469]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[22740, 776, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

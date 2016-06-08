@@ -1,0 +1,806 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36572,        798]
+NotebookOptionsPosition[     34231,        716]
+NotebookOutlinePosition[     34582,        731]
+CellTagsIndexPosition[     34539,        728]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Test Nounou GUI", "Title",
+ CellChangeTimes->{{3.66963406238684*^9, 3.669634064169942*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.669638356766464*^9, 3.6696383575095067`*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Thu 14 Apr 2016 18:02:25     [Mathematica: 10.4.0 for Microsoft \
+Windows (64-bit) (February 26, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   \
+C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[e88c77baa446ff7c17d81aa6b3d6d1052b9c1cfd]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6696385455592623`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{
+  3.6609071100989757`*^9, {3.6610105717671556`*^9, 3.6610105860659733`*^9}, 
+   3.661013997855076*^9, 3.6610159971564293`*^9, 3.661016175973657*^9, 
+   3.661076322748788*^9, 3.6610785181623583`*^9, 3.661078629164707*^9, 
+   3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
+   3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
+   3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.661240094239548*^9, 
+   3.661349356126057*^9, 3.6613500403851943`*^9, 3.661350833790575*^9, 
+   3.6613509314581614`*^9, 3.6613510148129287`*^9, 3.6613526535406585`*^9, 
+   3.661437902245578*^9, 3.66148209377059*^9, 3.661483631859564*^9, 
+   3.6614838595115843`*^9, 3.661485676753525*^9, 3.6614862092579823`*^9, 
+   3.6614869493823147`*^9, 3.6615144189860525`*^9, 3.6615146546005287`*^9, 
+   3.66157106703628*^9, 3.661579874830435*^9, 3.6615843604990005`*^9, 
+   3.6615849491446695`*^9, 3.661585063553213*^9, 3.661585094589988*^9, 
+   3.669634068823208*^9, 3.6696342548158464`*^9, 3.6696349883408012`*^9, 
+   3.669635167976076*^9, 3.6696353125643463`*^9, 3.6696364540866375`*^9, 
+   3.669636488895628*^9, 3.6696365429447193`*^9, 3.6696366213182025`*^9, 
+   3.6696371515525303`*^9, 3.6696372183113484`*^9, 3.669637411952424*^9, 
+   3.6696375427379045`*^9, 3.669637625892661*^9, 3.66963800405229*^9, 
+   3.669638095854541*^9, 3.6696382111131334`*^9, {3.6696382530585327`*^9, 
+   3.669638263695141*^9}, 3.669638357949532*^9, 3.669638438949165*^9, 
+   3.6696385456822696`*^9}],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Thu 14 Apr 2016 18:02:27     [Mathematica: 10.4.0 for Microsoft \
+Windows (64-bit) (February 26, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[01fd3dd35b6861df05af7a14511bc4240b5bb3f8]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.669638547486373*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+353bff1ccc2e2d9a93383f3df8dd9ee2a27a94a4\\n  + current branch is: master\\n  \
++ remote names are: https://ktakagaki@github.com/ktakagaki/nounou.git, \
+https://github.com/slentzen/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{
+  3.6609071100989757`*^9, {3.6610105717671556`*^9, 3.6610105860659733`*^9}, 
+   3.661013997855076*^9, 3.6610159971564293`*^9, 3.661016175973657*^9, 
+   3.661076322748788*^9, 3.6610785181623583`*^9, 3.661078629164707*^9, 
+   3.6610787014638424`*^9, 3.661078755461931*^9, 3.66107902451532*^9, 
+   3.6610791188177137`*^9, 3.6610819473514967`*^9, 3.661082165351966*^9, 
+   3.661082485760292*^9, 3.6610825333370132`*^9, 3.661082611983512*^9, 
+   3.6610837030919194`*^9, 3.661091908180323*^9, 3.6611057351272492`*^9, 
+   3.661106250451724*^9, 3.661229918198512*^9, 3.661237667923771*^9, 
+   3.6612381839042835`*^9, 3.6612387077272444`*^9, 3.6612396469489646`*^9, 
+   3.6612398084722033`*^9, 3.661240024353551*^9, 3.661240094239548*^9, 
+   3.661349356126057*^9, 3.6613500403851943`*^9, 3.661350833790575*^9, 
+   3.6613509314581614`*^9, 3.6613510148129287`*^9, 3.6613526535406585`*^9, 
+   3.661437902245578*^9, 3.66148209377059*^9, 3.661483631859564*^9, 
+   3.6614838595115843`*^9, 3.661485676753525*^9, 3.6614862092579823`*^9, 
+   3.6614869493823147`*^9, 3.6615144189860525`*^9, 3.6615146546005287`*^9, 
+   3.66157106703628*^9, 3.661579874830435*^9, 3.6615843604990005`*^9, 
+   3.6615849491446695`*^9, 3.661585063553213*^9, 3.661585094589988*^9, 
+   3.669634068823208*^9, 3.6696342548158464`*^9, 3.6696349883408012`*^9, 
+   3.669635167976076*^9, 3.6696353125643463`*^9, 3.6696364540866375`*^9, 
+   3.669636488895628*^9, 3.6696365429447193`*^9, 3.6696366213182025`*^9, 
+   3.6696371515525303`*^9, 3.6696372183113484`*^9, 3.669637411952424*^9, 
+   3.6696375427379045`*^9, 3.669637625892661*^9, 3.66963800405229*^9, 
+   3.669638095854541*^9, 3.6696382111131334`*^9, {3.6696382530585327`*^9, 
+   3.669638263695141*^9}, 3.669638357949532*^9, 3.669638438949165*^9, 
+   3.6696385491114655`*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"ShowJavaConsole", "[", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6613500543349924`*^9, 3.661350056535118*^9}, {
+   3.6613501139314013`*^9, 3.6613501186796727`*^9}, 3.6613526610470877`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"JavaClassPath", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.669634306602808*^9, 3.6696343093869677`*^9}, {
+  3.6696343549465733`*^9, 3.669634376427802*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\
+\\\\SystemFiles\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Java\\\\WolframSSH.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Java\\\\WolframSSHKeyGen.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Autoload\\\\PacletManager\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Autoload\\\\PacletManager\\\\Java\\\\antlr.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Autoload\\\\PacletManager\\\\Java\\\\mexpr.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Autoload\\\\PacletManager\\\\Java\\\\mexprparser.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Autoload\\\\PacletManager\\\\Java\\\\PacletManager.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Autoload\\\\PacletManager\\\\Java\\\\WRIjdbm.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\activation.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\bzip2.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\commons-codec-1.3.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\commons-collections-3.2.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\commons-httpclient-3.0.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\commons-lang-2.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\commons-logging-1.1.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\Convert.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\core-3.0.0.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\customizer.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\dom4j-1.6.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\Exif.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\externalservice.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\gnu-regexp-1.1.4.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\grib-8.0.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\jackcess-1.1.18.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\javase-3.0.0.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\jdbf.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\jdom.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\jmf.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\JPEG2000b.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\JSON.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\jxl.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\ldap.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\mail.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\mediaplayer.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\multiplayer.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\netcdf-4.2.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\poi-3.11-20150702.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\poi-examples-3.11-20150702.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\poi-excelant-3.11-20150702.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\poi-ooxml-3.11-20150702.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\poi-ooxml-schemas-3.11-20150702.jar\"\>\
+", ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\poi-scratchpad-3.11-20150702.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\prefsAll.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\resourcesOptional.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\stax-api-1.0.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\tagsoup-1.0rc9.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\tar.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\xercesImpl.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\xml-apis.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\xmlbeans-2.3.0.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Converters\\\\Java\\\\zxing-client.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\bsf-Wolfram.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\bsf.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\concurrent.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\diva-canvas-core.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\GUIKit.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\OculusLayout.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\xercesImpl.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Packages\\\\GUIKit\\\\Java\\\\xmlParserAPIs.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\commons-collections-3.1.jar\
+\"\>", ",", "\<\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\10.4\\\\SystemFiles\\\\Links\\\\DatabaseLink\\\\\
+Java\\\\commons-dbcp-1.2.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\commons-pool-1.2.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\derby.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\derbyclient.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\drizzle-jdbc-1.3.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\glazedlists.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\h2-1.3.174.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\h2-1.3.176.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\hsqldb.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\jaybird-full-2.2.9.jar\"\>",
+    ",", "\<\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\10.4\\\\SystemFiles\\\\Links\\\\DatabaseLink\\\\\
+Java\\\\jtds-1.3.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\mariadb-java-client-1.3.4.\
+jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\mysql-connector-java-5.1.38-\
+bin.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\postgresql-9.4-1206-jdbc4.\
+jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\DatabaseLink\\\\Java\\\\sqlite-jdbc-3.8.11.2.jar\"\>\
+", ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\jna.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\JRI.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\JRIEngine.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\log4j-1.2.16.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\REngine.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\RLink\\\\Java\\\\RLink.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\WebServices\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\WebServices\\\\Java\\\\commons-httpclient-3.0.jar\"\
+\>", ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\
+\\\\SystemFiles\\\\Links\\\\WebServices\\\\Java\\\\commons-logging-1.0.4.jar\"\
+\>", ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\
+\\\\SystemFiles\\\\Links\\\\WebServices\\\\Java\\\\junit-3.8.1.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\XMLSchema\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Links\\\\XMLSchema\\\\Java\\\\commons-codec-1.3.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Applications\\\\ClusterIntegration\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Applications\\\\ClusterIntegration\\\\Java\\\\Wolfram_SGE.jar\"\>\
+", ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Applications\\\\DocumentationSearch\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Applications\\\\LightweightGridClient\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\AddOns\\\\Applications\\\\LightweightGridClient\\\\Java\\\\wolfram-remote-\
+services-client.jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Components\\\\Interpreter\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Components\\\\Interpreter\\\\Java\\\\libphonenumber-7.0.4.\
+jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Components\\\\Interpreter\\\\Java\\\\ParseTelephoneNumber.\
+jar\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\10.4\\\
+\\SystemFiles\\\\Java\\\\Windows-x86-64\\\\lib\\\\tools.jar\"\>", 
+   ",", "\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\Java\\\\nounou-lib.jar\
+\"\>", ",", "\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\NounouW\\\\Java\\\\nounou.jar\
+\"\>", ",", "\<\"C:\\\\prog\\\\_w\\\\HokahokaW\\\\HokahokaW\\\\Java\\\\\"\>", 
+   ",", "\<\"C:\\\\prog\\\\_w\\\\HokahokaW\\\\HokahokaW\\\\Java\\\\org.\
+eclipse.jgit-3.7.0.201502260915-r.jar\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.6696343766668158`*^9, 3.6696353163515625`*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Launch JavaFX via JPanel", "Section",
+ CellChangeTimes->{{3.6696342717078123`*^9, 3.669634278875222*^9}, {
+  3.6696378020537367`*^9, 3.6696378213648415`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"class", "=", 
+  RowBox[{"JavaNew", "[", "\"\<nounou.gui.Nounou\>\"", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "gui", ".", "Nounou"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject26761557710995457]], "Output",
+ CellChangeTimes->{3.6696380111826982`*^9, 3.6696380996397576`*^9, 
+  3.6696382148853493`*^9, 3.6696382719516134`*^9, 3.66963836018666*^9, 
+  3.669638443145405*^9, 3.66963848921404*^9, 3.669638549466486*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"class", "@", 
+  RowBox[{"initAndShowGUI", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.669638012727786*^9, 3.669638020213215*^9}}],
+
+Cell[BoxData[
+ RowBox[{"class", "@", 
+  RowBox[{"initAndShowGUI", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.669638012727786*^9, 3.669638020213215*^9}, 
+   3.6696382746307664`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Nounou`initAndShowGUI", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.669638377457648*^9, 3.669638380941847*^9}}],
+
+Cell[BoxData[
+ RowBox[{"class", "@", 
+  RowBox[{"initAndShowGUI", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.669638012727786*^9, 3.669638020213215*^9}, {
+  3.6696382746307664`*^9, 3.66963828378229*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["BAK Launch JavaFX GUI Directly---failed", "Section",
+ CellChangeTimes->{{3.6696342717078123`*^9, 3.669634278875222*^9}, {
+  3.6696378020537367`*^9, 3.669637807149028*^9}, {3.669638598118269*^9, 
+  3.6696385997183604`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"LoadJavaClass", "[", "\"\<nounou.gui.Nounou$1\>\"", "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6696342836884975`*^9, 3.6696343044746866`*^9}, {
+   3.669634642059995*^9, 3.66963464231501*^9}, 3.6696347899194527`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"LoadJavaClass", "[", "\"\<nounou.gui.Nounou\>\"", "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.6696350244828687`*^9, 3.6696350267790003`*^9}, 
+   3.6696376288928328`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"JavaClass", "[", 
+   RowBox[{"nounou", ".", "gui", ".", "Nounou"}], ",", "<>", "]"}],
+  JLink`JavaClass["nounou.gui.Nounou", 16, {
+    JLink`JVM["vm2"]}, 17, "nounou`gui`Nounou`", False, True]]], "Output",
+ CellChangeTimes->{
+  3.6696350272080245`*^9, 3.6696351722603207`*^9, 3.6696353206388073`*^9, {
+   3.669636466070323*^9, 3.669636493750906*^9}, 3.669636546827942*^9, 
+   3.669636632735855*^9, 3.6696371614220943`*^9, 3.669637227309863*^9, 
+   3.669637418246784*^9, 3.6696375463751125`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"class", "=", 
+  RowBox[{"JavaNew", "[", "\"\<nounou.gui.Nounou\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.669634645007164*^9, 3.6696346478183246`*^9}, {
+  3.6696346809152174`*^9, 3.6696347076667476`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "gui", ".", "Nounou"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject8002658782674945]], "Output",
+ CellChangeTimes->{3.6696376315469837`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Methods", "[", "class", "]"}]], "Input",
+ CellChangeTimes->{{3.669634709373845*^9, 3.6696347142511244`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {"\<\"boolean equals(Object)\"\>"},
+     {"\<\"Class getClass()\"\>"},
+     {"\<\"javafx.application.HostServices getHostServices()\"\>"},
+     {"\<\"javafx.application.Application$Parameters getParameters()\"\>"},
+     {"\<\"static String getUserAgentStylesheet()\"\>"},
+     {"\<\"int hashCode()\"\>"},
+     {"\<\"void init() throws Exception\"\>"},
+     {"\<\"static void launch(Class, String[])\"\>"},
+     {"\<\"static void launchGUI()\"\>"},
+     {"\<\"static void launch(String[])\"\>"},
+     {"\<\"static void main(String[])\"\>"},
+     {"\<\"void notify()\"\>"},
+     {"\<\"void notifyAll()\"\>"},
+     {"\<\"void \
+notifyPreloader(javafx.application.Preloader$PreloaderNotification)\"\>"},
+     {"\<\"static void setUserAgentStylesheet(String)\"\>"},
+     {"\<\"void start(javafx.stage.Stage)\"\>"},
+     {"\<\"void stop() throws Exception\"\>"},
+     {"\<\"String toString()\"\>"},
+     {"\<\"void wait(long, int) throws InterruptedException\"\>"},
+     {"\<\"void wait(long) throws InterruptedException\"\>"},
+     {"\<\"void wait() throws InterruptedException\"\>"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.5599999999999999]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   Column],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6696347144691367`*^9}]
+}, Closed]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Nounou`launch", "[", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6696347573635902`*^9, 3.6696347635709453`*^9}, {
+   3.669637165061303*^9, 3.66963716535732*^9}, 3.6696376346821637`*^9}],
+
+Cell[BoxData[
+ RowBox[{"class", "@", 
+  RowBox[{"launch", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6696376365112677`*^9, 3.6696376421655917`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Nounou`primaryStage"], "Input",
+ CellChangeTimes->{{3.6696350352124825`*^9, 3.66963503989375*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"javafx", ".", "stage", ".", "Stage"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject9608578495152129]], "Output",
+ CellChangeTimes->{3.6696374463003883`*^9, 3.6696375594088583`*^9, 
+  3.6696376547713127`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"class", "@", "primaryStage"}]], "Input",
+ CellChangeTimes->{{3.6696376557293673`*^9, 3.669637659541585*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"javafx", ".", "stage", ".", "Stage"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject9608578495152129]], "Output",
+ CellChangeTimes->{3.6696376598006*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", "Nounou`primaryStage", ")"}], "@", 
+  RowBox[{"isShowing", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6696350352124825`*^9, 3.669635073323662*^9}, {
+  3.669635104219429*^9, 3.669635107450614*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.6696351086446824`*^9, 3.669635199639887*^9, 
+  3.6696353439081388`*^9, 3.6696366565052147`*^9, 3.669637254651427*^9, 
+  3.6696375610639524`*^9, 3.669637664401863*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Nounou`launchStage", "[", "]"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"class", "@", 
+   RowBox[{"launchStage", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.669636666925811*^9, 3.669636672432126*^9}, {
+  3.6696376681700788`*^9, 3.669637672773342*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Java", "::", "excptn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A Java exception occurred: \[NoBreak]\\!\\(\\*RowBox[{\\\"\
+\\\\\\\"java.lang.IllegalStateException: Not on FX application thread; \
+currentThread = J/Link reader\\\\\\\\n\\\\\\\\tat \
+com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)\\\\\\\\n\\\\\\\\\
+tat com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.\
+java:438)\\\\\\\\n\\\\\\\\tat javafx.stage.Stage.<init>(Stage.java:238)\\\\\\\
+\\n\\\\\\\\tat javafx.stage.Stage.<init>(Stage.java:224)\\\\\\\\n\\\\\\\\tat \
+nounou.gui.Nounou.launchStage(Nounou.java:30)\\\\\\\"\\\"}]\\)\[NoBreak].\"\>\
+"}]], "Message", "MSG",
+ CellChangeTimes->{3.669636672814148*^9, 3.669637264059965*^9, 
+  3.6696374498805933`*^9, 3.66963756469116*^9, 3.6696376731623645`*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.669636672815148*^9, 3.669637264063965*^9, 
+  3.6696374498825936`*^9, 3.66963756469316*^9, 3.6696376731653643`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", "Nounou`primaryStage", ")"}], "@", 
+  RowBox[{"show", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6696367293993845`*^9, 3.6696367323885555`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Java", "::", "excptn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A Java exception occurred: \[NoBreak]\\!\\(\\*RowBox[{\\\"\
+\\\\\\\"java.lang.IllegalStateException: Not on FX application thread; \
+currentThread = J/Link reader\\\\\\\\n\\\\\\\\tat \
+com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)\\\\\\\\n\\\\\\\\\
+tat com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.\
+java:438)\\\\\\\\n\\\\\\\\tat javafx.stage.Window.setShowing(Window.java:909)\
+\\\\\\\\n\\\\\\\\tat javafx.stage.Window.show(Window.java:925)\\\\\\\\n\\\\\\\
+\\tat javafx.stage.Stage.show(Stage.java:256)\\\\\\\"\\\"}]\\)\[NoBreak].\"\>\
+"}]], "Message", "MSG",
+ CellChangeTimes->{3.669636733123597*^9, 3.669637567867342*^9, 
+  3.6696376784266653`*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.6696367331245975`*^9, 3.669637567868342*^9, 
+  3.6696376784276657`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"stage", " ", "=", " ", 
+  RowBox[{"JavaNew", "[", "\"\<javafx.stage.Stage\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.669636193538735*^9, 3.669636212355811*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Java", "::", "excptn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A Java exception occurred: \[NoBreak]\\!\\(\\*RowBox[{\\\"\
+\\\\\\\"java.lang.IllegalStateException: Not on FX application thread; \
+currentThread = J/Link reader\\\\\\\\n\\\\\\\\tat \
+com.sun.javafx.tk.Toolkit.checkFxUserThread(Toolkit.java:204)\\\\\\\\n\\\\\\\\\
+tat com.sun.javafx.tk.quantum.QuantumToolkit.checkFxUserThread(QuantumToolkit.\
+java:438)\\\\\\\\n\\\\\\\\tat javafx.stage.Stage.<init>(Stage.java:238)\\\\\\\
+\\n\\\\\\\\tat javafx.stage.Stage.<init>(Stage.java:224)\\\\\\\\n\\\\\\\\tat \
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native \
+Method)\\\\\\\\n\\\\\\\\tat \
+sun.reflect.NativeConstructorAccessorImpl.newInstance(\
+NativeConstructorAccessorImpl.java:62)\\\\\\\\n\\\\\\\\tat \
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(\
+DelegatingConstructorAccessorImpl.java:45)\\\\\\\\n\\\\\\\\tat \
+java.lang.reflect.Constructor.newInstance(Constructor.java:422)\\\\\\\"\\\"}]\
+\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6696362127788353`*^9, 3.6696366849928446`*^9, 
+  3.669637691308402*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"JavaNew", "::", "fail"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Error calling constructor for class \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"javafx.stage.Stage\\\\\\\"\\\"}]\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:JLink/ref/JavaNew\\\", ButtonNote -> \
+\\\"JLink`JavaNew::fail\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6696362127788353`*^9, 3.6696366849928446`*^9, 
+  3.669637691412408*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.669636212895842*^9, 3.6696366850918503`*^9, 
+  3.6696376914134083`*^9}]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{952, 1136},
+WindowMargins->{{Automatic, 640}, {Automatic, -1200}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (February 25, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 97, 1, 103, "Title"],
+Cell[680, 25, 150, 3, 33, "Input"],
+Cell[833, 30, 962, 34, 131, "Text"],
+Cell[1798, 66, 1875, 26, 25, "Print"],
+Cell[3676, 94, 952, 33, 131, "Text"],
+Cell[4631, 129, 2177, 31, 158, "Print"],
+Cell[6811, 162, 234, 4, 33, "Input"],
+Cell[CellGroupData[{
+Cell[7070, 170, 180, 3, 33, "Input"],
+Cell[7253, 175, 15272, 218, 2518, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[22562, 398, 164, 2, 57, "Section"],
+Cell[CellGroupData[{
+Cell[22751, 404, 111, 2, 33, "Input"],
+Cell[22865, 408, 449, 9, 33, "Output"]
+}, Open  ]],
+Cell[23329, 420, 155, 3, 33, "Input"],
+Cell[23487, 425, 183, 4, 33, "Input"],
+Cell[23673, 431, 135, 2, 33, "Input"],
+Cell[23811, 435, 205, 4, 33, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24053, 444, 228, 3, 71, "Section"],
+Cell[24284, 449, 263, 5, 33, "Input"],
+Cell[CellGroupData[{
+Cell[24572, 458, 216, 5, 33, "Input"],
+Cell[24791, 465, 539, 10, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25367, 480, 232, 4, 33, "Input"],
+Cell[25602, 486, 284, 7, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25923, 498, 132, 2, 33, "Input"],
+Cell[26058, 502, 1663, 39, 426, "Output"]
+}, Closed]],
+Cell[27736, 544, 229, 4, 27, "Input"],
+Cell[27968, 550, 151, 3, 33, "Input"],
+Cell[CellGroupData[{
+Cell[28144, 557, 112, 1, 33, "Input"],
+Cell[28259, 560, 336, 8, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28632, 573, 132, 2, 33, "Input"],
+Cell[28767, 577, 281, 7, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29085, 589, 238, 5, 33, "Input"],
+Cell[29326, 596, 220, 3, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29583, 604, 311, 7, 57, "Input"],
+Cell[29897, 613, 861, 15, 158, "Message"],
+Cell[30761, 630, 170, 2, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30968, 637, 186, 4, 33, "Input"],
+Cell[31157, 643, 816, 15, 158, "Message"],
+Cell[31976, 660, 127, 2, 33, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32140, 667, 188, 3, 33, "Input"],
+Cell[32331, 672, 1172, 21, 224, "Message"],
+Cell[33506, 695, 555, 12, 25, "Message"],
+Cell[34064, 709, 127, 2, 33, "Output"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
