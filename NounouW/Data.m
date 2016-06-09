@@ -14,6 +14,8 @@ BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}];
 
 NNLoad::usage="Load data object(s) from file(s).";
 Options[NNLoad] = {NNOptFileNameSort -> True};
+
+
 NNSave::usage="Save data object(s) to a file.";
 
 
@@ -89,7 +91,7 @@ NNFilterBuffer::usage="";
 Begin["`Private`"];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNLoad*)
 
 
@@ -392,7 +394,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilterXXX*)
 
 
