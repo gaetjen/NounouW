@@ -1,0 +1,726 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23602,        718]
+NotebookOptionsPosition[     20336,        595]
+NotebookOutlinePosition[     20708,        611]
+CellTagsIndexPosition[     20665,        608]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Specifying data ranges", "Title",
+ CellChangeTimes->{{3.6706130118050194`*^9, 3.6706130136121225`*^9}, {
+  3.6744424765594993`*^9, 3.6744424848749747`*^9}}],
+
+Cell["Updated 20160609", "Text",
+ CellChangeTimes->{{3.670613019964486*^9, 3.6706130242197294`*^9}, {
+   3.674380166018444*^9, 3.6743801664024663`*^9}, 3.6744412055057993`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Initialization", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, {
+  3.6706157383579693`*^9, 3.67061574047009*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Thu 9 Jun 2016 08:35:50     [Mathematica: 10.4.1 for Microsoft \
+Windows (64-bit) (April 11, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   \
+C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[126533ea69146d2bf85bdf97b6ec768a9cbcc322]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.674442950238592*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Thu 9 Jun 2016 08:35:50     [Mathematica: 10.4.1 for Microsoft \
+Windows (64-bit) (April 11, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  master \
+[e13f72bf504f0a08f8a6fef57c6efb1b301dec98]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin (https://github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6744429503775997`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+1a58c41332bd336e036338dfedc8b6c19c080f3e\\n  + current branch is: master\\n  \
++ remote names are: https://github.com/ktakagaki/nounou.git, \
+https://github.com/slentzen/nounou.git, \
+https://github.com/dowa4213/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.6744412118791637`*^9, 3.6744424915303555`*^9, 
+  3.6744429518066816`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["{start ;; last, segment}", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, 
+   3.674380467091665*^9, {3.674441564403327*^9, 3.6744416176743736`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", ";;", "10"}], ",", " ", "0"}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, 
+   3.6744417804026814`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRange"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject10469659224571905]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.674442493029441*^9, 3.6744429654374614`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}}],
+
+Cell[BoxData["\<\"FrameRange(0, 10, step=1, segment=0)\"\>"], "Output",
+ CellChangeTimes->{3.6744413107698197`*^9, 3.6744424935624714`*^9, 
+  3.674442966234507*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["{start ;; last, NNSegment \[Rule] segment}", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, 
+   3.674380467091665*^9, {3.674441564403327*^9, 3.6744416176743736`*^9}, {
+   3.674442979139245*^9, 3.674442981555383*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", ";;", "10"}], ",", " ", 
+     RowBox[{"NNSegment", "\[Rule]", "0"}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, 
+   3.6744417804026814`*^9, 3.6744429884447775`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRange"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject14633891742613505]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.674442493029441*^9, {3.6744429654374614`*^9, 3.6744429895498405`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}}],
+
+Cell[BoxData["\<\"FrameRange(0, 10, step=1, segment=0)\"\>"], "Output",
+ CellChangeTimes->{
+  3.6744413107698197`*^9, 3.6744424935624714`*^9, {3.674442966234507*^9, 
+   3.674442990202878*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["timestamp \[Rule] start ;; last (;; step)", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, 
+   3.674380467091665*^9, {3.674441564403327*^9, 3.674441594202031*^9}, {
+   3.6744416291300287`*^9, 3.6744416330582533`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"1234567890", "\[Rule]", " ", 
+    RowBox[{"1", " ", ";;", "5"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, 3.6744417804126816`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject6857562670497793]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.6744424947755413`*^9, 3.674442995637189*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}}],
+
+Cell[BoxData["\<\"NNRangeTsEvent(1234567890, startOffset=1, lastOffset=5, \
+step=1)\"\>"], "Output",
+ CellChangeTimes->{3.6744413107698197`*^9, 3.674441416128846*^9, 
+  3.6744424951385617`*^9, 3.674442995696192*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"1234567890", "\[Rule]", " ", 
+    RowBox[{"1", " ", ";;", "5", " ", ";;", " ", "2"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.674441639330612*^9, 
+   3.6744416401856613`*^9}, 3.6744417803886805`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject12120577175191553]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.6744416407306924`*^9, 3.6744424959816103`*^9, 
+   3.6744429957051926`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}}],
+
+Cell[BoxData["\<\"NNRangeTsEvent(1234567890, startOffset=1, lastOffset=5, \
+step=2)\"\>"], "Output",
+ CellChangeTimes->{3.6744413107698197`*^9, 3.674441416128846*^9, 
+  3.674441641609743*^9, 3.6744424963566313`*^9, 3.674442995713193*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["{timestamps} \[Rule] start ;; last (;; step)", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, 
+   3.674380467091665*^9, {3.674441564403327*^9, 3.674441594202031*^9}, {
+   3.6744416527223787`*^9, 3.6744416559215612`*^9}, 3.6744416973469305`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1234567890", ",", "1234567891", ",", "1234567892"}], "}"}], 
+    "\[Rule]", " ", 
+    RowBox[{"1", " ", ";;", "5"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.6744416600267963`*^9, 
+   3.674441669850358*^9}, 3.674441780395681*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm1`JavaObject20996566571548673], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm1`JavaObject15039561453273089], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm1`JavaObject28885972133347329]}], "}"}]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.674441670304384*^9, 3.674442497990725*^9, 
+   3.674443002729594*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"#", "@", 
+    RowBox[{"toString", "[", "]"}]}], "&"}], " ", "/@", " ", 
+  "testRange"}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}, {
+  3.6744416789868803`*^9, 3.674441684349187*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NNRangeTsEvent(1234567890, startOffset=1, lastOffset=5, \
+step=1)\"\>", 
+   ",", "\<\"NNRangeTsEvent(1234567891, startOffset=1, lastOffset=5, \
+step=1)\"\>", 
+   ",", "\<\"NNRangeTsEvent(1234567892, startOffset=1, lastOffset=5, \
+step=1)\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6744413107698197`*^9, 3.674441416128846*^9, {3.6744416711384315`*^9, 
+   3.674441684715208*^9}, 3.6744424988697753`*^9, 3.6744430027825975`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1234567890", ",", "1234567891", ",", "1234567892"}], "}"}], 
+    "\[Rule]", " ", 
+    RowBox[{"1", " ", ";;", "5", " ", ";;", " ", "2"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.6744416600267963`*^9, 
+   3.674441669850358*^9}, {3.6744417046903505`*^9, 3.6744417061384335`*^9}, 
+   3.6744417803986807`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm1`JavaObject13802924152979457], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm1`JavaObject16248192765001729], ",", 
+   InterpretationBox[
+    RowBox[{"\[LeftGuillemet]", 
+     RowBox[{"JavaObject", "[", 
+      RowBox[{"nounou", ".", "ranges", ".", "NNRangeTsEvent"}], "]"}], 
+     "\[RightGuillemet]"}],
+    JLink`Objects`vm1`JavaObject35931750236422145]}], "}"}]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.674441670304384*^9, 3.6744417065714583`*^9, 
+   3.674442499881833*^9, 3.6744430028105993`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"#", "@", 
+    RowBox[{"toString", "[", "]"}]}], "&"}], " ", "/@", " ", 
+  "testRange"}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}, {
+  3.6744416789868803`*^9, 3.674441684349187*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NNRangeTsEvent(1234567890, startOffset=1, lastOffset=5, \
+step=2)\"\>", 
+   ",", "\<\"NNRangeTsEvent(1234567891, startOffset=1, lastOffset=5, \
+step=2)\"\>", 
+   ",", "\<\"NNRangeTsEvent(1234567892, startOffset=1, lastOffset=5, \
+step=2)\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6744413107698197`*^9, 3.674441416128846*^9, {3.6744416711384315`*^9, 
+   3.674441708330559*^9}, 3.6744425004128637`*^9, 3.6744430028195996`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["{All, segment}   {All, NNSegment \[Rule] segment}   All", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, 
+   3.674380467091665*^9, {3.674441564403327*^9, 3.674441594202031*^9}, {
+   3.6744416527223787`*^9, 3.6744416559215612`*^9}, 3.6744416973469305`*^9, {
+   3.674442414538952*^9, 3.6744424186991897`*^9}, {3.674443028475067*^9, 
+   3.674443043858947*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"{", 
+    RowBox[{"All", ",", " ", "0"}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.6744416600267963`*^9, 
+   3.674441669850358*^9}, 3.674441780395681*^9, {3.6744424248665423`*^9, 
+   3.6744424287307634`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRangeAll"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject35931750236422145]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.674441670304384*^9, 3.6744425019979544`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}, {
+  3.6744416789868803`*^9, 3.674441684349187*^9}, {3.674442436691219*^9, 
+  3.6744424394103746`*^9}}],
+
+Cell[BoxData["\<\"NNRangeAll(step=1, segment=0)\"\>"], "Output",
+ CellChangeTimes->{
+  3.6744413107698197`*^9, 3.674441416128846*^9, {3.6744416711384315`*^9, 
+   3.674441684715208*^9}, 3.6744425026819935`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"{", 
+    RowBox[{"All", ",", " ", 
+     RowBox[{"NNSegment", "\[Rule]", "0"}]}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.6744416600267963`*^9, 
+   3.674441669850358*^9}, 3.674441780395681*^9, {3.6744424248665423`*^9, 
+   3.6744424287307634`*^9}, 3.6744430537805147`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRangeAll"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject28209500926246913]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.674441670304384*^9, 3.6744425019979544`*^9, 
+   3.6744430548145733`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}, {
+  3.6744416789868803`*^9, 3.674441684349187*^9}, {3.674442436691219*^9, 
+  3.6744424394103746`*^9}}],
+
+Cell[BoxData["\<\"NNRangeAll(step=1, segment=0)\"\>"], "Output",
+ CellChangeTimes->{
+  3.6744413107698197`*^9, 3.674441416128846*^9, {3.6744416711384315`*^9, 
+   3.674441684715208*^9}, 3.6744425026819935`*^9, 3.674443055732626*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", "All", "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.6744416600267963`*^9, 
+   3.674441669850358*^9}, 3.674441780395681*^9, {3.6744424248665423`*^9, 
+   3.6744424287307634`*^9}, {3.674442580691455*^9, 3.6744425823265486`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{"nounou", ".", "ranges", ".", "NNRangeAll"}], "]"}], 
+   "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject6949031146160129]], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.674441670304384*^9, 3.6744425019979544`*^9, 
+   3.6744425831955986`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "@", 
+  RowBox[{"toString", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6744413057635336`*^9, 3.674441310481803*^9}, {
+  3.6744416789868803`*^9, 3.674441684349187*^9}, {3.674442436691219*^9, 
+  3.6744424394103746`*^9}}],
+
+Cell[BoxData["\<\"NNRangeAll(step=1, segment=-1)\"\>"], "Output",
+ CellChangeTimes->{
+  3.6744413107698197`*^9, 3.674441416128846*^9, {3.6744416711384315`*^9, 
+   3.674441684715208*^9}, 3.6744425026819935`*^9, 3.6744425844276686`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["$Failed", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, 
+   3.674380467091665*^9, {3.674441564403327*^9, 3.674441594202031*^9}, {
+   3.6744416527223787`*^9, 3.6744416559215612`*^9}, 3.6744416973469305`*^9, {
+   3.674442414538952*^9, 3.6744424186991897`*^9}, {3.674443028475067*^9, 
+   3.674443043858947*^9}, {3.6744441235977044`*^9, 3.674444126579875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", "=", 
+  RowBox[{"$ToNNRangeSpecifier", "[", 
+   RowBox[{"{", 
+    RowBox[{"\"\<All\>\"", ",", " ", "0"}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.674441262306048*^9, 3.6744413031373835`*^9}, {
+   3.674441389658332*^9, 3.6744414075543556`*^9}, {3.6744416600267963`*^9, 
+   3.674441669850358*^9}, 3.674441780395681*^9, {3.6744424248665423`*^9, 
+   3.6744424287307634`*^9}, {3.6744441349003506`*^9, 3.6744441362604284`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$ToNNRangeSpecifier", "::", "invalidArgs2"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"\\\\\\\"All\\\\\\\"\\\", \\\",\\\", \\\"0\\\"}], \\\"}\\\"}], \
+\\\"}\\\"}]\\)\[NoBreak] is not a correctly formatted span \
+specification!\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.674444136788459*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.674441298851138*^9, 3.674441304010433*^9}, 
+   3.67444141287466*^9, 3.674441670304384*^9, 3.6744425019979544`*^9, 
+   3.674444136788459*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testRange", " ", "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.6744441511552806`*^9, 3.674444155029502*^9}}],
+
+Cell["$Failed", "Output",
+ CellChangeTimes->{3.674444155232514*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{952, 1076},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 162, 2, 112, "Title"],
+Cell[745, 26, 176, 2, 37, "Text"],
+Cell[CellGroupData[{
+Cell[946, 32, 153, 2, 78, "Section"],
+Cell[1102, 36, 52, 1, 37, "Input"],
+Cell[1157, 39, 956, 34, 145, "Text"],
+Cell[2116, 75, 941, 32, 145, "Text"],
+Cell[3060, 109, 503, 8, 179, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3600, 122, 187, 2, 78, "Section"],
+Cell[CellGroupData[{
+Cell[3812, 128, 281, 7, 37, "Input"],
+Cell[4096, 137, 361, 8, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4494, 150, 155, 3, 37, "Input"],
+Cell[4652, 155, 164, 2, 36, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4865, 163, 255, 3, 78, "Section"],
+Cell[CellGroupData[{
+Cell[5145, 170, 345, 8, 37, "Input"],
+Cell[5493, 180, 387, 8, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5917, 193, 155, 3, 37, "Input"],
+Cell[6075, 198, 192, 3, 36, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6316, 207, 256, 3, 78, "Section"],
+Cell[CellGroupData[{
+Cell[6597, 214, 322, 6, 37, "Input"],
+Cell[6922, 222, 388, 8, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7347, 235, 155, 3, 37, "Input"],
+Cell[7505, 240, 215, 3, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7757, 248, 395, 7, 37, "Input"],
+Cell[8155, 257, 419, 9, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8611, 271, 155, 3, 37, "Input"],
+Cell[8769, 276, 237, 3, 36, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9055, 285, 283, 3, 78, "Section"],
+Cell[CellGroupData[{
+Cell[9363, 292, 456, 10, 65, "Input"],
+Cell[9822, 304, 952, 23, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10811, 332, 264, 7, 37, "Input"],
+Cell[11078, 341, 476, 10, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11591, 356, 533, 11, 65, "Input"],
+Cell[12127, 369, 978, 23, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13142, 397, 264, 7, 37, "Input"],
+Cell[13409, 406, 476, 10, 87, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13934, 422, 396, 5, 78, "Section"],
+Cell[CellGroupData[{
+Cell[14355, 431, 407, 8, 37, "Input"],
+Cell[14765, 441, 385, 8, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15187, 454, 257, 5, 37, "Input"],
+Cell[15447, 461, 209, 3, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15693, 469, 471, 9, 37, "Input"],
+Cell[16167, 480, 413, 9, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16617, 494, 257, 5, 37, "Input"],
+Cell[16877, 501, 231, 3, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17145, 509, 401, 6, 37, "Input"],
+Cell[17549, 517, 412, 9, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17998, 531, 257, 5, 37, "Input"],
+Cell[18258, 538, 234, 3, 36, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18541, 547, 396, 5, 78, "Section"],
+Cell[CellGroupData[{
+Cell[18962, 556, 465, 8, 37, "Input"],
+Cell[19430, 566, 420, 9, 26, "Message"],
+Cell[19853, 577, 197, 3, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20087, 585, 139, 2, 79, "Input"],
+Cell[20229, 589, 67, 1, 54, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -18,7 +18,7 @@ NNTracePlot[ <<JavaObject[nounou.DataReader]>> , channel(s), <<JavaObject[nounou
 
 NNTracePlot$UniqueOptions = {
 	(*NNValueUnit -> Absolute, ScaleBars->{None, None}, *)  
-	(*NNBaselineCorrection->Mean,*) NNTimeUnit -> "ms", NNOptStack-> Automatic
+	(*NNBaselineCorrection->Mean,*) NNOptTimeUnit -> "ms", NNOptStack -> Automatic
 	(*, NNMasking->False*)
 	(*HHStackIncrement -> 0, HHBaselineCorrection -> None*)
 };
@@ -63,55 +63,45 @@ NNTracePlotManipulate[args___]:=Message[NNTracePlotManipulate::invalidArgs,{args
 
 
 (* ::Subsection:: *)
-(*NNTracePlotImpl*)
-
-
-NNTracePlotImpl[
-			nnData_/;NNJavaObjectQ[nnData, $NNJavaClass$NNData], 
-			channels:{_Integer ..}, 
-			NNTimestamp[ startTs_Integer ], lengthFr_Integer, stepFr_Integer,
-			hhListLinePlotStackOpts:OptionsPattern[]
-]:= 
-	HHListLinePlotStack[nnData@readTraces[channels, NN`NNRangeTsEvent[startTs, 0, lengthFr, stepFr] ], Sequence@@hhListLinePlotStackOpts];
-
-
-NNTracePlotImpl[args___]:=Message[NNTracePlotImpl::invalidArgs,{args}];
-
-
-(* ::Subsection:: *)
 (*NNTracePlot*)
 
 
 (*Open up one-element lists*)
-NNTracePlot[{nnData_/;NNJavaObjectQ[nnData, $NNJavaClass$NNData]}, rest___]:= NNTracePlot[nnData, rest];
+NNTracePlot[{dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]}, rest___]:= 
+	NNTracePlot[dataObj, rest];
 
 
+(*Main plotting class*)
 NNTracePlot[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
-			channels_, 
-			range_, 
+			channels_:{_Integer ..}, 
+			range_/;NNJavaObjectQ[range, $NNJavaClass$NNRangeSpecifier], 
 			opts:OptionsPattern[]]:= 
 
 Block[{ optTimeUnit, optAspectRatio, optAxesLabels,
 		tempData, tempDataUnit, tempTimepoints},
 
 	(*==========Handle unit options==========*)
-	optTimeUnit = OptionValue[ NNTimeUnit ];
+	optTimeUnit = OptionValue[ NNOptTimeUnit ];
+(*	
 	optTimeUnit = Switch[ optTimeUnit,
 		Automatic, "ms",
 		x_String/;MemberQ[ {"ms"}, ToLowerCase[x] ], "ms",
 		x_String/;MemberQ[ {"timestamp", "timestamps", "ts"}, ToLowerCase[x] ], "Timestamps",
 		x_String/;MemberQ[ {"sample", "samples", "frame", "frames"}, ToLowerCase[x] ], "Frames",
 		_, Message[NNTracePlot::invalidOptionValue, "NNTimeUnit", ToString[optTimeUnit]]; "ms"
-	];	
+	];*)	
 
 	(*==========Data==========*)
-	tempData = NNReadTrace[ dataObj, channels, range, NNOptReturnTimepoints -> True];
+	tempData = NNReadTrace[ dataObj, channels, range];
+	tempTimepoints = NNReadTimepoints[ dataObj, range, optTimeUnit ];
 	tempDataUnit = dataObj@getUnit[];
 
 	(*==========Handle graphing options==========*)
+	tempData = HHStackLists[tempData, HHStackIncrement -> OptionValue[NNOptStack]];
 
 	(*==========Plot==========*)
-	ListLinePlot[ tempData, 
+	ListLinePlot[ 
+			Transpose[{tempTimepoints,#}]& /@ tempData, 
 			Sequence@@HHJoinOptionLists[ ListLinePlot,
 				{opts},
 				{  AxesLabel-> {optTimeUnit, tempDataUnit} },
@@ -122,17 +112,31 @@ Block[{ optTimeUnit, optAspectRatio, optAxesLabels,
 ];
 
 
+(*This signature will reshape for a single channel*)
+NNTracePlot[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channel:Integer, 
+			rest___]:= NNTracePlot[dataObj, {channel}, rest];
+
+
+(*This signature will reshape for all channels*)
+NNTracePlot[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			All, 
+			rest___]:= NNTracePlot[dataObj, Range[0, dataObj@getChannelCount[] - 1], rest];
+
+
+(*This signature will realize the range if it is specified in Mathematica style*)
 NNTracePlot[nnDataObj_/;NNJavaObjectQ[nnDataObj, $NNJavaClass$NNData], 
 			channels:{_Integer ..}, 
 			range_, 
 			opts:OptionsPattern[]]:= 
-Block[{rangeSpecifier},
-	rangeSpecifier = $NNSpanToNNRangeSpecifier[range];
+NNTracePlot[nnDataObj, channels, $ToNNRangeSpecifier[range], opts];
+(*Block[{rangeSpecifier},
+	rangeSpecifier = $ToNNRangeSpecifier[range];
 	If[ rangeSpecifier === Null,
 		Message[NNReadTimepoints::invalidArgs, {nnDataObj, channels, range}]; Null,
 		NNTracePlot[nnDataObj, channels, rangeSpecifier, opts]
 	]
-];
+];*)
 
 
 NNTracePlot[args___]:=Message[NNTracePlot::invalidArgs,{args}];
@@ -262,3 +266,19 @@ tempTracesWidth,
 	]
   
 ];*)
+
+
+(* ::Subsection:: *)
+(*NNTracePlotImpl*)
+
+
+(*NNTracePlotImpl[
+			nnData_/;NNJavaObjectQ[nnData, $NNJavaClass$NNData], 
+			channels:{_Integer ..}, 
+			NNTimestamp[ startTs_Integer ], lengthFr_Integer, stepFr_Integer,
+			hhListLinePlotStackOpts:OptionsPattern[]
+]:= 
+	HHListLinePlotStack[nnData@readTraces[channels, NN`NNRangeTsEvent[startTs, 0, lengthFr, stepFr] ], Sequence@@hhListLinePlotStackOpts];*)
+
+
+(*NNTracePlotImpl[args___]:=Message[NNTracePlotImpl::invalidArgs,{args}];*)

@@ -103,7 +103,7 @@ NNTimestamp::usage="Marker for specifying times as timestamps, use as \"NNTimest
 (*Package-wide option keys*)
 
 
-NNTimeUnit::usage="Specifies what time units the data output should be in (\"ms\", \"samples\"). \
+NNOptTimeUnit::usage="Specifies what time units the data output should be in (\"ms\"(default), \"frames\", \"timestamps\"). \
 For trace reading, only relevant if time stamps are returned (i.e. NNReturnTimestamps -> True).";
 NNOptStack::usage="Whether to stack multiple channels in NNTracePlot. Automatic will stack based on digitization range.";
 NNOptStackGain::usage="Stack increment as a multiple of digitization range. Only valid when NNOptStack -> Automatic.";
