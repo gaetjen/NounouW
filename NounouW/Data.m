@@ -11,8 +11,8 @@ BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}];
 NNSegment::usage="Marker for a rule specifying the relevant data segment (e.g. NNSegment \[Rule] 0)"; 
 
 
-(* ::Subsection:: *)
-(* NNLoad/NNSave*)
+(* ::Subsection::Closed:: *)
+(* File Access (NNLoad, NNSave, NNFilenameSort)*)
 
 
 NNLoad::usage="Load data object(s) from file(s).";
@@ -22,31 +22,30 @@ Options[NNLoad] = {NNOptFileNameSort -> True};
 NNSave::usage="Save data object(s) to a file.";
 
 
-(* ::Subsection:: *)
-(*NNFilenameSort*)
-
-
 NNFilenameSort::usage="Sorts data filenames based on trailing digits, which may not be straight forward. \
 For example, XXX\\CSC2.ncs => XXX\\CSC10.ncs";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
-$ToNNRangeSpecifier::usage="Converts a Mathematica-style range specification to Nounou Java object. Returns $Failed if invalid.";
+$ToNNRangeSpecifier::usage =
+"Converts a Mathematica-style range specification to Nounou Java object. Returns $Failed if invalid.";
 
 
-NNReadTimepoints::usage="Reads a list of timepoints for a given data/timing object. Use for {x,y} plotting.";
+NNPrintInfo::usage =
+"Prints out java object information for an NNElement child class (calls toStringFull[]).";
+
+
+NNReadTimepoints::usage =
+"Reads a list of timepoints for a given data/timing object. Use for {x,y} plotting.";
 
 
 (*NNOptTimepointUnit::usage="Specifies which units to use for timepoints. \"Frames\", \"ms\", or \"Timestamps\".";*)
 
 
-NNPrintInfo::usage="Prints out java object information for an NNElement child class (calls toStringFull[]).";
-
-
-NNReadTrace::usage="";
+NNReadTrace::usage="Reads a trace of data from a channel(s)";
 
 Options[NNReadTrace] = {
 (*	NNOptReturnTimepoints \[Rule] True, NNOptTimepointUnit \[Rule] Automatic*)
@@ -98,7 +97,11 @@ NNFilterBuffer::usage="";
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
+(*File Access (NNLoad, NNSave, NNFilenameSort)*)
+
+
+(* ::Subsubsection::Closed:: *)
 (*NNLoad*)
 
 
@@ -118,7 +121,7 @@ Module[{tempret, optSort},
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNSave*)
 
 
@@ -137,36 +140,19 @@ Module[{tempret},
 NNSave[args___]:=Message[NNSave::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNFilenameSort*)
 
 
 NNFilenameSort[fileNames:{__String}]:=
-Module[{},
-		
-		SortBy[fileNames,
+	SortBy[fileNames,
 			StringCases[ #,
 					Shortest[__] ~~ x:NumberString~~"."~~WordCharacter ..  :> ToExpression[x]
 			]&
-		]
-
-];
+	];
 
 
 NNFilenameSort[args___]:=Message[NNFilenameSort::invalidArgs, {args}];
-
-
-(* ::Subsection::Closed:: *)
-(*NNPrintInfo*)
-
-
-NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNElement]]:= dataObj@toStringFull[];
-NNPrintInfo[dataObj_/;JavaObjectQ[dataObj]]:= dataObj@toString[];
-
-NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Timing"]:= dataObj@getTiming[]@toStringFull[];
-
-
-NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)
@@ -228,6 +214,19 @@ $ToNNRangeSpecifier[ All ] := NN`NNRangeAll[];
 
 $ToNNRangeSpecifier[args___] := (Message[$ToNNRangeSpecifier::invalidArgs2, {args}]; $Failed);
 $ToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
+
+
+(* ::Subsubsection::Closed:: *)
+(*NNPrintInfo*)
+
+
+NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNElement]]:= dataObj@toStringFull[];
+NNPrintInfo[dataObj_/;JavaObjectQ[dataObj]]:= dataObj@toString[];
+
+NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Timing"]:= dataObj@getTiming[]@toStringFull[];
+
+
+NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
 
 
 (* ::Subsubsection::Closed:: *)

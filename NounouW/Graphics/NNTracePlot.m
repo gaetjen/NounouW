@@ -11,6 +11,31 @@ BeginPackage["NounouW`Graphics`NNTracePlot`",
 (*Declarations*)
 
 
+(* ::Subsection:: *)
+(*NNTracePlotManipulate*)
+
+
+NNTracePlotManipulate::usage=
+"NNTracePlotManipulate provides a simple interface to view trace data in a simple interactive interface.";
+
+
+NNTracePlotManipulate$UniqueOptions = {
+	NNOptTimeUnit -> "ms", NNOptStack -> Automatic
+};
+NNTracePlotManipulate$OverrideOptions = {
+	AspectRatio -> Automatic, PlotStyle -> {Opacity[0.75]}, AxesLabel -> Automatic,
+	PlotRange -> Automatic, ImageSize -> Full
+};
+Options[NNTracePlotManipulate] = HHJoinOptionLists[ 
+	NNTracePlotManipulate$UniqueOptions, NNNTracePlotManipulate$OverrideOptions,
+	Options[ListLinePlot]
+];
+
+
+(* ::Subsection::Closed:: *)
+(*NNTracePlot*)
+
+
 NNTracePlot::usage=
 "NNTracePlot provides an easy way to plot traces with correct axes, stimulus marks, etc.
 NNTracePlot[ <<JavaObject[nounou.DataReader]>> , channel(s), <<JavaObject[nounou.FrameRange]>>, segment, opts:OptionsPattern[]]";
@@ -20,21 +45,15 @@ NNTracePlot$UniqueOptions = {
 	(*NNValueUnit -> Absolute, ScaleBars->{None, None}, *)  
 	(*NNBaselineCorrection->Mean,*) NNOptTimeUnit -> "ms", NNOptStack -> Automatic
 	(*, NNMasking->False*)
-	(*HHStackIncrement -> 0, HHBaselineCorrection -> None*)
 };
 NNTracePlot$OverrideOptions = {
 	AspectRatio -> Automatic, PlotStyle->{Opacity[0.75]}, AxesLabel->Automatic,
 	PlotRange->Automatic, (*BaseStyle->{FontFamily->"Helvetica"},*) ImageSize->10*72
 };
-
 Options[NNTracePlot] = HHJoinOptionLists[ 
 	NNTracePlot$UniqueOptions, NNTracePlot$OverrideOptions,
 	Options[ListLinePlot]
 ];
-
-
-NNTracePlotManipulate::usage=
-"NNTracePlotManipulate provides a simple interface to view trace data in a simple interactive interface.";
 
 
 (* ::Section:: *)
@@ -44,19 +63,47 @@ NNTracePlotManipulate::usage=
 Begin["`Private`"];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNTracePlotManipulate*)
 
 
 NNTracePlotManipulate[
-			nnData_/;NNJavaObjectQ[nnData, $NNJavaClass$NNData], 
+			dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 			channels:{_Integer ..}, 
-			optspts:OptionsPattern[]
+			opts:OptionsPattern[]
 ]:= 
-Module[{},
-	Print["Implement me! NNTracePlotManipulate"];
-	Null
+Block[{tempStack = 200, tempStackTable,
+		optAspectRatio, optPlotRangeY},
+
+	optAspectRatio = Length[channels]/20;
+	optPlotRangeY = {-tempStack*Length[channels]-tempStack, 0};
+	tempStackTable = Table[-n*tempStack - tempStack/2, {n, 0, Length[channels]-1}];
+
+	DynamicModule[{start},
+		Panel[Column[{
+			Row[{Slider[Dynamic[start], {0, 32000*20, 32000/4}], Dynamic[start]}],
+			ListLinePlot[ 
+				dataObj@readTrace[#, NN`NNRange[start, start+ 32000, 1 , 0]]& /@ channels + tempStackTable,
+				AspectRatio -> optAspectRatio,
+				PlotRange -> {Automatic, optPlotRangeY},
+				ImageSize -> Full
+			]
+		}]], 
+	ContinuousAction -> False]
+
 ];
+
+
+(*This signature will reshape for a single channel*)
+NNTracePlotManipulate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channel:Integer, 
+			rest___]:= NNTracePlotManipulate[dataObj, {channel}, rest];
+
+
+(*This signature will reshape for all channels*)
+NNTracePlotManipulate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			All, 
+			rest___]:= NNTracePlotManipulate[dataObj, Range[0, dataObj@getChannelCount[] - 1], rest];
 
 
 NNTracePlotManipulate[args___]:=Message[NNTracePlotManipulate::invalidArgs,{args}];
@@ -97,7 +144,7 @@ Block[{ optTimeUnit, optAspectRatio, optAxesLabels,
 	tempDataUnit = dataObj@getUnit[];
 
 	(*==========Handle graphing options==========*)
-	tempData = HHStackLists[tempData, HHStackIncrement -> OptionValue[NNOptStack]];
+	tempData = HHStackLists[tempData, HHOptStack ->  OptionValue[NNOptStack]];
 
 	(*==========Plot==========*)
 	ListLinePlot[ 

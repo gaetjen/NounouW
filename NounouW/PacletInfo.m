@@ -10,11 +10,6 @@ Paclet[
         {
             {"Documentation", Language -> "English"}
         }
-    Extensions -> {
-    	{"Kernel",	Context -> {"NounouW`"}}, 
-   		{"Documentation", 
-   		Language -> "English", LinkBase -> "NounouW", 
-   		MainPage -> "Guides/NounouW"}, {"FrontEnd"}}
 ]
 
 

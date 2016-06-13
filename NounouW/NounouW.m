@@ -62,18 +62,6 @@ $NNJavaClass$NNDataChannelExtracted = "nounou.elements.data.NNDataChannelExtract
 $NNJavaClass$NNEvents = "nounou.elements.events.NNEvents";
 
 
-(*NNJavaObjectQ$NNElement::usage=
-"Checks whether something is a Java object and an instance of $NNJavaClass$NNElement ("<>$NNJavaClass$NNElement<>")";
-
-NNJavaObjectQ$NNData::usage=
-"Checks whether something is a Java object and an instance of $NNJavaClass$NNData ("<>$NNJavaClass$NNData<>")";
-NNJavaObjectQ$NNTimingElement::usage=
-"Checks whether something is a Java object and an instance of $NNJavaClass$NNTimingElement ("<>$NNJavaClass$NNTimingElement<>")";
-
-NNJavaObjectQ$NNEvent::usage=
-"Checks whether something is a Java object and an instance of $NNJavaClass$NNEvent ("<>$NNJavaClass$NNEvent<>")";*)
-
-
 $NNJavaClass$NNRangeSpecifier = "nounou.ranges.NNRangeSpecifier";
 
 $NNJavaClass$NNRange =          "nounou.ranges.NNRange";
@@ -81,15 +69,6 @@ $NNJavaClass$NNRangeEvent =     "nounou.ranges.NNRangeEvent";
 $NNJavaClass$NNRangeAll =       "nounou.ranges.NNRangeAll";
 $NNJavaClass$NNRangeTs =        "nounou.ranges.NNRangeTs";
 $NNJavaClass$NNRangeTsEvent =   "nounou.ranges.NNRangeTsEvent";
-
-
-(*NNJavaObjectQ$NNRangeSpecifier::usage=
-"Checks whether something is a Java object and an instance of $NNJavaClass$NNRangeSpecifier ("<>$NNJavaClass$NNRangeSpecifier<>")";*)
-
-
-(*NNFrameRangeJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.FrameRange";
-
-NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";*)
 
 
 (* ::Subsection:: *)
@@ -120,8 +99,8 @@ NNOptReturnTimepoints::usage=
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
-(*Java object checking*)
+(* ::Subsection::Closed:: *)
+(*Java class paths and object checking*)
 
 
 NNJavaObjectQ[ obj_/;JavaObjectQ[obj], className_String ]:= InstanceOf[obj, className];
@@ -130,25 +109,6 @@ NNJavaObjectQ[ args___]:= False ;
 
 NNJavaObjectListQ[ objList_List, className_String ]:= And@@( NNJavaObjectQ[#, className]& /@ objList );
 NNJavaObjectListQ[ args___]:= False ;
-
-
-(*NNJavaObjectQ$NNElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNElement ])]:= True ;
-NNJavaObjectQ$NNElement[ args___]:= False ;*)
-
-
-(*NNJavaObjectQ$NNData[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNData ])]:= True ;
-NNJavaObjectQ$NNData[ args___]:= False ;
-
-NNJavaObjectQ$NNTimingElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNTimingElement ])]:= True ;
-NNJavaObjectQ$NNTimingElement[ args___]:= False ;*)
-
-
-(*NNJavaObjectQ$NNEvents[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNEvents ])]:= True ;
-NNJavaObjectQ$NNEvents[ args___]:= False ;*)
-
-
-(*NNJavaObjectQ$NNRangeSpecifier[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNRangeSpecifier ])]:= True ;
-NNJavaObjectQ$NNRangeSpecifier[ args___]:= False ;*)
 
 
 (* ::Section:: *)
@@ -219,3 +179,43 @@ NNNextPower[args___]:=Message[NNNextPower::invalidArgs,{args}];*)
 (*NNData=LoadJavaClass["nounou.NNData", StaticsVisible->True, AllowShortContext\[Rule]True];*)
 (*NNDataReader=LoadJavaClass["nounou.NNDataReader", StaticsVisible->False, AllowShortContext->True];*)
 
+
+
+(*NNJavaObjectQ$NNElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNElement ])]:= True ;
+NNJavaObjectQ$NNElement[ args___]:= False ;*)
+
+
+(*NNJavaObjectQ$NNData[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNData ])]:= True ;
+NNJavaObjectQ$NNData[ args___]:= False ;
+
+NNJavaObjectQ$NNTimingElement[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNTimingElement ])]:= True ;
+NNJavaObjectQ$NNTimingElement[ args___]:= False ;*)
+
+
+(*NNJavaObjectQ$NNEvents[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNEvents ])]:= True ;
+NNJavaObjectQ$NNEvents[ args___]:= False ;*)
+
+
+(*NNJavaObjectQ$NNRangeSpecifier[ obj_/;(JavaObjectQ[obj] && InstanceOf[obj, $NNJavaClass$NNRangeSpecifier ])]:= True ;
+NNJavaObjectQ$NNRangeSpecifier[ args___]:= False ;*)
+
+
+(*NNJavaObjectQ$NNElement::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNElement ("<>$NNJavaClass$NNElement<>")";
+
+NNJavaObjectQ$NNData::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNData ("<>$NNJavaClass$NNData<>")";
+NNJavaObjectQ$NNTimingElement::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNTimingElement ("<>$NNJavaClass$NNTimingElement<>")";
+
+NNJavaObjectQ$NNEvent::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNEvent ("<>$NNJavaClass$NNEvent<>")";*)
+
+
+(*NNJavaObjectQ$NNRangeSpecifier::usage=
+"Checks whether something is a Java object and an instance of $NNJavaClass$NNRangeSpecifier ("<>$NNJavaClass$NNRangeSpecifier<>")";*)
+
+
+(*NNFrameRangeJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.FrameRange";
+
+NNXMaskJavaObjectQ::usage="Checks whether something is a Java object and an instance of nounou.data.XMask";*)
