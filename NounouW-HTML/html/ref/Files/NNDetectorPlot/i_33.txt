@@ -1,0 +1,5 @@
+<pre name='i_33_in' id='i_33_in' class='IFT'>HHJavaObjectQ[x_ /; JavaObjectQ[x]] := True;
+HHJavaObjectQ[x_ /; JavaObjectQ[x], className_String] := 
+  Module[{}, Print[&quot;Hello&quot;];
+   InstanceOf[x, className]];
+HHJavaObjectQ[___] := False;</pre><div class='IFU'><a name='2360046'></a>http://wolfram.com/xid/04jn5p8n63fccnxou84h09ia4y-bova4</div>

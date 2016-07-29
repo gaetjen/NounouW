@@ -1,0 +1,2 @@
+<pre name='i_7_in' id='i_7_in' class='IFT'>layout = JavaNew[&quot;nounou.elements.layouts.NNDataLayoutHexagonal&quot;, 
+  layoutArr]</pre><div class='IFU'><a name='687037852'></a>http://wolfram.com/xid/04jn5p8n63fccnxou84h09ia4y-lnbv22</div>

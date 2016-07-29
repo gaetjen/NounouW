@@ -1,0 +1,646 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17000,        636]
+NotebookOptionsPosition[     11982,        455]
+NotebookOutlinePosition[     12605,        479]
+CellTagsIndexPosition[     12526,        474]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["NounouW", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["NounouW`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["NounouW/ref/NNJavaObjectQ$NNData", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["NNJavaObjectQ$NNData", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"NNJavaObjectQ$NNData", "[", "]"}]], "InlineFormula"],
+ " \[LineSeparator]",
+ "Checks whether something is a Java object and an instance of \
+$NNJavaClass$NNData"
+}], "Usage",
+ CellChangeTimes->{{3.660305115656909*^9, 3.6603051453906097`*^9}},
+ CellID->982511436],
+
+Cell["XXXX", "Notes",
+ CellID->1067943069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell["XXXX", "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1268215905],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->1584193535],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell["XXXX", "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell["XXXX", "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellID->204741328],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304382385968*^9},
+ CellID->27759776]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Mon 28 Dec 2015 16:13:02     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   \
+C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[49d44a08c64a146a010f8de46223ecea3699dedd]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6603043825459776`*^9},
+ Background->GrayLevel[0.85],
+ CellID->13456297],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304382703986*^9},
+ CellID->578000355],
+
+Cell[BoxData["\<\"Unloading repository: C:\\\\prog\\\\_w\\\\HokahokaW\\\\.git\
+\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304382734988*^9},
+ CellID->100218551],
+
+Cell[BoxData["\<\"HokahokaW`HHPackageGitLoad: Loaded Git repository located \
+at C:\\\\prog\\\\_w\\\\NounouW\\\\.git\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.6603043838770533`*^9},
+ CellID->348218835]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Mon 28 Dec 2015 16:13:04     [Mathematica: 10.3.1 for Microsoft \
+Windows (64-bit) (December 9, 2015)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current local repository path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[af91d1dff493df4df1b926d84743d5ba9f5bb494]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.660304384199072*^9},
+ Background->GrayLevel[0.85],
+ CellID->95218454],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+3cc31723ae141d3f2622c7f26ab9e5a96b19674c\\n  + current branch is: master\\n  \
++ remote names are: \
+https://ktakagaki@github.com/ktakagaki/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.653567168901726*^9, 3.658242182413548*^9, 
+  3.6602351139745173`*^9, 3.6602355431480646`*^9, 3.660235657593611*^9, 
+  3.660235838431954*^9, 3.6603020042809486`*^9, 3.660304385688157*^9},
+ CellID->245544904],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"files", "=", 
+  RowBox[{
+  "FileNames", "[", 
+   "\"\<C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\Neuralynx\\\\\
+t130911\\\\*.ncs\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.658242217188537*^9, 3.6582422411819096`*^9}, {
+  3.658242297158111*^9, 3.6582423303420095`*^9}, {3.6582423730704527`*^9, 
+  3.6582424011820607`*^9}},
+ CellID->369764457],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4a.ncs\"\>", 
+   ",", "\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4b.ncs\"\>", 
+   ",", "\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4c.ncs\"\>", 
+   ",", "\<\"C:\\\\prog\\\\nounou-resources\\\\resources\\\\nounou\\\\\
+Neuralynx\\\\t130911\\\\Tet4d.ncs\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.6582423163312073`*^9, 3.658242330730031*^9}, {
+   3.658242384572111*^9, 3.6582424015320807`*^9}, 3.6602351186677856`*^9, 
+   3.6602355596110067`*^9, 3.6602356617878504`*^9, 3.6602358463244057`*^9, 
+   3.660302008341181*^9, 3.6603043513791947`*^9, 3.660304388257304*^9},
+ CellID->165903382]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"NNLoad", "[", "files", "]"}]}]], "Input",
+ CellChangeTimes->{{3.660304356806505*^9, 3.6603043591176376`*^9}, {
+  3.660305067174136*^9, 3.660305070630334*^9}},
+ CellID->180937867],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "elements", ".", "data", ".", "NNDataChannelArray"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject27115648370868225]], "Output",
+ CellChangeTimes->{3.6603043929855747`*^9, 3.6603050721654215`*^9},
+ CellID->112720001]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNJavaObjectQ$NNData", "[", "data", "]"}]], "Input",
+ CellChangeTimes->{{3.660305048437064*^9, 3.6603050783897777`*^9}},
+ CellID->230293886],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6603050801208763`*^9},
+ CellID->69664971]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Scope", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1293636265],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Generalizations & Extensions", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1020263627],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["Options", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2061341341],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1757724783],
+
+Cell[BoxData[
+ InterpretationBox[Cell["XXXX", "ExampleSubsection"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Applications", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->258228157],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Properties & Relations", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2123667759],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Possible Issues", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1305812373],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Interactive Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1653164318],
+
+Cell[BoxData[
+ InterpretationBox[Cell["Neat Examples", "ExampleSection"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+CellContext->"Global`",
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "ShiftJIS"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[10462, 397, 100, 2, 53, "ExtendedExamplesSection",
+   CellTags->"ExtendedExamples",
+   CellID->1854448968]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 12387, 467}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 22, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1144, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1224, 53, 77, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1338, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1396, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1478, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1546, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1643, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1728, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1812, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1931, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1987, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2053, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2125, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2192, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2264, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2328, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2392, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2458, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2539, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2643, 132, 63, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2709, 135, 329, 9, 71, "Usage",
+ CellID->982511436],
+Cell[3041, 146, 42, 1, 23, "Notes",
+ CellID->1067943069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3120, 152, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[3180, 155, 45, 1, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3262, 161, 83, 1, 30, "RelatedDemonstrationsSection",
+ CellID->1268215905],
+Cell[3348, 164, 58, 1, 16, "RelatedDemonstrations",
+ CellID->1129518860]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3443, 170, 65, 1, 30, "RelatedLinksSection",
+ CellID->1584193535],
+Cell[3511, 173, 49, 1, 16, "RelatedLinks",
+ CellID->1038487239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3597, 179, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[3655, 182, 43, 1, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3735, 188, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[3795, 191, 46, 1, 16, "MoreAbout",
+ CellID->1665078683]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3878, 197, 356, 11, 68, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[4259, 212, 72, 2, 27, "Input",
+ CellID->204741328],
+Cell[4334, 216, 361, 5, 41, "Print",
+ CellID->27759776]
+}, Open  ]],
+Cell[4710, 224, 980, 35, 103, "Text",
+ CellID->13456297],
+Cell[CellGroupData[{
+Cell[5715, 263, 302, 4, 21, "Print",
+ CellID->578000355],
+Cell[6020, 269, 323, 5, 21, "Print",
+ CellID->100218551],
+Cell[6346, 276, 362, 5, 41, "Print",
+ CellID->348218835]
+}, Open  ]],
+Cell[6723, 284, 970, 34, 103, "Text",
+ CellID->95218454],
+Cell[7696, 320, 564, 9, 136, "Print",
+ CellID->245544904],
+Cell[CellGroupData[{
+Cell[8285, 333, 383, 9, 88, "Input",
+ CellID->369764457],
+Cell[8671, 344, 813, 14, 83, "Output",
+ CellID->165903382]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9521, 363, 226, 5, 27, "Input",
+ CellID->180937867],
+Cell[9750, 370, 365, 9, 25, "Output",
+ CellID->112720001]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10152, 384, 164, 3, 27, "Input",
+ CellID->230293886],
+Cell[10319, 389, 94, 2, 25, "Output",
+ CellID->69664971]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10462, 397, 100, 2, 53, "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1854448968],
+Cell[10565, 401, 125, 3, 30, "ExampleSection",
+ CellID->1293636265],
+Cell[10693, 406, 148, 3, 18, "ExampleSection",
+ CellID->1020263627],
+Cell[CellGroupData[{
+Cell[10866, 413, 127, 3, 18, "ExampleSection",
+ CellID->2061341341],
+Cell[10996, 418, 130, 3, 70, "ExampleSubsection",
+ CellID->1757724783],
+Cell[11129, 423, 130, 3, 70, "ExampleSubsection",
+ CellID->1295379749]
+}, Closed]],
+Cell[11274, 429, 131, 3, 18, "ExampleSection",
+ CellID->258228157],
+Cell[11408, 434, 142, 3, 18, "ExampleSection",
+ CellID->2123667759],
+Cell[11553, 439, 135, 3, 18, "ExampleSection",
+ CellID->1305812373],
+Cell[11691, 444, 140, 3, 18, "ExampleSection",
+ CellID->1653164318],
+Cell[11834, 449, 132, 3, 18, "ExampleSection",
+ CellID->589267740]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

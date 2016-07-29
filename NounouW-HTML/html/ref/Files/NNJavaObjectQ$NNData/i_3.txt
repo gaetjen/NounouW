@@ -1,0 +1,3 @@
+<pre name='i_3_in' id='i_3_in' class='IFT'>files = FileNames[
+  &quot;C:\\prog\\nounou-resources\\resources\\nounou\\Neuralynx\\t130911\\\
+*.ncs&quot;]</pre><div class='IFU'><a name='369764457'></a>http://wolfram.com/xid/0efdt59yfsf9a8aqwl0mr6dfrdjtj4bvolg18-gefmc7</div>

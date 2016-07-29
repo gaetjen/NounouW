@@ -1,0 +1,2 @@
+<pre name='i_3_in' id='i_3_in' class='IFT'>layoutArr = {{-1, 15, 14, 13, 12, 11}, {10, 9, 8, 1, 0}, {7, 6, 5, 
+    4}, {-1, 3, 2}};</pre><div class='IFU'><a name='121274972'></a>http://wolfram.com/xid/04jn5p8n63fccnxou84h09ia4y-cahmni</div>
