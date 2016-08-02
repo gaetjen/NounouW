@@ -1,0 +1,311 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8085,        303]
+NotebookOptionsPosition[      5768,        226]
+NotebookOutlinePosition[      6187,        242]
+CellTagsIndexPosition[      6144,        239]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Tutorial", "Categorization",
+ CellID->686433507],
+
+Cell["NounouW", "Categorization",
+ CellID->605800465],
+
+Cell["NounouW`", "Categorization",
+ CellID->468444828],
+
+Cell["NounouW/tutorial/Getting Started 1: Loading Data", "Categorization"],
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827],
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellID->218895918],
+
+Cell["XXXX", "Details",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellID->795871300],
+
+Cell["XXXX", "Details",
+ CellID->199739161],
+
+Cell["XXXX", "Details",
+ CellID->40625308],
+
+Cell["XXXX", "Details",
+ CellID->357121918],
+
+Cell["XXXX", "Details",
+ CellID->35949532],
+
+Cell["XXXX", "Details",
+ CellID->929432370],
+
+Cell["XXXX", "Details",
+ CellID->240026365],
+
+Cell[CellGroupData[{
+
+Cell["Getting Started 1. Loading Data", "Title",
+ CellChangeTimes->{3.679050521191643*^9},
+ CellID->509267359],
+
+Cell["\<\
+This tutorial walks you through loading neurophysiological data into the \
+Mathematica environment using NounouW`.\
+\>", "Text",
+ CellChangeTimes->{{3.6787323436153736`*^9, 3.6787323677267528`*^9}, {
+   3.678778708203888*^9, 3.6787787129771605`*^9}, 3.679050548968232*^9},
+ CellID->1534169418],
+
+Cell[BoxData[GridBox[{
+   {"XXXX", Cell["XXXX", "TableText"]},
+   {"XXXX", Cell["XXXX", "TableText"]},
+   {"XXXX", Cell["XXXX", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->2096742444],
+
+Cell["XXXX.", "Caption",
+ CellID->1891092685],
+
+Cell["Load Neuralynx ncs files", "MathCaption",
+ CellChangeTimes->{{3.6790505611669292`*^9, 3.679050570542466*^9}},
+ CellID->836781195],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}},
+ CellID->2058623809],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Tue 2 Aug 2016 09:35:55     [Mathematica: 10.4.1 for Microsoft \
+Windows (64-bit) (April 11, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Info as of: Tue 2 Aug 2016 08:45:33",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Local repo path:   C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[ada9721f7ce16dc5c1a303a892475b6cbf3373e7]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.6791121555349894`*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Tue 2 Aug 2016 09:35:55     [Mathematica: 10.4.1 for Microsoft \
+Windows (64-bit) (April 11, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Info as of: Tue 2 Aug 2016 09:04:35",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Local repo path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[96e68a3ca52813e37539d5a6ca66a53acb0fc06c]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin (https://github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.679112155697999*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+1a58c41332bd336e036338dfedc8b6c19c080f3e\\n  + current branch is: master\\n  \
++ remote names are: https://github.com/ktakagaki/nounou.git, \
+https://github.com/slentzen/nounou.git, \
+https://github.com/dowa4213/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.678764895479845*^9, 3.679112156963071*^9}],
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell["XXXX", "TutorialMoreAbout",
+ CellID->1567025153],
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->806871991],
+
+Cell["Related Wolfram Education Group Courses", "TutorialRelatedLinksSection",
+ CellID->415694148],
+
+Cell["XXXX", "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+},
+WindowSize->{1272, 1328},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 25, "History",
+ CellID->1247902091],
+Cell[886, 36, 68, 1, 25, "CategorizationSection",
+ CellID->1122911449],
+Cell[957, 39, 54, 1, 41, "Categorization",
+ CellID->686433507],
+Cell[1014, 42, 53, 1, 41, "Categorization",
+ CellID->605800465],
+Cell[1070, 45, 54, 1, 41, "Categorization",
+ CellID->468444828],
+Cell[1127, 48, 74, 0, 41, "Categorization"],
+Cell[1204, 50, 56, 1, 25, "KeywordsSection",
+ CellID->1427428552],
+Cell[1263, 53, 45, 1, 25, "Keywords",
+ CellID->1251852827],
+Cell[1311, 56, 53, 1, 25, "DetailsSection",
+ CellID->307771771],
+Cell[1367, 59, 43, 1, 41, "Details",
+ CellID->218895918],
+Cell[1413, 62, 43, 1, 41, "Details",
+ CellID->350963985],
+Cell[1459, 65, 43, 1, 41, "Details",
+ CellID->795871300],
+Cell[1505, 68, 43, 1, 41, "Details",
+ CellID->199739161],
+Cell[1551, 71, 42, 1, 41, "Details",
+ CellID->40625308],
+Cell[1596, 74, 43, 1, 41, "Details",
+ CellID->357121918],
+Cell[1642, 77, 42, 1, 41, "Details",
+ CellID->35949532],
+Cell[1687, 80, 43, 1, 41, "Details",
+ CellID->929432370],
+Cell[1733, 83, 43, 1, 41, "Details",
+ CellID->240026365],
+Cell[CellGroupData[{
+Cell[1801, 88, 110, 2, 117, "Title",
+ CellID->509267359],
+Cell[1914, 92, 303, 6, 35, "Text",
+ CellID->1534169418],
+Cell[2220, 100, 186, 5, 71, "DefinitionBox",
+ CellID->2096742444],
+Cell[2409, 107, 45, 1, 25, "Caption",
+ CellID->1891092685],
+Cell[2457, 110, 135, 2, 45, "MathCaption",
+ CellID->836781195],
+Cell[2595, 114, 141, 3, 33, "Input",
+ CellID->2058623809],
+Cell[2739, 119, 1070, 38, 151, "Text"],
+Cell[3812, 159, 1050, 37, 151, "Text"],
+Cell[4865, 198, 472, 7, 158, "Print"],
+Cell[5340, 207, 65, 1, 25, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[5408, 210, 54, 1, 25, "TutorialMoreAbout",
+ CellID->1567025153],
+Cell[5465, 213, 72, 1, 25, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[5540, 216, 52, 1, 25, "RelatedTutorials",
+ CellID->806871991],
+Cell[5595, 219, 98, 1, 25, "TutorialRelatedLinksSection",
+ CellID->415694148],
+Cell[5696, 222, 56, 1, 25, "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+}
+]
+*)
+

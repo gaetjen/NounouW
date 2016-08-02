@@ -27,7 +27,8 @@ NNTracePlotManipulate$OverrideOptions = {
 	PlotRange -> Automatic, ImageSize -> Full
 };
 Options[NNTracePlotManipulate] = HHJoinOptionLists[ 
-	NNTracePlotManipulate$UniqueOptions, NNNTracePlotManipulate$OverrideOptions,
+	NNTracePlotManipulate$UniqueOptions, 
+	NNTracePlotManipulate$OverrideOptions,
 	Options[ListLinePlot]
 ];
 

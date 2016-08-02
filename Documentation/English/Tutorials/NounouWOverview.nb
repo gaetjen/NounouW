@@ -1,0 +1,205 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4478,        195]
+NotebookOptionsPosition[      2689,        130]
+NotebookOutlinePosition[      3106,        146]
+CellTagsIndexPosition[      3063,        143]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["XX", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Overview", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["NounouW Package", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["NounouW`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["NounouW/tutorial/NounouWOverview", "Categorization",
+ CellLabel->"URI"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Synonyms", "SynonymsSection",
+ CellID->1427418553],
+
+Cell["XXXX", "Synonyms",
+ CellID->1251652828]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["NounouW Overview", "TOCDocumentTitle"],
+
+Cell[TextData[ButtonBox["Getting Started 1: Loading Data",
+ BaseStyle->"Link",
+ ButtonData->"paclet:NounouW/tutorial/ Loading Data#509267359"]], "TOCChapter"],
+
+Cell[TextData[ButtonBox["Test",
+ BaseStyle->"Link",
+ ButtonData->"paclet:NounouW/tutorial/Test#509267359"]], "TOCChapter"]
+}, Open  ]]
+},
+WindowSize->{700, 745},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 324, 14, 70, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 70, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 81, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1062, 45, 88, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1153, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1233, 53, 77, 1, 70, "Categorization"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1347, 59, 56, 1, 70, "SynonymsSection",
+ CellID->1427418553],
+Cell[1406, 62, 45, 1, 70, "Synonyms",
+ CellID->1251652828]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1488, 68, 56, 1, 70, "KeywordsSection",
+ CellID->1427428552],
+Cell[1547, 71, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1629, 77, 53, 1, 70, "DetailsSection",
+ CellID->307771771],
+Cell[1685, 80, 63, 2, 70, "Details",
+ CellID->218895918],
+Cell[1751, 84, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1823, 88, 66, 2, 70, "Details",
+ CellID->795871300],
+Cell[1892, 92, 71, 2, 70, "Details",
+ CellID->199739161],
+Cell[1966, 96, 60, 2, 70, "Details",
+ CellID->40625308],
+Cell[2029, 100, 61, 2, 70, "Details",
+ CellID->357121918],
+Cell[2093, 104, 62, 2, 70, "Details",
+ CellID->35949532],
+Cell[2158, 108, 78, 2, 70, "Details",
+ CellID->929432370],
+Cell[2239, 112, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2343, 119, 44, 0, 70, "TOCDocumentTitle"],
+Cell[2390, 121, 158, 2, 70, "TOCChapter"],
+Cell[2551, 125, 122, 2, 70, "TOCChapter"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
