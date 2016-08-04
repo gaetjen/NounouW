@@ -56,7 +56,7 @@ WindowTitle->"Installing NounouW - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2016, 8, 2, 9, 29, 7.5896562}", "context" -> "NounouW`", 
+   "built" -> "{2016, 8, 4, 11, 7, 4.1634346}", "context" -> "NounouW`", 
     "keywords" -> {}, "index" -> True, "label" -> "Nounou W Guide", 
     "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
     "See the GitHub page on how to install NounouW", "synonyms" -> {}, 

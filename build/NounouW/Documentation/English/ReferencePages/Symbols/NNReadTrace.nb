@@ -10,16 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5160,        163]
-NotebookOptionsPosition[      3184,        102]
-NotebookOutlinePosition[      4761,        147]
-CellTagsIndexPosition[      4718,        144]
-WindowTitle->Test - Wolfram Mathematica
+NotebookDataLength[      4643,        136]
+NotebookOptionsPosition[      3164,         93]
+NotebookOutlinePosition[      4480,        130]
+CellTagsIndexPosition[      4437,        127]
+WindowTitle->NNReadTrace - Wolfram Mathematica
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[" ", "TutorialColorBar",
+Cell[" ", "SymbolColorBar",
  CellMargins->{{Inherited, Inherited}, {-5, 0}}],
 
 Cell[TextData[{
@@ -30,15 +30,16 @@ Cell[TextData[{
 }], "LinkTrail"],
 
 Cell[BoxData[GridBox[{
-   {Cell["NOUNOU W TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+   {Cell["NOUNOUW PACLET SYMBOL", "PacletNameCell"], Cell[TextData[Cell[
+    BoxData[
      ActionMenuBox[
       FrameBox["\<\"URL \[RightGuillemet]\"\>",
-       StripOnInput->False], {"\<\"NounouW/tutorial/Test\"\>":>
+       StripOnInput->False], {"\<\"NounouW/ref/NNReadTrace\"\>":>
       None, "\<\"Copy Mathematica url\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
-            Cell["NounouW/tutorial/Test"]}, Visible -> False]]; 
+            Cell["NounouW/ref/NNReadTrace"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
@@ -50,9 +51,9 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/mathematica/NounouW/tutorial/\
-Test.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
-           Visible -> False]]; 
+               "http://reference.wolfram.com/mathematica/NounouW/ref/\
+NNReadTrace.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; 
@@ -61,7 +62,7 @@ Test.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
           URL[
            StringJoin[
            "http://reference.wolfram.com/mathematica/", 
-            "NounouW/tutorial/Test", ".html"]], None}]}]},
+            "NounouW/ref/NNReadTrace", ".html"]], None}]}]},
       Appearance->None,
       MenuAppearance->Automatic]],
      LineSpacing->{1.4, 0}]], "AnchorBar"]}
@@ -72,31 +73,21 @@ Test.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
    "RowsIndexed" -> {}}},
  CellID->1],
 
-Cell[CellGroupData[{
+Cell["NNReadTrace", "ObjectName",
+ CellID->1224892054],
 
-Cell["Test", "Title",
- CellID->509267359],
-
-Cell["dsfwe", "Text",
- CellID->1534169418],
-
-Cell["XXXX.", "Caption",
- CellID->1891092685],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["XXXX"], "Input",
- CellLabel->"In[1]:=",
- CellID->2058623809],
-
-Cell[BoxData["XXXX"], "Output",
- ImageSize->{40, 17},
- ImageMargins->{{0, 0}, {0, 0}},
- ImageRegion->{{0, 1}, {0, 1}},
- CellLabel->"Out[1]=",
- CellID->1181321046]
-}, Open  ]]
-}, Open  ]],
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"NNReadTrace", "[", "]"}]], "InlineFormula"],
+     " \[LineSeparator]NNReadTrace"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
 
 Cell[" ", "FooterCell"]
 },
@@ -104,16 +95,17 @@ Saveable->False,
 ScreenStyleEnvironment->"Working",
 WindowSize->{725, 750},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"Test - Wolfram Mathematica",
+WindowTitle->"NNReadTrace - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2016, 8, 4, 11, 7, 9.4027342}", "context" -> "NounouW`", 
-    "keywords" -> {}, "index" -> True, "label" -> "Nounou W Tutorial", 
+   "built" -> "{2016, 8, 4, 11, 7, 7.6006312}", "context" -> "NounouW`", 
+    "keywords" -> {}, "index" -> True, "label" -> "NounouW Paclet Symbol", 
     "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
-    "dsfwe XXXX.", "synonyms" -> {}, "title" -> "Test", "type" -> "Tutorial", 
-    "uri" -> "NounouW/tutorial/Test"}, "LinkTrails" -> "", 
-  "SearchTextTranslated" -> ""},
+    "NNReadTrace[] NNReadTrace", "synonyms" -> {}, "title" -> "NNReadTrace", 
+    "type" -> "Symbol", "uri" -> "NounouW/ref/NNReadTrace"}, "LinkTrails" -> 
+  "", "SearchTextTranslated" -> ""},
+CellContext->"Global`",
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->Notebook[{
    Cell[
@@ -122,16 +114,7 @@ StyleDefinitions->Notebook[{
    Cell[
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
-    StyleData["Output"], CellContext -> "Global`"], 
-   Cell[
-    StyleData["TutorialMoreAboutSection"], 
-    CellGroupingRules -> {"SectionGrouping", 30}], 
-   Cell[
-    StyleData["RelatedTutorialsSection"], 
-    CellGroupingRules -> {"SectionGrouping", 30}], 
-   Cell[
-    StyleData["TutorialRelatedLinksSection"], 
-    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
   FrontEndVersion -> "9.0 for Microsoft Windows (64-bit) (January 25, 2013)", 
   StyleDefinitions -> "Default.nb"]
 ]
@@ -146,25 +129,15 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[597, 21, 78, 1, 70, "TutorialColorBar"],
-Cell[678, 24, 180, 5, 70, "LinkTrail"],
-Cell[861, 31, 1846, 41, 70, "AnchorBarGrid",
+Cell[604, 21, 76, 1, 70, "SymbolColorBar"],
+Cell[683, 24, 180, 5, 70, "LinkTrail"],
+Cell[866, 31, 1865, 42, 70, "AnchorBarGrid",
  CellID->1],
-Cell[CellGroupData[{
-Cell[2732, 76, 41, 1, 70, "Title",
- CellID->509267359],
-Cell[2776, 79, 42, 1, 70, "Text",
- CellID->1534169418],
-Cell[2821, 82, 45, 1, 70, "Caption",
- CellID->1891092685],
-Cell[CellGroupData[{
-Cell[2891, 87, 74, 2, 70, "Input",
- CellID->2058623809],
-Cell[2968, 91, 162, 5, 38, "Output",
- CellID->1181321046]
-}, Open  ]]
-}, Open  ]],
-Cell[3157, 100, 23, 0, 70, "FooterCell"]
+Cell[2734, 75, 54, 1, 70, "ObjectName",
+ CellID->1224892054],
+Cell[2791, 78, 343, 11, 70, "Usage",
+ CellID->982511436],
+Cell[3137, 91, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

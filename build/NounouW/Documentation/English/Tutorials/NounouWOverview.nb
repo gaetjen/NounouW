@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5039,        143]
-NotebookOptionsPosition[      3173,         90]
-NotebookOutlinePosition[      4832,        136]
-CellTagsIndexPosition[      4789,        133]
+NotebookDataLength[      5750,        169]
+NotebookOptionsPosition[      3653,        108]
+NotebookOutlinePosition[      5349,        155]
+CellTagsIndexPosition[      5306,        152]
 WindowTitle->NounouW Overview - Wolfram Mathematica
 WindowFrame->Normal*)
 
@@ -77,13 +77,31 @@ Cell[CellGroupData[{
 
 Cell["NounouW Overview", "TOCDocumentTitle"],
 
-Cell[TextData[ButtonBox["Getting Started 1: Loading Data",
+Cell[TextData[ButtonBox["Getting Started 1. Loading Continuous Data",
  BaseStyle->"Link",
- ButtonData->"paclet:NounouW/tutorial/ Loading Data#509267359"]], "TOCChapter"],
+ ButtonData->"paclet:NounouW/tutorial/Loading Data#509267359"]], "TOCChapter"],
 
-Cell[TextData[ButtonBox["Test",
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["ReferencePages/Symbols",
  BaseStyle->"Link",
- ButtonData->"paclet:NounouW/tutorial/Test#509267359"]], "TOCChapter"]
+ ButtonData->"paclet:NounouW/ref/NNReadTrace"]], "TOCChapter"],
+
+Cell[TextData[ButtonBox["NNReadTrace",
+ BaseStyle->"Link",
+ ButtonData->"paclet:NounouW/ref/NNReadTrace"]], "TOCSection"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["Guides",
+ BaseStyle->"Link",
+ ButtonData->"paclet:NounouW/guide/Installing NounouW"]], "TOCChapter"],
+
+Cell[TextData[ButtonBox["Installing NounouW",
+ BaseStyle->"Link",
+ ButtonData->"paclet:NounouW/guide/Installing NounouW"]], "TOCSection"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[" ", "FooterCell"]
@@ -96,13 +114,14 @@ WindowTitle->"NounouW Overview - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2016, 8, 2, 9, 29, 10.4078174}", "context" -> "NounouW`", 
+   "built" -> "{2016, 8, 4, 11, 7, 8.5606861}", "context" -> "NounouW`", 
     "keywords" -> {}, "index" -> True, "label" -> "Nounou W Package Overview",
      "language" -> "en", "paclet" -> "NounouW Package", "status" -> "None", 
-    "summary" -> "Getting Started 1: Loading Data Test", "synonyms" -> {}, 
-    "title" -> "NounouW Overview", "type" -> "Overview", "uri" -> 
-    "NounouW/tutorial/NounouWOverview"}, "LinkTrails" -> "", 
-  "SearchTextTranslated" -> ""},
+    "summary" -> 
+    "Getting Started 1. Loading Continuous Data ReferencePages/Symbols \
+Guides", "synonyms" -> {}, "title" -> "NounouW Overview", "type" -> 
+    "Overview", "uri" -> "NounouW/tutorial/NounouWOverview"}, "LinkTrails" -> 
+  "", "SearchTextTranslated" -> ""},
 FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
 StyleDefinitions->Notebook[{
    Cell[
@@ -141,10 +160,17 @@ Cell[871, 31, 1905, 42, 70, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
 Cell[2801, 77, 44, 0, 70, "TOCDocumentTitle"],
-Cell[2848, 79, 158, 2, 70, "TOCChapter"],
-Cell[3009, 83, 122, 2, 70, "TOCChapter"]
+Cell[2848, 79, 168, 2, 70, "TOCChapter"],
+Cell[CellGroupData[{
+Cell[3041, 85, 132, 2, 70, "TOCChapter"],
+Cell[3176, 89, 121, 2, 70, "TOCSection"]
 }, Open  ]],
-Cell[3146, 88, 23, 0, 70, "FooterCell"]
+Cell[CellGroupData[{
+Cell[3334, 96, 125, 2, 70, "TOCChapter"],
+Cell[3462, 100, 137, 2, 70, "TOCSection"]
+}, Open  ]]
+}, Open  ]],
+Cell[3626, 106, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

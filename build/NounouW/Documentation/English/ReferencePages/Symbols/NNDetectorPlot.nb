@@ -104,7 +104,7 @@ Cell[TextData[ButtonBox["EXAMPLES",
      FrontEnd`SelectedNotebook[], After, 
      CellContents]}]& )]], "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->245072806],
+ CellID->791286005],
 
 Cell[CellGroupData[{
 
@@ -113,7 +113,7 @@ Cell[TextData[{
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount"]
 }], "ExampleSection",
- CellID->183031621],
+ CellID->426567009],
 
 Cell[BoxData[
  RowBox[{"<<", "NounouW`"}]], "Input",
@@ -550,7 +550,7 @@ WindowTitle->"NNDetectorPlot - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2016, 8, 2, 9, 29, 8.4137034}", "context" -> "NounouW`", 
+   "built" -> "{2016, 8, 4, 11, 7, 5.3655033}", "context" -> "NounouW`", 
     "keywords" -> {}, "index" -> True, "label" -> "NounouW Paclet Symbol", 
     "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
     "NNDetectorPlot[] NNDetectorPlot", "synonyms" -> {}, "title" -> 
@@ -578,7 +578,7 @@ CellTagsIndex->{
  "PrimaryExamplesSection"->{
   Cell[3183, 93, 461, 13, 70, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->245072806]}
+   CellID->791286005]}
  }
 *)
 (*CellTagsIndex
@@ -599,10 +599,10 @@ Cell[2809, 78, 349, 11, 70, "Usage",
 Cell[CellGroupData[{
 Cell[3183, 93, 461, 13, 70, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->245072806],
+ CellID->791286005],
 Cell[CellGroupData[{
 Cell[3669, 110, 148, 5, 70, "ExampleSection",
- CellID->183031621],
+ CellID->426567009],
 Cell[3820, 117, 95, 3, 70, "Input",
  CellID->182887016],
 Cell[3918, 122, 652, 21, 70, "Input",
