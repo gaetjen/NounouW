@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      2516,         85]
+NotebookDataLength[      2518,         85]
 NotebookOptionsPosition[      1326,         50]
-NotebookOutlinePosition[      2374,         79]
-CellTagsIndexPosition[      2331,         76]
+NotebookOutlinePosition[      2376,         79]
+CellTagsIndexPosition[      2333,         76]
 WindowTitle->Installing NounouW - Wolfram Mathematica
 WindowFrame->Normal*)
 
@@ -56,7 +56,7 @@ WindowTitle->"Installing NounouW - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2016, 8, 4, 11, 7, 4.1634346}", "context" -> "NounouW`", 
+   "built" -> "{2016, 8, 4, 11, 16, 43.5415731}", "context" -> "NounouW`", 
     "keywords" -> {}, "index" -> True, "label" -> "Nounou W Guide", 
     "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
     "See the GitHub page on how to install NounouW", "synonyms" -> {}, 

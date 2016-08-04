@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      5750,        169]
+NotebookDataLength[      5752,        169]
 NotebookOptionsPosition[      3653,        108]
-NotebookOutlinePosition[      5349,        155]
-CellTagsIndexPosition[      5306,        152]
+NotebookOutlinePosition[      5351,        155]
+CellTagsIndexPosition[      5308,        152]
 WindowTitle->NounouW Overview - Wolfram Mathematica
 WindowFrame->Normal*)
 
@@ -114,7 +114,7 @@ WindowTitle->"NounouW Overview - Wolfram Mathematica",
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
-   "built" -> "{2016, 8, 4, 11, 7, 8.5606861}", "context" -> "NounouW`", 
+   "built" -> "{2016, 8, 4, 11, 16, 49.3339044}", "context" -> "NounouW`", 
     "keywords" -> {}, "index" -> True, "label" -> "Nounou W Package Overview",
      "language" -> "en", "paclet" -> "NounouW Package", "status" -> "None", 
     "summary" -> 

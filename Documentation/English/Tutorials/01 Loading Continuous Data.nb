@@ -1,0 +1,800 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24309,        790]
+NotebookOptionsPosition[     19894,        624]
+NotebookOutlinePosition[     20313,        640]
+CellTagsIndexPosition[     20270,        637]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Tutorial", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["NounouW", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["NounouW`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["NounouW/tutorial/01 Loading Continuous Data", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["01 Loading Continuous Data", "Title",
+ CellID->509267359],
+
+Cell["XXXX", "Text",
+ CellID->1534169418],
+
+Cell[BoxData[GridBox[{
+   {"XXXX", Cell["XXXX", "TableText"]},
+   {"XXXX", Cell["XXXX", "TableText"]},
+   {"XXXX", Cell["XXXX", "TableText"]}
+  }]], "DefinitionBox",
+ CellID->2096742444],
+
+Cell["XXXX.", "Caption",
+ CellID->1891092685],
+
+Cell[CellGroupData[{
+
+Cell["Load Neuralynx ncs files", "MathCaption",
+ CellChangeTimes->{{3.6790505611669292`*^9, 3.679050570542466*^9}},
+ CellID->836781195],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->2058623809]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Thu 4 Aug 2016 10:52:14     [Mathematica: 10.4.1 for Microsoft \
+Windows (64-bit) (April 11, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->10],
+ "\n",
+ StyleBox["     Artifact info as of: Tue 2 Aug 2016 08:45:33",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->10],
+ "\n",
+ StyleBox["     Local repo path:   C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->10],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[ada9721f7ce16dc5c1a303a892475b6cbf3373e7]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->10],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->10]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.679289534105526*^9},
+ Background->GrayLevel[0.85],
+ CellID->155067522],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Thu 4 Aug 2016 10:52:15     [Mathematica: 10.4.1 for Microsoft \
+Windows (64-bit) (April 11, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Git info loaded: Thu 4 Aug 2016 10:52:15",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Local repo path:   \
+C:\\Users\\ktakagaki\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[c6fa48445eaa327d13d379f0ef7b3853f71ee9ea]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin (https://github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.679289535116584*^9},
+ Background->GrayLevel[0.85],
+ CellID->19345781],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+1a58c41332bd336e036338dfedc8b6c19c080f3e\\n  + current branch is: master\\n  \
++ remote names are: https://github.com/ktakagaki/nounou.git, \
+https://github.com/slentzen/nounou.git, \
+https://github.com/dowa4213/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{3.678764895479845*^9, 3.679112156963071*^9, 
+  3.679208175517269*^9, 3.679208210996299*^9, 3.679208702025384*^9, 
+  3.679208899187661*^9, 3.6792895364186583`*^9},
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->278735313]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The starting point is to have some continuous data files:", "Text",
+ CellChangeTimes->{{3.6792096988744*^9, 3.67920972525791*^9}},
+ CellID->540242572],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempFiles", "=", 
+  RowBox[{
+   RowBox[{
+   "FileNames", "[", 
+    "\"\<S:\\\\VSDdata\\\\proj.SPP\\\\data\\\\SPP.Nlx2\\\\SPP067\\\\2016-07-\
+07_15-10-56\\\\*.ncs\>\"", "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"4", ";;", "7"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}, {
+  3.6792097388416862`*^9, 3.679209787714482*^9}},
+ CellLabel->"In[1]:=",
+ CellID->226352429],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"S:\\\\VSDdata\\\\proj.SPP\\\\data\\\\SPP.Nlx2\\\\SPP067\\\\\
+2016-07-07_15-10-56\\\\CSC13.ncs\"\>", 
+   ",", "\<\"S:\\\\VSDdata\\\\proj.SPP\\\\data\\\\SPP.Nlx2\\\\SPP067\\\\2016-\
+07-07_15-10-56\\\\CSC14.ncs\"\>", 
+   ",", "\<\"S:\\\\VSDdata\\\\proj.SPP\\\\data\\\\SPP.Nlx2\\\\SPP067\\\\2016-\
+07-07_15-10-56\\\\CSC15.ncs\"\>", 
+   ",", "\<\"S:\\\\VSDdata\\\\proj.SPP\\\\data\\\\SPP.Nlx2\\\\SPP067\\\\2016-\
+07-07_15-10-56\\\\CSC16.ncs\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.6792097557896557`*^9, 3.679209788499527*^9, 
+  3.6792895370106926`*^9},
+ FontSize->9,
+ CellLabel->"Out[1]=",
+ CellID->148958703]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+We can now use the standard function NNLoad to load the contents of these \
+files into a data object (actually, a java object for nounou, the Java/Scala \
+package which underlies NounouW). \
+\>", "Text",
+ CellChangeTimes->{{3.6792096988744*^9, 3.67920972525791*^9}, {
+  3.679209797362034*^9, 3.679209871586279*^9}},
+ CellID->869539933],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Note, for large files such as these *.ncs files, nounou will not load all of \
+the data into memory. Instead, it will load file pointers and file \
+information (e.g. sampling rate, etc.) in a way that the data can be streamed \
+rapidly from disk.\
+\>", "Text",
+ CellChangeTimes->{{3.6792096988744*^9, 3.67920972525791*^9}, {
+  3.679209797362034*^9, 3.6792099343058662`*^9}},
+ CellID->85002631],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempJavaDataObject", "=", 
+  RowBox[{"NNLoad", "[", " ", "tempFiles", " ", "]"}]}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}, {
+  3.6792097388416862`*^9, 3.679209787714482*^9}, {3.6792099476656303`*^9, 
+  3.6792099604103594`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->729692899],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "elements", ".", "data", ".", "NNDataChannelArray"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm1`JavaObject19154881273135105]], "Output",
+ CellChangeTimes->{3.6792099675757694`*^9, 3.679289546775251*^9},
+ CellLabel->"Out[2]=",
+ CellID->347825936]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Now, we can interact with this Java object to access information, or to call \
+specific segments of data.\
+\>", "Text",
+ CellChangeTimes->{{3.6792099752772098`*^9, 3.6792100000096245`*^9}},
+ CellID->480999311],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNPrintInfo", "[", " ", 
+  RowBox[{"tempJavaDataObject", ",", " ", "\"\<Timing\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}, {
+  3.6792097388416862`*^9, 3.679209787714482*^9}, {3.679210007530054*^9, 
+  3.6792100196427474`*^9}},
+ CellLabel->"In[3]:=",
+ CellID->363680526],
+
+Cell[BoxData["\<\"nounou.elements.traits.NNTiming(fs=32000.0, segmentCount=1, \
+1a58c41332)\\n==================================================\\nsegment\\\
+tsamples (  mm:ss  ) (    s   )\\t   start Ts  (  hh:mm )\\n   0\\t  61212160 \
+( 31:52.88) (  1912.9)\\t  2984886413 ( 0:00.00)\"\>"], "Output",
+ CellChangeTimes->{3.6792100199697657`*^9, 3.679289547175274*^9},
+ FontSize->9,
+ CellLabel->"Out[3]=",
+ CellID->141824148]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+This call was directly equivalent with a direct call to the java object like \
+this:\
+\>", "Text",
+ CellChangeTimes->{{3.6792103354418097`*^9, 3.6792103559619837`*^9}},
+ CellID->733562366],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempJavaDataObject", "@", 
+  RowBox[{
+   RowBox[{"timing", "[", "]"}], "@", 
+   RowBox[{"toStringFull", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}, {
+  3.6792097388416862`*^9, 3.679209787714482*^9}, {3.679210007530054*^9, 
+  3.6792100196427474`*^9}, {3.6792103706108217`*^9, 3.679210385353665*^9}},
+ CellLabel->"In[4]:=",
+ CellID->104165434],
+
+Cell[BoxData["\<\"nounou.elements.traits.NNTiming(fs=32000.0, segmentCount=1, \
+1a58c41332)\\n==================================================\\nsegment\\\
+tsamples (  mm:ss  ) (    s   )\\t   start Ts  (  hh:mm )\\n   0\\t  61212160 \
+( 31:52.88) (  1912.9)\\t  2984886413 ( 0:00.00)\"\>"], "Output",
+ CellChangeTimes->{{3.6792103774272118`*^9, 3.679210385554676*^9}, 
+   3.6792895472932806`*^9},
+ FontSize->9,
+ CellLabel->"Out[4]=",
+ CellID->219568796]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Of note here:", "Text",
+ CellChangeTimes->{{3.679210399009446*^9, 3.6792104026906567`*^9}, {
+  3.679289150620592*^9, 3.6792891507646008`*^9}},
+ CellID->2894472],
+
+Cell[TextData[{
+ "The Mathematica Java calling syntax is modified from Java (e.g. using ",
+ StyleBox["@", "Program"],
+ " and ",
+ StyleBox["[]", "Program"],
+ "), in order to avoid pre-defined definitions in Mathematica for Java \
+symbols such as ",
+ StyleBox[".", "Program"],
+ " . The above input in native Java would be ",
+ StyleBox["tempJavaDataObject.timing().toStringFull()", "Program"],
+ ". "
+}], "Text",
+ CellChangeTimes->{{3.679210399009446*^9, 3.679210607018343*^9}, {
+  3.6792884417120447`*^9, 3.679288441713045*^9}, {3.6792887694767923`*^9, 
+  3.679288771403902*^9}, {3.6792891549088373`*^9, 3.6792892547005453`*^9}},
+ CellID->678455],
+
+Cell[TextData[{
+ "The Java method ",
+ StyleBox["toStringFull()", "Program"],
+ " returns a Java string, which Mathematica automatically converts to a \
+Mathematica string. The same type of conversion is done for numerical values \
+(including ",
+ StyleBox["BigInteger", "Program"],
+ "and ",
+ StyleBox["breeze.Complex", "Program"],
+ ") and Arrays of numerical or string values (to Mathematica ",
+ StyleBox["List[]", "Program"],
+ " objects). See the ",
+ ButtonBox["Mathematica JLink guide",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/JLink/tutorial/\
+CallingJavaFromTheWolframLanguage.html"], None},
+  ButtonNote->
+   "https://reference.wolfram.com/language/JLink/tutorial/\
+CallingJavaFromTheWolframLanguage.html"],
+ " for the full syntax of calling JVM functions from Mathematica."
+}], "Text",
+ CellChangeTimes->{{3.679210399009446*^9, 3.679210607018343*^9}, {
+  3.6792884417120447`*^9, 3.679288441713045*^9}, {3.6792887694767923`*^9, 
+  3.679288771403902*^9}, {3.6792891549088373`*^9, 3.6792892400687084`*^9}},
+ CellID->280174873],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+You can access data from this object using the following NounouW command:\
+\>", "Text",
+ CellChangeTimes->{{3.679210399009446*^9, 3.6792104026906567`*^9}, {
+  3.679289150620592*^9, 3.6792891507646008`*^9}, {3.679289277797866*^9, 
+  3.6792892935887694`*^9}},
+ CellID->480493008],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tempData", "=", 
+   RowBox[{"NNReadTrace", "[", " ", "\[IndentingNewLine]", 
+    RowBox[{"(*", "1", "*)"}], " ", 
+    RowBox[{"tempJavaDataObject", ",", "  ", 
+     RowBox[{"(*", "2", "*)"}], " ", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", "3"}], "]"}], ",", " ", 
+     RowBox[{"(*", "3", "*)"}], " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", " ", ";;", " ", "10"}], ",", " ", "0"}], "}"}]}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Dimensions", "[", "tempData", "]"}]}], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}, {
+  3.6792097388416862`*^9, 3.679209787714482*^9}, {3.679210007530054*^9, 
+  3.6792100196427474`*^9}, {3.6792893021092567`*^9, 3.6792893083006105`*^9}, {
+  3.6792893578944473`*^9, 3.679289411341504*^9}, {3.6792895586299286`*^9, 
+  3.679289565509322*^9}, {3.6792896619498386`*^9, 3.6792896931486225`*^9}},
+ FontSize->10,
+ CellLabel->"In[7]:=",
+ CellID->218736180],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4", ",", "11"}], "}"}]], "Output",
+ CellChangeTimes->{3.679289565761337*^9},
+ CellLabel->"Out[8]=",
+ CellID->739367261]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"tempData", ",", " ", 
+   RowBox[{"AspectRatio", "\[Rule]", " ", 
+    RowBox[{"1", "/", "3"}]}], ",", " ", 
+   RowBox[{"ImageSize", "\[Rule]", " ", "Medium"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.678764885199257*^9, 3.6787648919906454`*^9}, {
+  3.6792097388416862`*^9, 3.679209787714482*^9}, {3.679210007530054*^9, 
+  3.6792100196427474`*^9}, {3.6792893021092567`*^9, 3.6792893083006105`*^9}, {
+  3.6792893578944473`*^9, 3.679289411341504*^9}, {3.6792895586299286`*^9, 
+  3.67928960253244*^9}},
+ CellLabel->"In[11]:=",
+ CellID->246501619],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., -4.882961661678564}, {2., -7.507553554830793}, {
+      3., -5.920591014785259}, {4., -6.775109305579008}, {
+      5., -11.505478415330117`}, {6., -15.74755135891337}, {
+      7., -18.09747665859618}, {8., -19.440291115557784`}, {
+      9., -18.524735803993053`}, {10., -16.479995608165154`}, {
+      11., -18.555254314378544`}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., -2.7161474243087014`}, {2., -4.638813578594636}, {
+      3., -5.1576282551479835`}, {4., -7.019257388662936}, {
+      5., -13.489181590387034`}, {6., -22.00384598793903}, {
+      7., -25.757622765354427`}, {8., -24.018067673381438`}, {
+      9., -22.064883008710012`}, {10., -22.186957050251976`}, {
+      11., -23.957030652610456`}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., -5.64592442131584}, {2., -10.10162693759753}, {
+      3., -12.054811602268956`}, {4., -12.817774361906231`}, {
+      5., -16.05273646276828}, {6., -22.30903109179394}, {
+      7., -28.53480721043411}, {8., -30.762658468574955`}, {
+      9., -27.832881471567816`}, {10., -23.071993851431216`}, {
+      11., -20.661031530977425`}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., -10.254219489524985`}, {2., -12.115848623039938`}, {
+      3., -12.20740415419641}, {4., -13.855403715012926`}, {
+      5., -19.470809625943275`}, {6., -27.06991871193054}, {
+      7., -31.52562122821223}, {8., -30.03021421932317}, {
+      9., -24.93362298494617}, {10., -20.661031530977425`}, {
+      11., -19.989624302496622`}}]}, {}}, {}},
+  AspectRatio->NCache[
+    Rational[1, 3], 0.3333333333333333],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->Medium,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 11.}, {-31.52562122821223, 0}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.02]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.679289565761337*^9, 3.679289602793455*^9}},
+ CellLabel->"Out[11]=",
+ CellID->111466104]
+}, Open  ]]
+}, Open  ]],
+
+Cell["(*1*) The first argument is naturally the Java data object.", "Text",
+ CellChangeTimes->{{3.6792895691995335`*^9, 3.6792895696045566`*^9}, {
+  3.6792896113889465`*^9, 3.6792896735575027`*^9}, {3.6792897176290236`*^9, 
+  3.6792897209172115`*^9}},
+ CellID->947321068],
+
+Cell["\<\
+(*2*) The next argument specifies data channels to read. Note above that we \
+have specified channels [0 to 3] above. Since we loaded 4 *.ncs files, we \
+have 4 channels which we can call, and since nounou (and Java in general) is \
+zero-indexed, we need to call channels [0 to 3].\
+\>", "Text",
+ CellChangeTimes->{{3.6792895691995335`*^9, 3.6792895696045566`*^9}, {
+  3.6792896113889465`*^9, 3.679289673548502*^9}, {3.6792897242123995`*^9, 
+  3.679289780268606*^9}},
+ CellID->197914190],
+
+Cell["\<\
+(*3*) The third argument is a time specification. Here, we call data sample \
+numbers 0 to 10, from segment 0. For more information regarding specifying \
+timing (for example, specifying in frames, in timestamps, or in ms) see the \
+help file for NNReadTrace.\
+\>", "Text",
+ CellChangeTimes->{{3.6792895691995335`*^9, 3.6792895696045566`*^9}, {
+  3.6792896113889465`*^9, 3.6792896735575027`*^9}, {3.6792897176290236`*^9, 
+  3.6792897209172115`*^9}, {3.679289788957103*^9, 3.6792898824134483`*^9}},
+ CellID->622176659],
+
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell["XXXX", "TutorialMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Wolfram Education Group Courses", "TutorialRelatedLinksSection",
+ CellID->415694148],
+
+Cell["XXXX", "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1272, 1328},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 325, 14, 26, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 31, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 81, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1063, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1146, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1226, 53, 88, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1351, 59, 56, 1, 21, "KeywordsSection",
+ CellID->1427428552],
+Cell[1410, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1492, 68, 53, 1, 21, "DetailsSection",
+ CellID->307771771],
+Cell[1548, 71, 63, 2, 70, "Details",
+ CellID->218895918],
+Cell[1614, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1686, 79, 66, 2, 70, "Details",
+ CellID->795871300],
+Cell[1755, 83, 71, 2, 70, "Details",
+ CellID->199739161],
+Cell[1829, 87, 60, 2, 70, "Details",
+ CellID->40625308],
+Cell[1892, 91, 61, 2, 70, "Details",
+ CellID->357121918],
+Cell[1956, 95, 62, 2, 70, "Details",
+ CellID->35949532],
+Cell[2021, 99, 78, 2, 70, "Details",
+ CellID->929432370],
+Cell[2102, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2206, 110, 63, 1, 111, "Title",
+ CellID->509267359],
+Cell[2272, 113, 41, 1, 25, "Text",
+ CellID->1534169418],
+Cell[2316, 116, 186, 5, 91, "DefinitionBox",
+ CellID->2096742444],
+Cell[2505, 123, 45, 1, 31, "Caption",
+ CellID->1891092685],
+Cell[CellGroupData[{
+Cell[2575, 128, 135, 2, 41, "MathCaption",
+ CellID->836781195],
+Cell[2713, 132, 164, 4, 28, "Input",
+ CellID->2058623809]
+}, Open  ]],
+Cell[2892, 139, 1097, 39, 190, "Text",
+ CellID->155067522],
+Cell[CellGroupData[{
+Cell[4014, 182, 1094, 39, 214, "Text",
+ CellID->19345781],
+Cell[5111, 223, 654, 11, 156, "Print",
+ CellID->278735313]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5802, 239, 156, 2, 25, "Text",
+ CellID->540242572],
+Cell[CellGroupData[{
+Cell[5983, 245, 439, 12, 95, "Input",
+ CellID->226352429],
+Cell[6425, 259, 655, 14, 79, "Output",
+ CellID->148958703]
+}, Open  ]]
+}, Open  ]],
+Cell[7107, 277, 345, 7, 63, "Text",
+ CellID->869539933],
+Cell[CellGroupData[{
+Cell[7477, 288, 403, 8, 63, "Text",
+ CellID->85002631],
+Cell[CellGroupData[{
+Cell[7905, 300, 332, 7, 28, "Input",
+ CellID->729692899],
+Cell[8240, 309, 386, 10, 27, "Output",
+ CellID->347825936]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8675, 325, 219, 5, 44, "Text",
+ CellID->480999311],
+Cell[CellGroupData[{
+Cell[8919, 334, 340, 7, 28, "Input",
+ CellID->363680526],
+Cell[9262, 343, 426, 7, 79, "Output",
+ CellID->141824148]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9737, 356, 198, 5, 25, "Text",
+ CellID->733562366],
+Cell[CellGroupData[{
+Cell[9960, 365, 414, 9, 28, "Input",
+ CellID->104165434],
+Cell[10377, 376, 456, 8, 79, "Output",
+ CellID->219568796]
+}, Open  ]]
+}, Open  ]],
+Cell[10860, 388, 166, 3, 25, "Text",
+ CellID->2894472],
+Cell[11029, 393, 643, 15, 90, "Text",
+ CellID->678455],
+Cell[11675, 410, 1076, 25, 109, "Text",
+ CellID->280174873],
+Cell[CellGroupData[{
+Cell[12776, 439, 287, 6, 25, "Text",
+ CellID->480493008],
+Cell[CellGroupData[{
+Cell[13088, 449, 983, 22, 68, "Input",
+ CellID->218736180],
+Cell[14074, 473, 159, 5, 27, "Output",
+ CellID->739367261]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14270, 483, 594, 12, 28, "Input",
+ CellID->246501619],
+Cell[14867, 497, 3166, 67, 130, "Output",
+ CellID->111466104]
+}, Open  ]]
+}, Open  ]],
+Cell[18060, 568, 271, 4, 25, "Text",
+ CellID->947321068],
+Cell[18334, 574, 497, 9, 82, "Text",
+ CellID->197914190],
+Cell[18834, 585, 527, 9, 82, "Text",
+ CellID->622176659],
+Cell[CellGroupData[{
+Cell[19386, 598, 65, 1, 68, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[19454, 601, 54, 1, 24, "TutorialMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19545, 607, 72, 1, 74, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[19620, 610, 52, 1, 24, "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19709, 616, 98, 1, 74, "TutorialRelatedLinksSection",
+ CellID->415694148],
+Cell[19810, 619, 56, 1, 24, "TutorialRelatedLinks",
+ CellID->415694149]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
