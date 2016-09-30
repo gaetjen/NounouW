@@ -31,7 +31,7 @@ NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
 Print[NN`toString[]];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Java class paths and object checking*)
 
 
@@ -52,7 +52,8 @@ $NNJavaClass$NNFilterDownsample      = "nounou.elements.data.filters.NNFilterDow
 $NNJavaClass$NNFilterDecimate        = "nounou.elements.data.filters.NNFilterDecimate";
 $NNJavaClass$NNFilterMedianSubtract  = "nounou.elements.data.filters.NNFilterMedianSubtract";
 $NNJavaClass$NNFilterFIR             = "nounou.elements.data.filters.NNFilterFIR";
-$NNJavaClass$NNFilterBuffer             = "nounou.elements.data.filters.NNFilterBuffer";
+$NNJavaClass$NNFilterBuffer          = "nounou.elements.data.filters.NNFilterBuffer";
+$NNJavaClass$NNFilterTrodeNormalize  = "nounou.elements.data.filters.NNFilterTrodeNormalize";
 
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";

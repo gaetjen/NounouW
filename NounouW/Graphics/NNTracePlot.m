@@ -11,7 +11,7 @@ BeginPackage["NounouW`Graphics`NNTracePlot`",
 (*Declarations*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNTracePlotManipulate*)
 
 
@@ -33,7 +33,7 @@ Options[NNTracePlotManipulate] = HHJoinOptionLists[
 ];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNTracePlot*)
 
 
@@ -44,11 +44,11 @@ NNTracePlot[ <<JavaObject[nounou.DataReader]>> , channel(s), <<JavaObject[nounou
 
 NNTracePlot$UniqueOptions = {
 	(*NNValueUnit -> Absolute, ScaleBars->{None, None}, *)  
-	(*NNBaselineCorrection->Mean,*) NNOptTimeUnit -> "ms", NNOptStack -> Automatic
+	(*NNBaselineCorrection->Mean,*) NNOptTimeUnit -> "timestamp", NNOptStack -> 250(*Automatic*)
 	(*, NNMasking->False*)
 };
 NNTracePlot$OverrideOptions = {
-	AspectRatio -> Automatic, PlotStyle->{Opacity[0.75]}, AxesLabel->Automatic,
+	AspectRatio -> 1/3, PlotStyle->{Opacity[0.75]}, AxesLabel->Automatic,
 	PlotRange->Automatic, (*BaseStyle->{FontFamily->"Helvetica"},*) ImageSize->10*72
 };
 Options[NNTracePlot] = HHJoinOptionLists[ 
@@ -64,7 +64,7 @@ Options[NNTracePlot] = HHJoinOptionLists[
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNTracePlotManipulate*)
 
 
@@ -130,14 +130,6 @@ Block[{ optTimeUnit, optAspectRatio, optAxesLabels,
 
 	(*==========Handle unit options==========*)
 	optTimeUnit = OptionValue[ NNOptTimeUnit ];
-(*	
-	optTimeUnit = Switch[ optTimeUnit,
-		Automatic, "ms",
-		x_String/;MemberQ[ {"ms"}, ToLowerCase[x] ], "ms",
-		x_String/;MemberQ[ {"timestamp", "timestamps", "ts"}, ToLowerCase[x] ], "Timestamps",
-		x_String/;MemberQ[ {"sample", "samples", "frame", "frames"}, ToLowerCase[x] ], "Frames",
-		_, Message[NNTracePlot::invalidOptionValue, "NNTimeUnit", ToString[optTimeUnit]]; "ms"
-	];*)	
 
 	(*==========Data==========*)
 	tempData = NNReadTrace[ dataObj, channels, range];
@@ -145,7 +137,7 @@ Block[{ optTimeUnit, optAspectRatio, optAxesLabels,
 	tempDataUnit = dataObj@getUnit[];
 
 	(*==========Handle graphing options==========*)
-	tempData = HHStackLists[tempData, HHOptStack ->  OptionValue[NNOptStack]];
+	tempData = HHStackLists[tempData, OptionValue[NNOptStack]];
 
 	(*==========Plot==========*)
 	ListLinePlot[ 
@@ -153,7 +145,7 @@ Block[{ optTimeUnit, optAspectRatio, optAxesLabels,
 			Sequence@@HHJoinOptionLists[ ListLinePlot,
 				{opts},
 				{  AxesLabel-> {optTimeUnit, tempDataUnit} },
-				NNTracePlot$UniqueOptions
+				Options[NNTracePlot]
 			]
 	]
   

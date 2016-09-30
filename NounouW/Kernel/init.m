@@ -13,10 +13,10 @@ Needs["HokahokaW`"];
 
 
 SetComplexClass["breeze.math.Complex"]; (*This allows Mathematica to interact transparently with Java/Scala/breeze complex numbers*)
-(*NounouW`$JavaStackSize = 6144;*)
+NounouW`$JavaStackSize = 6144;
 
 
-(*HHIncreaseJavaStack[NounouW`$JavaStackSize];*)
+HHIncreaseJavaStack[NounouW`$JavaStackSize];
 
 
 Get[ "NounouW`NounouW`"];

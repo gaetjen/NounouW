@@ -1,7 +1,11 @@
 (* ::Package:: *)
 
 (* Mathematica Package *)
-BeginPackage["NounouW`Graphics`", {"HokahokaW`","HokahokaW`Graphics`","JLink`","NounouW`","NounouW`Data`"}]
+BeginPackage[ "NounouW`Graphics`", 
+	{"HokahokaW`","HokahokaW`Graphics`",
+	"JLink`",
+	"NounouW`","NounouW`Data`"}
+];
 
 
 (* ::Section:: *)
