@@ -8,10 +8,18 @@ BeginPackage["NounouW`Data`", {"HokahokaW`","JLink`","NounouW`"}];
 (*Declarations*)
 
 
+(* ::Subsection:: *)
+(*Data related markers*)
+
+
 NNSegment::usage="Marker for a rule specifying the relevant data segment (e.g. NNSegment \[Rule] 0)"; 
 
 
-(* ::Subsection:: *)
+NNTimestamp::usage="Marker for specifying times as timestamps (not frames), use as \"NNTimestamp @ 1000000\" or \"NNTimestamp[1000000]\" .";
+Ts::usage="Alias for NNTimestamp, especially useful in postfix form \"t // Ts\".";
+
+
+(* ::Subsection::Closed:: *)
 (* File Access (NNLoad, NNSave, NNFilenameSort)*)
 
 
@@ -36,10 +44,19 @@ $ToNNRangeSpecifier::usage =
 
 
 NNPrintInfo::usage =
-"Prints out java object information for an NNElement child class (calls toStringFull[]).";
+"Prints out java object information for an NNElement child class. When called without argument,\
+redirects to toStringFull[]. The following arguments can be given for what to print:\n          \
++ NNData: \"Timing\", \"Scaling\", \"Layout\"";
 
 
-(* ::Subsubsection:: *)
+NNReadInfo::usage =
+"Reads java object information for an NNElement child class. \
+The following arguments can be given for what to read:\n          \
++ NNData: \"ChannelCount\", \"SegmentCount\"\n          \
++ NNLayout: \"ChannelCount\"";
+
+
+(* ::Subsubsection::Closed:: *)
 (*Continuous*)
 
 
@@ -104,6 +121,100 @@ Begin["`Private`"];
 
 
 (* ::Subsection:: *)
+(*Data marker/specifier related converters*)
+
+
+(* ::Subsubsection::Closed:: *)
+(*NNTimestamp, Ts*)
+
+
+NNTimestamp[ timestamps_:{_Integer ..} ]:= NNTimestamp /@ timestamps;
+NNTimestamp[]:=Message[NNTimestamp::invalidArgs, {}];
+NNTimestamp[arg1_, arg2__]:=Message[NNTimestamp::invalidArgs, {arg1, arg2}];
+
+
+Ts[ something_ ]:= NNTimestamp[ something ];
+Ts[args___]:=Message[Ts::invalidArgs, {args}];
+
+
+(* ::Subsubsection::Closed:: *)
+(*$ToNNRangeSpecifier*)
+
+
+(* { start;;last , segment}  *)
+$ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]], segment_Integer} ]:= 	
+	NN`NNRange[start, last, 1, segment];
+
+(* { start;;last , NNSegment \[Rule] segment}  *)
+$ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]],  Rule[ NNSegment, segment_Integer]} ]:= 	
+	NN`NNRange[start, last, 1, segment];
+
+(* { start;;last;;step , segment} *)
+$ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] ],  segment_/;NumberQ[segment]} ]:= 
+	NN`NNRange[start, last, step, segment];
+
+
+(*  timestamp -> start;;last  *)
+$ToNNRangeSpecifier[ 
+	Rule[ timestamp_NNTimestamp, 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last] ]
+	]
+]:= NN`NNRangeTsEvent[timestamp[[1]], start, last, 1];
+(*$ToNNRangeSpecifier[ 
+	Rule[ timestamp_/;NumberQ[timestamp], 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last] ]
+	]
+]:= NN`NNRangeTsEvent[timestamp, start, last, 1];*)
+
+(*  timestamp -> start;;last;;step  *)
+$ToNNRangeSpecifier[ 
+	Rule[ timestamp_NNTimestamp, 
+		  Span[ start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step]]
+	]
+]:= NN`NNRangeTsEvent[timestamp[[1]], start, last, step];
+(*$ToNNRangeSpecifier[ 
+	Rule[ timestamp_/;NumberQ[timestamp], 
+		  Span[ start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step]]
+	]
+]:= NN`NNRangeTsEvent[timestamp, start, last, step];*)
+
+
+(*  {timestamps} -> start;;last  *)
+$ToNNRangeSpecifier[ 
+	Rule[ timestamps_:{_NNTimestamps ..}, 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last]	]
+	]
+]:= NN`NNRangeTsEvent[#, start, last, 1]& /@ timestamps;
+(*$ToNNRangeSpecifier[ 
+	Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last]	]
+	]
+]:= NN`NNRangeTsEvent[#, start, last, 1]& /@ timestamps;*)
+
+(*  {timestamps} -> start;;last;;step  *)
+$ToNNRangeSpecifier[ 
+	Rule[ timestamps_:{_NNTimestamps ..}, 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] 	]
+	]
+]:= NN`NNRangeTsEvent[#, start, last, step]& /@ timestamps;
+(*$ToNNRangeSpecifier[ 
+	Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), 
+		  Span[   start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] 	]
+	]
+]:= NN`NNRangeTsEvent[#, start, last, step]& /@ timestamps;*)
+
+
+(* All *)
+$ToNNRangeSpecifier[ {All, segment_Integer} ] := NN`NNRangeAll[1, segment];
+$ToNNRangeSpecifier[ {All, Rule[ NNSegment, segment_Integer]} ] := NN`NNRangeAll[1, segment];
+$ToNNRangeSpecifier[ All ] := NN`NNRangeAll[];
+
+
+$ToNNRangeSpecifier[args___] := (Message[$ToNNRangeSpecifier::invalidArgs2, {args}]; $Failed);
+$ToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
+
+
+(* ::Subsection:: *)
 (*File Access (NNLoad, NNSave, NNFilenameSort)*)
 
 
@@ -146,7 +257,7 @@ Module[{tempret},
 NNSave[args___]:=Message[NNSave::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNFilenameSort*)
 
 
@@ -165,64 +276,7 @@ NNFilenameSort[args___]:=Message[NNFilenameSort::invalidArgs, {args}];
 (*NNData Accessors*)
 
 
-(* ::Subsubsection::Closed:: *)
-(*$ToNNRangeSpecifier*)
-
-
-(* { start;;last , segment}  *)
-$ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]], segment_Integer} ]:= 	
-	NN`NNRange[start, last, 1, segment];
-
-(* { start;;last , NNSegment \[Rule] segment}  *)
-$ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last]],  Rule[ NNSegment, segment_Integer]} ]:= 	
-	NN`NNRange[start, last, 1, segment];
-
-(* { start;;last;;step , segment} *)
-$ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] ],  segment_/;NumberQ[segment]} ]:= 
-	NN`NNRange[start, last, step, segment];
-
-
-(*  timestamp -> start;;last  *)
-$ToNNRangeSpecifier[ 
-	Rule[ timestamp_/;NumberQ[timestamp], 
-		  Span[   start_/;NumberQ[start], last_/;NumberQ[last] ]
-	]
-]:= NN`NNRangeTsEvent[timestamp, start, last, 1];
-
-(*  timestamp -> start;;last;;step  *)
-$ToNNRangeSpecifier[ 
-	Rule[ timestamp_/;NumberQ[timestamp], 
-		  Span[ start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step]]
-	]
-]:= NN`NNRangeTsEvent[timestamp, start, last, step];
-
-
-(*  {timestamps} -> start;;last  *)
-$ToNNRangeSpecifier[ 
-	Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), 
-		  Span[   start_/;NumberQ[start], last_/;NumberQ[last]	]
-	]
-]:= NN`NNRangeTsEvent[#, start, last, 1]& /@ timestamps;
-
-(*  {timestamps} -> start;;last;;step  *)
-$ToNNRangeSpecifier[ 
-	Rule[ timestamps_List/;(And@@(NumberQ /@ timestamps)), 
-		  Span[   start_/;NumberQ[start], last_/;NumberQ[last], step_/;NumberQ[step] 	]
-	]
-]:= NN`NNRangeTsEvent[#, start, last, step]& /@ timestamps;
-
-
-(* All *)
-$ToNNRangeSpecifier[ {All, segment_Integer} ] := NN`NNRangeAll[1, segment];
-$ToNNRangeSpecifier[ {All, Rule[ NNSegment, segment_Integer]} ] := NN`NNRangeAll[1, segment];
-$ToNNRangeSpecifier[ All ] := NN`NNRangeAll[];
-
-
-$ToNNRangeSpecifier[args___] := (Message[$ToNNRangeSpecifier::invalidArgs2, {args}]; $Failed);
-$ToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
-
-
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*NNPrintInfo*)
 
 
@@ -230,9 +284,24 @@ NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNElement]]:= dataObj@
 NNPrintInfo[dataObj_/;JavaObjectQ[dataObj]]:= dataObj@toString[];
 
 NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Timing"]:= dataObj@getTiming[]@toStringFull[];
+NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Scaling"]:= dataObj@getScaling[]@toStringFull[];
+NNPrintInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement], "Layout"]:= dataObj@getLayout[]@toStringFull[];
 
 
 NNPrintInfo[args___]:=Message[NNPrintInfo::invalidArgs, {args}];
+
+
+(* ::Subsubsection:: *)
+(*NNReadInfo*)
+
+
+NNReadInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], "ChannelCount"]:= dataObj@channelCount[];
+NNReadInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNLayout], "ChannelCount"]:= dataObj@channelCount[];
+
+NNReadInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], "SegmentCount"]:= dataObj@timing[]@segmentCount[];
+
+
+NNReadInfo[args___]:=Message[NNReadInfo::invalidArgs, {args}];
 
 
 (* ::Subsubsection::Closed:: *)

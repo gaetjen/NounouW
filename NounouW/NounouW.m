@@ -44,7 +44,7 @@ $NNJavaClass$NNElement = "nounou.elements.NNElement";
 
 $NNJavaClass$NNData          = "nounou.elements.data.NNData";
 $NNJavaClass$NNTimingElement = "nounou.elements.traits.NNTimingElement";
-$NNJavaClass$NNLayout    = "nounou.elements.layout.NNLayoutSpatial";
+$NNJavaClass$NNLayout    = "nounou.elements.layout.NNLayout";
 $NNJavaClass$NNLayoutSpatial = "nounou.elements.layout.NNLayoutSpatial";
 
 
@@ -74,9 +74,6 @@ $NNJavaClass$NNRangeTsEvent =   "nounou.ranges.NNRangeTsEvent";
 
 (* ::Subsection:: *)
 (*Package-wide markers*)
-
-
-NNTimestamp::usage="Marker for specifying times as timestamps, use as \"NNTimestamp @ 1000000\".";
 
 
 (* ::Subsection:: *)

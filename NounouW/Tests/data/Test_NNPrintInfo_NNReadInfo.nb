@@ -1,0 +1,520 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17281,        512]
+NotebookOptionsPosition[     14477,        409]
+NotebookOutlinePosition[     15162,        435]
+CellTagsIndexPosition[     15034,        429]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Test NNPrintInfo and NNReadInfo", "Title",
+ CellChangeTimes->{{3.6706130118050194`*^9, 3.6706130136121225`*^9}, {
+  3.685366985511215*^9, 3.6853669870863056`*^9}, {3.6866432608565845`*^9, 
+  3.6866432645297947`*^9}}],
+
+Cell["\<\
+These tests require the standard test file resources folder to be downloaded \
+from Git and available at Tests/_resources.\
+\>", "Text",
+ CellChangeTimes->{{3.661079149424464*^9, 3.6610791977702293`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Initialization", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, {
+  3.6706157383579693`*^9, 3.67061574047009*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Wed 19 Oct 2016 00:22:25     [Mathematica: 11.0.1 for Microsoft \
+Windows (64-bit) (September 20, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Artifact info as of: Sun 14 Aug 2016 00:05:06",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Local repo path:   C:\\prog\\_w\\HokahokaW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[e54e12e7076ab93c52f9fd04b9ad2cd5bd18b862]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin \
+(https://ktakagaki@github.com/ktakagaki/HokahokaW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.685818145725506*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{
+  3.6744506171272154`*^9, 3.6744830737642403`*^9, 3.685368452104232*^9, 
+   3.685817604652252*^9, {3.6858181252573347`*^9, 3.685818145953519*^9}}],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Wed 19 Oct 2016 00:22:26     [Mathematica: 11.0.1 for Microsoft \
+Windows (64-bit) (September 20, 2016)]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Artifact info as of: Thu 4 Aug 2016 11:01:21",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Local repo path:   C:\\prog\\_w\\NounouW\\.git",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Current branch [hash]:  dev \
+[c6fa48445eaa327d13d379f0ef7b3853f71ee9ea]",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12],
+ "\n",
+ StyleBox["     Remote:  origin (https://github.com/ktakagaki/NounouW.git)",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontSize->12]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.685818146081526*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"Welcome to nounou, a Scala/Java adapter for \
+neurophysiological data.\\nLast GIT info from file resource: \
+NNGit.gson.txt\\n  + current HEAD is: \
+1a58c41332bd336e036338dfedc8b6c19c080f3e\\n  + current branch is: master\\n  \
++ remote names are: https://github.com/ktakagaki/nounou.git, \
+https://github.com/slentzen/nounou.git, \
+https://github.com/dowa4213/nounou.git\\n\"\>"], "Print",
+ CellChangeTimes->{
+  3.6744506171272154`*^9, 3.6744830737642403`*^9, 3.685368452104232*^9, 
+   3.685817604652252*^9, {3.6858181252573347`*^9, 3.6858181477856236`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Get", "[", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Nest", "[", 
+       RowBox[{"ParentDirectory", ",", 
+        RowBox[{"SetDirectory", "[", 
+         RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", "1"}], "]"}], 
+      ",", "\"\<TestDataLoaders.m\>\""}], "}"}], "]"}], " ", "]"}], 
+  ";"}], "\[IndentingNewLine]", "$nnwResourcesFolder"}], "Input",
+ CellChangeTimes->{{3.6842320405120015`*^9, 3.6842321779878645`*^9}}],
+
+Cell[BoxData["\<\"C:\\\\prog\\\\_w\\\\NounouW\\\\resources\"\>"], "Output",
+ CellChangeTimes->{
+  3.6842321786079006`*^9, 3.6842324416839476`*^9, {3.6842325607517576`*^9, 
+   3.684232568203184*^9}, 3.6847509837387924`*^9, 3.6849502213523827`*^9, 
+   3.684951147898378*^9, 3.685197248813929*^9, 3.6852002145202556`*^9, 
+   3.685211776375556*^9, 3.6852985743860865`*^9, 3.685342882722262*^9, 
+   3.6853429520462275`*^9, 3.685344372990877*^9, 3.6853445833529215`*^9, 
+   3.68534505221474*^9, 3.685345193153801*^9, 3.6853661487539644`*^9, 
+   3.6853684542123523`*^9, 3.685817606589363*^9, 3.685818149778737*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"ShowJavaConsole", "[", "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.6613500543349924`*^9, 3.661350056535118*^9}, {
+   3.6613501139314013`*^9, 3.6613501186796727`*^9}, 3.6613526610470877`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NNPrintInfo"}]], "Input",
+ CellChangeTimes->{{3.685367144290297*^9, 3.685367145818384*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Prints out java object information for an NNElement child \
+class. When called without argument,redirects to toStringFull[]. The \
+following arguments can be given for what to print:\\n          + NNData: \
+\\\"Timing\\\", \\\"Scaling\\\", \\\"Layout\\\"\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.6858181531509304`*^9},
+ CellTags->"Info43685825353-6191446"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "NNReadInfo"}]], "Input",
+ CellChangeTimes->{{3.6853677540161715`*^9, 3.685367754447196*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"Reads java object information for an NNElement child class. \
+The following arguments can be given for what to read:\\n          + NNData: \
+\\\"ChannelCount\\\", \\\"SegmentCount\\\"\\n          + NNLayout: \
+\\\"ChannelCount\\\"\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.6858181541409864`*^9},
+ CellTags->"Info53685825354-6191446"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["SPP067a", "Section",
+ CellChangeTimes->{{3.6610919581261797`*^9, 3.6610919729260263`*^9}, {
+  3.6830512929354343`*^9, 3.6830512949515495`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["NNWTestLoadSPP067a"], "Input",
+ CellChangeTimes->{{3.6842324445371103`*^9, 3.684232446901246*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"$nnwTestFileFolder = \
+C:\\\\prog\\\\_w\\\\NounouW\\\\resources\\\\nounou\\\\Neuralynx\\\\SPP067\\\\\
+a\"\>"], "Print",
+ CellChangeTimes->{3.6858181592372785`*^9}],
+
+Cell[BoxData["\<\"$nnwTestFiles = \
+C:\\\\prog\\\\_w\\\\NounouW\\\\resources\\\\nounou\\\\Neuralynx\\\\SPP067\\\\\
+a\\\\CSC5.ncsC:\\\\prog\\\\_w\\\\NounouW\\\\resources\\\\nounou\\\\Neuralynx\\\
+\\SPP067\\\\a\\\\CSC6.ncsC:\\\\prog\\\\_w\\\\NounouW\\\\resources\\\\nounou\\\
+\\Neuralynx\\\\SPP067\\\\a\\\\CSC7.ncsC:\\\\prog\\\\_w\\\\NounouW\\\\\
+resources\\\\nounou\\\\Neuralynx\\\\SPP067\\\\a\\\\CSC8.ncs\"\>"], "Print",
+ CellChangeTimes->{3.6858181592382784`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$nnwTestDataOri"], "Input",
+ CellChangeTimes->{{3.6842325822869897`*^9, 3.6842325897684174`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\[LeftGuillemet]", 
+   RowBox[{"JavaObject", "[", 
+    RowBox[{
+    "nounou", ".", "elements", ".", "data", ".", "NNDataChannelArray"}], 
+    "]"}], "\[RightGuillemet]"}],
+  JLink`Objects`vm2`JavaObject14996892664463361]], "Output",
+ CellChangeTimes->{3.6842325901414385`*^9, 3.6847510002597375`*^9, 
+  3.684950226455674*^9, 3.6849511557618275`*^9, 3.685197251915107*^9, 
+  3.6852002180824594`*^9, 3.685211779210718*^9, 3.6852985801384153`*^9, 
+  3.6853428847933807`*^9, 3.685342953410305*^9, 3.6853443774801335`*^9, 
+  3.685344585908067*^9, 3.685345054995899*^9, 3.6853451952259197`*^9, 
+  3.685366151675132*^9, 3.6853663350896482`*^9, 3.685817705218004*^9, 
+  3.685818160171332*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NNPrintInfo", "Subsection",
+ CellChangeTimes->{{3.660907541017623*^9, 3.6609075455888844`*^9}, {
+  3.6610794343697624`*^9, 3.661079436688895*^9}, {3.6858177446912622`*^9, 
+  3.6858177489635067`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNPrintInfo", "[", "$nnwTestDataOri", "]"}]], "Input"],
+
+Cell[BoxData["\<\"nounou.elements.data.NNDataChannelArray(1 segments, \
+fs=32000.0, 1a58c41332)\"\>"], "Output",
+ CellChangeTimes->{3.6858177369228177`*^9, 3.685818165683647*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNPrintInfo", "[", 
+  RowBox[{"$nnwTestDataOri", ",", " ", "\"\<Timing\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.685817766067485*^9, 3.685817769811699*^9}}],
+
+Cell[BoxData["\<\"nounou.elements.traits.NNTiming(fs=32000.0, segmentCount=1, \
+1a58c41332)\\n==================================================\\nsegment\\\
+tsamples (  mm:ss  ) (    s   )\\t   start Ts  (  hh:mm )\\n   0\\t    607232 \
+(  0:18.98) (    19.0)\\t  3863862413 ( 0:00.00)\"\>"], "Output",
+ CellChangeTimes->{3.685817770286726*^9, 3.6858181675247526`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNPrintInfo", "[", 
+  RowBox[{"$nnwTestDataOri", ",", " ", "\"\<Scaling\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.685817766067485*^9, 3.6858177980283127`*^9}}],
+
+Cell[BoxData["\<\"nounou.io.neuralynx.NNScalingNeuralynx(unit=\[Micro]V, \
+absolutePerShort=-0.030518510385491027, 1a58c41332)\"\>"], "Output",
+ CellChangeTimes->{3.685817798520341*^9, 3.685818169070841*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NNPrintInfo", "[", 
+  RowBox[{"$nnwTestDataOri", ",", " ", "\"\<Layout\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.685817766067485*^9, 3.6858177980283127`*^9}, {
+  3.6858181766442738`*^9, 3.685818178988408*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Java","excptn",
+   "\"A Java exception occurred: \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"java.lang.IllegalArgumentException: Cannot use \
+layout-related functions in this nounou.elements.data.NNDataChannelArray \
+because layout is not set! Call setLayout(xxx) first!\\\\\\\\n\\\\\\\\tat \
+nounou.util.LoggingExt$class.loggerError(LoggingExt.scala:21)\\\\\\\\n\\\\\\\\\
+tat nounou.elements.data.NNDataChannelArray.loggerError(NNDataChannelArray.\
+scala:11)\\\\\\\\n\\\\\\\\tat \
+nounou.elements.layout.NNLayoutElement$class.getLayout(NNLayoutElement.scala:\
+14)\\\\\\\\n\\\\\\\\tat \
+nounou.elements.data.NNDataChannelArray.getLayout(NNDataChannelArray.scala:11)\
+\\\\\\\"\\\"}]\\).\"",2,11,1,29569392429486979985,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.685818179353429*^9}],
+
+Cell[BoxData[
+ RowBox[{"$Failed", "[", 
+  RowBox[{"NounouW`Data`Private`toStringFull", "[", "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.6858181793544292`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NNReadInfo", "Subsection",
+ CellChangeTimes->{{3.660907541017623*^9, 3.6609075455888844`*^9}, {
+  3.6610794343697624`*^9, 3.661079436688895*^9}, {3.6858177446912622`*^9, 
+  3.6858177589310765`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NNReadInfo", "[", 
+   RowBox[{"$nnwTestDataOri", ",", "\"\<ChannelCount\>\""}], "]"}], "//", 
+  "InputForm", " "}]], "Input",
+ CellChangeTimes->{{3.6847510026058717`*^9, 3.684751016401661*^9}, {
+   3.6853675517996054`*^9, 3.685367578439129*^9}, 3.685817718619771*^9, {
+   3.685818210612217*^9, 3.685818219515726*^9}}],
+
+Cell["4", "Output",
+ CellChangeTimes->{3.6858182199297495`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$nnwTestDataOri", "@", 
+  RowBox[{"channelCount", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6847510026058717`*^9, 3.684751016401661*^9}, {
+   3.6853675517996054`*^9, 3.685367578439129*^9}, 3.685817718619771*^9, {
+   3.6858182260290985`*^9, 3.685818227428179*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{{3.6847510112633667`*^9, 3.6847510166856766`*^9}, 
+   3.684950227306723*^9, 3.684951155959839*^9, 3.6851972521161184`*^9, 
+   3.6852002188175015`*^9, 3.68521177924872*^9, 3.685298580370429*^9, 
+   3.685342884834383*^9, 3.6853429538083277`*^9, 3.685344377736148*^9, 
+   3.6853445861330805`*^9, 3.6853450552139115`*^9, 3.685345195268922*^9, 
+   3.685366151894144*^9, 3.6853663360247016`*^9, 3.685367578926157*^9, 
+   3.6858182278212013`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NNReadInfo", "[", 
+   RowBox[{"$nnwTestDataOri", ",", "\"\<SegmentCount\>\""}], "]"}], "//", 
+  "InputForm", " "}]], "Input",
+ CellChangeTimes->{{3.6847510026058717`*^9, 3.684751016401661*^9}, {
+   3.6853675517996054`*^9, 3.685367578439129*^9}, 3.685817718619771*^9, {
+   3.685818210612217*^9, 3.685818248820402*^9}}],
+
+Cell["1", "Output",
+ CellChangeTimes->{3.6858182199297495`*^9, 3.6858182571468782`*^9, 
+  3.685818298645252*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$nnwTestDataOri", "@", 
+  RowBox[{
+   RowBox[{"timing", "[", "]"}], "@", 
+   RowBox[{"segmentCount", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6847510026058717`*^9, 3.684751016401661*^9}, {
+   3.6853675517996054`*^9, 3.685367578439129*^9}, 3.685817718619771*^9, {
+   3.6858182260290985`*^9, 3.6858182540677023`*^9}, {3.6858182918848653`*^9, 
+   3.6858182948050327`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.6847510112633667`*^9, 3.6847510166856766`*^9}, 
+   3.684950227306723*^9, 3.684951155959839*^9, 3.6851972521161184`*^9, 
+   3.6852002188175015`*^9, 3.68521177924872*^9, 3.685298580370429*^9, 
+   3.685342884834383*^9, 3.6853429538083277`*^9, 3.685344377736148*^9, 
+   3.6853445861330805`*^9, 3.6853450552139115`*^9, 3.685345195268922*^9, 
+   3.685366151894144*^9, 3.6853663360247016`*^9, 3.685367578926157*^9, {
+   3.6858182278212013`*^9, 3.685818254342718*^9}, 3.68581829510705*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1272, 1318},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info43685825353-6191446"->{
+  Cell[5766, 176, 405, 7, 94, "Print",
+   CellTags->"Info43685825353-6191446"]},
+ "Info53685825354-6191446"->{
+  Cell[6332, 192, 379, 6, 94, "Print",
+   CellTags->"Info53685825354-6191446"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info43685825353-6191446", 14819, 420},
+ {"Info53685825354-6191446", 14930, 423}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 222, 3, 129, "Title"],
+Cell[805, 27, 214, 4, 37, "Text"],
+Cell[CellGroupData[{
+Cell[1044, 35, 153, 2, 87, "Section"],
+Cell[1200, 39, 52, 1, 38, "Input"],
+Cell[1255, 42, 1083, 38, 166, "Text"],
+Cell[2341, 82, 241, 3, 28, "Print"],
+Cell[2585, 87, 1064, 37, 166, "Text"],
+Cell[3652, 126, 577, 9, 179, "Print"],
+Cell[CellGroupData[{
+Cell[4254, 139, 505, 12, 67, "Input"],
+Cell[4762, 153, 607, 8, 38, "Output"]
+}, Open  ]],
+Cell[5384, 164, 234, 4, 38, "Input"],
+Cell[CellGroupData[{
+Cell[5643, 172, 120, 2, 38, "Input"],
+Cell[5766, 176, 405, 7, 94, "Print",
+ CellTags->"Info43685825353-6191446"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6208, 188, 121, 2, 38, "Input"],
+Cell[6332, 192, 379, 6, 94, "Print",
+ CellTags->"Info53685825354-6191446"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6760, 204, 149, 2, 87, "Section"],
+Cell[CellGroupData[{
+Cell[6934, 210, 112, 1, 38, "Input"],
+Cell[CellGroupData[{
+Cell[7071, 215, 181, 3, 28, "Print"],
+Cell[7255, 220, 464, 6, 104, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7768, 232, 111, 1, 38, "Input"],
+Cell[7882, 235, 729, 14, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8648, 254, 205, 3, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[8878, 261, 78, 1, 38, "Input"],
+Cell[8959, 264, 178, 2, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9174, 271, 185, 3, 38, "Input"],
+Cell[9362, 276, 369, 4, 123, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9768, 285, 188, 3, 38, "Input"],
+Cell[9959, 290, 207, 2, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10203, 297, 238, 4, 38, "Input"],
+Cell[10444, 303, 828, 15, 142, "Message"],
+Cell[11275, 320, 160, 3, 38, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11484, 329, 204, 3, 61, "Subsection"],
+Cell[CellGroupData[{
+Cell[11713, 336, 352, 7, 38, "Input"],
+Cell[12068, 345, 63, 1, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12168, 351, 291, 5, 38, "Input"],
+Cell[12462, 358, 487, 7, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12986, 370, 352, 7, 38, "Input"],
+Cell[13341, 379, 112, 2, 38, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13490, 386, 400, 8, 38, "Input"],
+Cell[13893, 396, 532, 7, 38, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
