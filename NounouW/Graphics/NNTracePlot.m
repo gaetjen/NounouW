@@ -12,6 +12,13 @@ BeginPackage["NounouW`Graphics`NNTracePlot`",
 
 
 (* ::Subsection:: *)
+(*Related options*)
+
+
+(*NNOptGridLines::usage="";*)
+
+
+(* ::Subsection:: *)
 (*NNTracePlot*)
 
 
@@ -22,7 +29,9 @@ NNTracePlot[ <<JavaObject[nounou.DataReader]>> , channel(s), <<JavaObject[nounou
 
 NNTracePlot$UniqueOptions = {
 	NNOptTimeUnit -> "ms", NNOptStack -> Automatic,
-	NNOptAmplificationFactor -> 1
+	NNOptAmplificationFactor -> 16,
+	(*NNOptGridLines -> {},*)
+	NNOptPlotLabel -> Automatic
 	(*NNValueUnit -> Absolute, ScaleBars->{None, None}, *)  
 	(*NNBaselineCorrection->Mean,*) (*Automatic*)
 	(*, NNMasking->False*)
@@ -38,7 +47,7 @@ Options[NNTracePlot] = HHJoinOptionLists[
 ];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNTracePlotManipulate*)
 
 
@@ -92,7 +101,8 @@ NNTracePlot[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
 
 Block[{ optTimeUnit, 
 		tempData, tempDataUnit, tempTimepoints,
-		optStack},
+		optGridLines, optStack, optPlotLabel,
+		tempgr},
 
 	(*==========Handle unit options==========*)
 	optTimeUnit = OptionValue[ NNOptTimeUnit ];
@@ -102,22 +112,42 @@ Block[{ optTimeUnit,
 	tempTimepoints = NNReadTimepoints[ dataObj, range, optTimeUnit ];
 	tempDataUnit = dataObj@getUnit[];
 
-	(*==========Handle graphing options==========*)
+	(*==========Handle graphing options: GridLines(*NNOptGridLines*)==========*)
+	optGridLines = OptionValue[GridLines];
+	optGridLines = Switch[ Head[optGridLines],
+		NNTimestamp,  {NNConvert[ dataObj, optGridLines, optTimeUnit ], None},
+		NNMillisecond, {NNConvert[ dataObj, optGridLines, optTimeUnit], None},
+		List, optGridLines,
+		_, optGridLines(*Message[NNTracePlot::invalidOptionValue, "GridLines", optGridLines]; {}*)
+	];
+
+		(*==========Handle graphing options==========*)
 	optStack = OptionValue[NNOptStack];
 	If[ optStack === Automatic, 
 		optStack = (dataObj@scaling[]@maxValue[]- dataObj@scaling[]@minValue[])/2
 	];
-	tempData = HHStackLists[tempData, optStack/OptionValue[NNOptAmplificationFactor]];
+	If[ optStack =!= None && optStack =!= 0, 
+		tempData = HHStackLists[tempData, optStack/OptionValue[NNOptAmplificationFactor]];
+	];
+	optPlotLabel = OptionValue[NNOptPlotLabel];
 
 	(*==========Plot==========*)
-	ListLinePlot[ 
-			Transpose[{tempTimepoints,#}]& /@ tempData, 
-			Sequence@@HHJoinOptionLists[ ListLinePlot,
-				{opts},
-				{  AxesLabel-> {optTimeUnit, tempDataUnit} },
-				Options[NNTracePlot]
-			]
-	]
+	tempgr = ListLinePlot[ 
+		Transpose[{tempTimepoints,#}]& /@ tempData, 
+		Sequence@@HHJoinOptionLists[ ListLinePlot,
+			{ GridLines -> optGridLines  },
+			{opts},
+			{  AxesLabel-> {optTimeUnit, tempDataUnit} },
+			Options[NNTracePlot]
+		]
+	];
+	
+	If[ optPlotLabel === None, tempgr,
+		If[Head[optPlotLabel]===String, 
+			HHLabelGraphics[ tempgr, optPlotLabel ],
+			(*Automatic*) 
+			HHLabelGraphics[ tempgr, dataObj@toStringShort[]<>" "<> range@toString[], {Right, Top} ]
+	]]
   
 ];
 
@@ -166,6 +196,7 @@ NNTracePlotManipulate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
 $NNTracePlotManipulate$Notebook = None;
 $NNTracePlotManipulate$Graphic = None;
 $NNTracePlotManipulate$tempOpts = None;
+$NNTracePlotManipulate$tempPlotRangeXFrames = None;
 (*$NNTracePlotManipulate$tempStackTable = None;
 $NNTracePlotManipulate$optAspectRatio = None;
 $NNTracePlotManipulate$optPlotRangeY = None;*)
@@ -173,20 +204,34 @@ $NNTracePlotManipulate$optPlotRangeY = None;*)
 
 NNTracePlotManipulate[
 			dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
-			channels:{_Integer ..}, 
-			length_/;(length === Automatic || ( NumericQ[length]&& length > 0)), (*ToDo: add timestamp specification*)
+			channels_, 
+			Automatic,
 			opts:OptionsPattern[]
+]:= NNTracePlotManipulate[
+		dataObj, channels, Round[dataObj@timing[]@sampleRate[]/10], opts
+	]; 
+
+
+NNTracePlotManipulate[
+		dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+		channels:{_Integer ..}, 
+		length_/;((*length === Automatic || *)( NumericQ[length]&& length > 0)), 
+		(*ToDo: add timestamp specification*)
+		opts:OptionsPattern[]
 ]:= 
 Block[{
-	tempSegmentList, tempRange
+	tempSegmentList, tempSegmentLengthsMax
 	},
 	
 	tempSegmentList = Table[n, {n, 0, dataObj@timing[]@segmentCount[]-1}];
+	tempSegmentLengthsMax = Max[ dataObj@timing[]@segmentLengths[] ];
 	(*==========Handle time range options==========*)
-	tempRange =
-	Round[If[length === Automatic, 
-		dataObj@timing[]@sampleRate[]/10,  length
-	]];
+	$NNTracePlotManipulate$tempPlotRangeXFrames = Round[
+		length
+		(*If[length === Automatic, 
+			dataObj@timing[]@sampleRate[]/10,  length
+		]*)
+	];
 
 	$NNTracePlotManipulate$Notebook = SelectedNotebook[];
 	$NNTracePlotManipulate$tempOpts = FilterRules[{opts}, Options[NNTracePlot]];
@@ -194,14 +239,15 @@ Block[{
 	CreateDialog[{
 		ExpressionCell[Manipulate[
 			$NNTracePlotManipulate$Graphic = 
-				NNTracePlot[dataObj, All, {start ;; start + 3200, 0}, 
-					NNOptAmplificationFactor-> 16, PlotLabel-> hello,
-					Sequence@@$NNTracePlotManipulate$tempOpts
-				],
+			NNTracePlot[dataObj, All, 
+				{start ;; start + $NNTracePlotManipulate$tempPlotRangeXFrames, segment},
+				Sequence@@$NNTracePlotManipulate$tempOpts
+			],
 			
 			Row[{
-				Control[{segment, tempSegmentList, ControlType->PopupMenu}],
-				Control[{start, 0, 32000*2, 32000/4}]
+				Control[{{segment, 0, "segment:"}, tempSegmentList, ControlType->PopupMenu}],
+				Control[{{start, 0, "trace start:"}, 
+					0, tempSegmentLengthsMax, $NNTracePlotManipulate$tempPlotRangeXFrames}]
 			}],
 			Row[{
 				Button["Print graph to notebook",
@@ -211,6 +257,9 @@ Block[{
 				], 
 				Spacer[20],
 				Button["Print raster to notebook",
+					NotebookWrite[$NNTracePlotManipulate$Notebook,
+						TextCell[ "Hello" ]
+					];
 					NotebookWrite[$NNTracePlotManipulate$Notebook,
 						Cell[ BoxData[ToBoxes[Rasterize[$NNTracePlotManipulate$Graphic]]], "Output", CellTags-> {"testCT"}]
 					]
@@ -224,10 +273,12 @@ Block[{
 			}],
 			ContinuousAction -> False
 		](*Manipulate*)]
-		}, Modal->True, WindowTitle->"NNTracePlotManipulate: " <> dataObj@toString[]
+		}, Modal->True, Background -> White,
+		WindowTitle->"NNTracePlotManipulate: " <> dataObj@toString[]
 	];
 
-	Print["done"]
+	Print["done"];
+	
 ];
 
 
@@ -244,7 +295,7 @@ End[]
 EndPackage[]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Backup*)
 
 
@@ -358,7 +409,7 @@ tempTracesWidth,
 ];*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNTracePlotImpl*)
 
 

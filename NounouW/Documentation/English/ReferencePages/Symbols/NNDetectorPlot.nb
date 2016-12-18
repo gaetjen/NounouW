@@ -3,39 +3,36 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 9.0' *)
+(* CreatedBy='Mathematica 11.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[     19870,        692]
-NotebookOptionsPosition[     15689,        544]
-NotebookOutlinePosition[     17217,        589]
-CellTagsIndexPosition[     17132,        584]
-WindowTitle->NNDetectorPlot - Wolfram Mathematica
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20603,        713]
+NotebookOptionsPosition[     16027,        558]
+NotebookOutlinePosition[     18047,        613]
+CellTagsIndexPosition[     17962,        608]
+WindowTitle->NNDetectorPlot
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[" ", "SymbolColorBar",
- CellMargins->{{Inherited, Inherited}, {-5, 0}}],
-
-Cell[TextData[{
- ButtonBox["Mathematica",
-  BaseStyle->{"Link", "LinkTrail"},
-  ButtonData->"paclet:NounouW/guide/NounouW"],
- StyleBox[" > ", "LinkTrailSeparator"]
-}], "LinkTrail"],
-
 Cell[BoxData[GridBox[{
-   {Cell["NOUNOUW PACLET SYMBOL", "PacletNameCell"], Cell[TextData[Cell[
-    BoxData[
+   {Cell["NOUNOU W SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
-      FrameBox["\<\"URL \[RightGuillemet]\"\>",
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
        StripOnInput->False], {"\<\"NounouW/ref/NNDetectorPlot\"\>":>
-      None, "\<\"Copy Mathematica url\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
@@ -43,7 +40,7 @@ Cell[BoxData[GridBox[{
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-      Delimiter, "\<\"Copy web url\"\>":>
+      Delimiter, "\<\"Copy web URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
@@ -51,20 +48,24 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/mathematica/NounouW/ref/\
+               "http://reference.wolfram.com/language/NounouW/ref/\
 NNDetectorPlot.html"], StandardForm]], "Input", TextClipboardType -> 
              "PlainText"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; 
-       Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
         NotebookLocate[{
           URL[
            StringJoin[
-           "http://reference.wolfram.com/mathematica/", 
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$3707], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
             "NounouW/ref/NNDetectorPlot", ".html"]], None}]}]},
       Appearance->None,
-      MenuAppearance->Automatic]],
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
      LineSpacing->{1.4, 0}]], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
@@ -73,8 +74,18 @@ NNDetectorPlot.html"], StandardForm]], "Input", TextClipboardType ->
    "RowsIndexed" -> {}}},
  CellID->1],
 
-Cell["NNDetectorPlot", "ObjectName",
- CellID->1224892054],
+Cell[TextData[{
+ Cell["NNDetectorPlot", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -91,20 +102,22 @@ Cell[BoxData[GridBox[{
 
 Cell[CellGroupData[{
 
-Cell[TextData[ButtonBox["EXAMPLES",
- BaseStyle->None,
- Appearance->{Automatic, None},
- Evaluator->None,
- Method->"Preemptive",
- ButtonFunction:>(FrontEndExecute[{
-    FrontEnd`SelectionMove[
-     FrontEnd`SelectedNotebook[], All, ButtonCell], 
-    FrontEndToken["OpenCloseGroup"], 
-    FrontEnd`SelectionMove[
-     FrontEnd`SelectedNotebook[], After, 
-     CellContents]}]& )]], "PrimaryExamplesSection",
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
  CellTags->"PrimaryExamplesSection",
- CellID->73306118],
+ CellID->53072609],
 
 Cell[CellGroupData[{
 
@@ -112,8 +125,9 @@ Cell[TextData[{
  "Basic Examples",
  "\[NonBreakingSpace]\[NonBreakingSpace]",
  Cell["(1)", "ExampleCount"]
-}], "ExampleSection",
- CellID->311268041],
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->703537019],
 
 Cell[BoxData[
  RowBox[{"<<", "NounouW`"}]], "Input",
@@ -167,7 +181,7 @@ Cell[BoxData[
     "nounou", ".", "elements", ".", "layouts", ".", "NNDataLayoutHexagonal"}],
      "]"}], "\[RightGuillemet]"}],
   JLink`Objects`vm2`JavaObject23456350864408577]], "Output",
- ImageSize->{543, 17},
+ ImageSize->{486, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[4]=",
@@ -183,7 +197,7 @@ Cell[BoxData[
  CellID->176169232],
 
 Cell[BoxData["16"], "Output",
- ImageSize->{22, 17},
+ ImageSize->{20, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[5]=",
@@ -199,7 +213,7 @@ Cell[BoxData[
  CellID->12581516],
 
 Cell[BoxData["50.`"], "Output",
- ImageSize->{31, 17},
+ ImageSize->{28, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[6]=",
@@ -228,7 +242,7 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"-", "1"}], ",", "3", ",", "2"}], "}"}]}], "}"}]], "Output",
- ImageSize->{568, 17},
+ ImageSize->{527, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[7]=",
@@ -249,7 +263,7 @@ masked\\\":[],\\\"className\\\":\\\"nounou.elements.layouts.\
 NNDataLayoutHexagonal\\\",\\\"gitHead\\\":\\\"\
 674199eda7404048d811c228fb848bd74709fd6a\\\",\\\"version\\\":0.5,\\\"bitmap$0\
 \\\":false}\"\>"], "Output",
- ImageSize->{582, 94},
+ ImageSize->{577, 79},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[8]=",
@@ -285,7 +299,7 @@ Cell[BoxData[
  CellID->410026117],
 
 Cell[BoxData["True"], "Output",
- ImageSize->{40, 17},
+ ImageSize->{36, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[10]=",
@@ -301,7 +315,7 @@ Cell[BoxData[
  CellID->590624524],
 
 Cell[BoxData["True"], "Output",
- ImageSize->{40, 17},
+ ImageSize->{36, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[11]=",
@@ -317,7 +331,7 @@ Cell[BoxData[
  CellID->469911287],
 
 Cell[BoxData["False"], "Output",
- ImageSize->{49, 17},
+ ImageSize->{44, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[12]=",
@@ -335,7 +349,7 @@ Cell[BoxData[
  CellID->72937],
 
 Cell[BoxData["False"], "Output",
- ImageSize->{49, 17},
+ ImageSize->{44, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[13]=",
@@ -350,7 +364,7 @@ Cell[BoxData[
  CellID->214773236],
 
 Cell[BoxData["False"], "Output",
- ImageSize->{49, 17},
+ ImageSize->{44, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[14]=",
@@ -416,7 +430,7 @@ Cell[BoxData[
      "RowsIndexed" -> {}}],
   Definition[HokahokaW`Java`HHJavaObjectQ],
   Editable->False]], "Output",
- ImageSize->{583, 207},
+ ImageSize->{587, 196},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[16]=",
@@ -531,7 +545,7 @@ Cell[BoxData[
      "RowsIndexed" -> {}}],
   Definition[HokahokaW`Java`HHJavaObjectQ],
   Editable->False]], "Output",
- ImageSize->{583, 301},
+ ImageSize->{587, 313},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[18]=",
@@ -546,19 +560,28 @@ Saveable->False,
 ScreenStyleEnvironment->"Working",
 WindowSize->{725, 750},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"NNDetectorPlot - Wolfram Mathematica",
+WindowTitle->"NNDetectorPlot",
 TaggingRules->{
- "ModificationHighlight" -> False, 
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NounouW/guide/NounouW", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2016, 8, 4, 11, 16, 44.7796439}", "context" -> "NounouW`", 
-    "keywords" -> {}, "index" -> True, "label" -> "NounouW Paclet Symbol", 
-    "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
-    "NNDetectorPlot[] NNDetectorPlot", "synonyms" -> {}, "title" -> 
-    "NNDetectorPlot", "type" -> "Symbol", "uri" -> 
-    "NounouW/ref/NNDetectorPlot"}, "LinkTrails" -> "", "SearchTextTranslated" -> 
-  ""},
+   "built" -> "{2016, 12, 18, 20, 35, 9.5816068}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Nounou W Symbol", "language" -> "en", "paclet" -> "NounouW", "status" -> 
+    "None", "summary" -> "NNDetectorPlot[] NNDetectorPlot", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "NNDetectorPlot", "titlemodifier" -> "", 
+    "windowtitle" -> "NNDetectorPlot", "type" -> "Symbol", "uri" -> 
+    "NounouW/ref/NNDetectorPlot"}, "SearchTextTranslated" -> ""},
 CellContext->"Global`",
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
@@ -567,7 +590,8 @@ StyleDefinitions->Notebook[{
     StyleData["Input"], CellContext -> "Global`"], 
    Cell[
     StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
-  FrontEndVersion -> "9.0 for Microsoft Windows (64-bit) (January 25, 2013)", 
+  FrontEndVersion -> 
+  "11.0 for Microsoft Windows (64-bit) (September 21, 2016)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -576,124 +600,121 @@ StyleDefinitions->Notebook[{
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[3183, 93, 460, 13, 70, "PrimaryExamplesSection",
+  Cell[3548, 104, 386, 15, 33, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
-   CellID->73306118]}
+   CellID->53072609]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 16991, 577}
+ {"PrimaryExamplesSection", 17820, 601}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[607, 21, 76, 1, 70, "SymbolColorBar"],
-Cell[686, 24, 180, 5, 70, "LinkTrail"],
-Cell[869, 31, 1877, 42, 70, "AnchorBarGrid",
+Cell[586, 21, 2291, 53, 54, "AnchorBarGrid",
  CellID->1],
-Cell[2749, 75, 57, 1, 70, "ObjectName",
- CellID->1224892054],
-Cell[2809, 78, 349, 11, 70, "Usage",
+Cell[2880, 76, 291, 11, 52, "ObjectNameGrid"],
+Cell[3174, 89, 349, 11, 88, "Usage",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[3183, 93, 460, 13, 70, "PrimaryExamplesSection",
+Cell[3548, 104, 386, 15, 33, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->73306118],
+ CellID->53072609],
 Cell[CellGroupData[{
-Cell[3668, 110, 148, 5, 70, "ExampleSection",
- CellID->311268041],
-Cell[3819, 117, 95, 3, 70, "Input",
+Cell[3959, 123, 195, 6, 28, "ExampleSection",
+ CellID->703537019],
+Cell[4157, 131, 95, 3, 30, "Input",
  CellID->182887016],
-Cell[3917, 122, 652, 21, 70, "Input",
+Cell[4255, 136, 652, 21, 51, "Input",
  CellID->121274972],
-Cell[4572, 145, 116, 3, 70, "Input",
+Cell[4910, 159, 116, 3, 30, "Input",
  CellID->514242286],
 Cell[CellGroupData[{
-Cell[4713, 152, 234, 7, 70, "Input",
+Cell[5051, 166, 234, 7, 51, "Input",
  CellID->687037852],
-Cell[4950, 161, 414, 12, 38, "Output",
+Cell[5288, 175, 414, 12, 39, "Output",
  CellID->504254057]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5401, 178, 134, 4, 70, "Input",
+Cell[5739, 192, 134, 4, 30, "Input",
  CellID->176169232],
-Cell[5538, 184, 159, 5, 38, "Output",
+Cell[5876, 198, 159, 5, 39, "Output",
  CellID->220948255]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5734, 194, 134, 4, 70, "Input",
+Cell[6072, 208, 134, 4, 30, "Input",
  CellID->12581516],
-Cell[5871, 200, 161, 5, 38, "Output",
+Cell[6209, 214, 161, 5, 39, "Output",
  CellID->194523598]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6069, 210, 130, 4, 70, "Input",
+Cell[6407, 224, 130, 4, 30, "Input",
  CellID->186302334],
-Cell[6202, 216, 574, 18, 38, "Output",
+Cell[6540, 230, 574, 18, 39, "Output",
  CellID->714609180]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6813, 239, 130, 4, 70, "Input",
+Cell[7151, 253, 130, 4, 30, "Input",
  CellID->32444361],
-Cell[6946, 245, 505, 10, 115, "Output",
+Cell[7284, 259, 505, 10, 100, "Output",
  CellID->96204095]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7488, 260, 115, 3, 70, "Input",
+Cell[7826, 274, 115, 3, 70, "Input",
  CellID->200294427],
-Cell[7606, 265, 465, 10, 70, "Message",
+Cell[7944, 279, 465, 10, 70, "Message",
  CellID->203163290]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8108, 280, 164, 4, 70, "Input",
+Cell[8446, 294, 164, 4, 70, "Input",
  CellID->410026117],
-Cell[8275, 286, 162, 5, 38, "Output",
+Cell[8613, 300, 162, 5, 39, "Output",
  CellID->400834876]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8474, 296, 136, 4, 70, "Input",
+Cell[8812, 310, 136, 4, 70, "Input",
  CellID->590624524],
-Cell[8613, 302, 162, 5, 38, "Output",
+Cell[8951, 316, 162, 5, 39, "Output",
  CellID->105287466]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8812, 312, 162, 4, 70, "Input",
+Cell[9150, 326, 162, 4, 70, "Input",
  CellID->469911287],
-Cell[8977, 318, 162, 5, 38, "Output",
+Cell[9315, 332, 162, 5, 39, "Output",
  CellID->25647138]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9176, 328, 192, 6, 70, "Input",
+Cell[9514, 342, 192, 6, 70, "Input",
  CellID->72937],
-Cell[9371, 336, 162, 5, 38, "Output",
+Cell[9709, 350, 162, 5, 39, "Output",
  CellID->58582956]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9570, 346, 115, 3, 70, "Input",
+Cell[9908, 360, 115, 3, 70, "Input",
  CellID->214773236],
-Cell[9688, 351, 163, 5, 38, "Output",
+Cell[10026, 365, 163, 5, 39, "Output",
  CellID->145106188]
 }, Open  ]],
-Cell[9866, 359, 119, 3, 70, "Input",
+Cell[10204, 373, 119, 3, 70, "Input",
  CellID->171120571],
 Cell[CellGroupData[{
-Cell[10010, 366, 88, 2, 70, "Input",
+Cell[10348, 380, 88, 2, 70, "Input",
  CellID->88241639],
-Cell[10101, 370, 1882, 52, 228, "Output",
+Cell[10439, 384, 1882, 52, 217, "Output",
  CellID->355031587]
 }, Open  ]],
-Cell[11998, 425, 891, 30, 70, "Input",
+Cell[12336, 439, 891, 30, 70, "Input",
  CellID->2360046],
 Cell[CellGroupData[{
-Cell[12914, 459, 118, 3, 70, "Input",
+Cell[13252, 473, 118, 3, 70, "Input",
  CellID->47136202],
-Cell[13035, 464, 2588, 73, 322, "Output",
+Cell[13373, 478, 2588, 73, 334, "Output",
  CellID->627200296]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
-Cell[15662, 542, 23, 0, 70, "FooterCell"]
+Cell[16000, 556, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

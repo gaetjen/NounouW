@@ -1,5 +1,5 @@
 (* Created with the Wolfram Language : www.wolfram.com *)
 <|"GitPath" -> "C:\\prog\\_w\\NounouW\\.git", "GitBranch" -> "master", 
- "GitHEAD" -> "7741dc2ed66a16c85ad319d82d87c9c89810f87d", 
+ "GitHEAD" -> "fd879d7254b6ca778fe5b81bde7eecf5777d4566", 
  "GitRemotes" -> {"origin" -> "https://github.com/ktakagaki/NounouW.git"}, 
- "GitArtifactDate" -> "Sun 23 Oct 2016 15:55:26"|>
+ "GitArtifactDate" -> "Wed 14 Dec 2016 22:04:22"|>

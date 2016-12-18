@@ -66,8 +66,8 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
 		<property name="inputDir" value="${basedir}\${docInputDir}" />
 		<property name="outputDirNB" value="${dist}\${pacletContainer}/${docInputDir}" />
 		<property name="outputDirWeb" value="${dist}\${pacletContainer}-HTML" />
-		<property name="outputDirNB" value="${basedir}\${pacletContainer}/${docInputDir}" />
-		<property name="outputDirWeb" value="${basedir}\${pacletContainer}-HTML" />
+		<!--property name="outputDirNB" value="${basedir}\${pacletContainer}/${docInputDir}" />
+		<property name="outputDirWeb" value="${basedir}\${pacletContainer}-HTML" / -->
 		<property name="logDir" value="${basedir}\log" />
 		<property name="jlinkpath" value="${mathematicaInstallDir}\SystemFiles\Links\JLink"/>
 
@@ -135,7 +135,9 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
 		</copy>
 		<mathematica exe="${mathExe}" quit="false" timeout="300" failonerror="False" timeoutproperty="limit_reached">
 		      <![CDATA[
-		   
+			
+		   		Print["Hello from docbuild.xml/setupPaclet"];
+				Print[CurrentDirctory[]];
 
 		      ]]>
 		      </mathematica>

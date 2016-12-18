@@ -10,17 +10,17 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5453,        163]
-NotebookOptionsPosition[      3648,        114]
-NotebookOutlinePosition[      5195,        153]
-CellTagsIndexPosition[      5152,        150]
-WindowTitle->Installing NounouW
+NotebookDataLength[      5360,        155]
+NotebookOptionsPosition[      3520,        104]
+NotebookOutlinePosition[      5296,        152]
+CellTagsIndexPosition[      5253,        149]
+WindowTitle->NNReadPage
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["NOUNOU W GUIDE", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+   {Cell["NOUNOU W SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
       FrameBox[
        InterpretationBox[Cell[TextData[{
@@ -31,12 +31,12 @@ Cell[BoxData[GridBox[{
         TextCell[
          Row[{"URL", 
            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-       StripOnInput->False], {"\<\"NounouW/guide/Installing NounouW\"\>":>
+       StripOnInput->False], {"\<\"NounouW/ref/NNReadPage\"\>":>
       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
-            Cell["NounouW/guide/Installing NounouW"]}, Visible -> False]]; 
+            Cell["NounouW/ref/NNReadPage"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
@@ -48,10 +48,10 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/language/NounouW/guide/\
-Installing NounouW.html"], StandardForm]], "Input", TextClipboardType -> 
-             "PlainText"]}, Visible -> False]]; 
-       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+               "http://reference.wolfram.com/language/NounouW/ref/NNReadPage.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; 
        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
@@ -59,10 +59,10 @@ Installing NounouW.html"], StandardForm]], "Input", TextClipboardType ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2676], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$5208], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
-            "NounouW/guide/Installing NounouW", ".html"]], None}]}]},
+            "NounouW/ref/NNReadPage", ".html"]], None}]}]},
       Appearance->None,
       MenuAppearance->Automatic,
       MenuStyle->"URLMenu"]],
@@ -74,41 +74,31 @@ Installing NounouW.html"], StandardForm]], "Input", TextClipboardType ->
    "RowsIndexed" -> {}}},
  CellID->1],
 
-Cell[CellGroupData[{
-
-Cell["Installing NounouW", "GuideTitle",
- CellID->942062912],
-
 Cell[TextData[{
- "See the ",
- Cell[BoxData[
-  TemplateBox[{Cell[
-     TextData["GitHub page"]],
-    "https://github.com/ktakagaki/NounouW/wiki/Installing-NounouW"},
-   "WebLink",
-   BaseStyle->{"GuideAbstract"}]]],
- " on how to install NounouW"
-}], "GuideAbstract",
- CellID->2001916300]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
+ Cell["NNReadPage", "ObjectName"],
  Cell[BoxData[
   InterpretationBox[
    StyleBox[
     GraphicsBox[{},
      BaselinePosition->Baseline,
-     ImageSize->{6, 0}],
+     ImageSize->{8, 0}],
     CacheGraphics->False],
-   Spacer[6]]]],
- "Reference"
-}], "GuideReferenceSection",
- WholeCellGroupOpener->True],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
 
-Cell["", "SectionHeaderSpacer"]
-}, Open  ]],
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"NNReadPage", "[", "]"}]], "InlineFormula"],
+     " \[LineSeparator]NNReadPage"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
 
 Cell[" ", "FooterCell"]
 },
@@ -116,30 +106,39 @@ Saveable->False,
 ScreenStyleEnvironment->"Working",
 WindowSize->{725, 750},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"Installing NounouW",
+WindowTitle->"NNReadPage",
 TaggingRules->{
- "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
   GridBox[{{
       RowBox[{
         ButtonBox[
         "Mathematica", ButtonData -> "paclet:NounouW/guide/NounouW", 
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
-    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
-  "", "Metadata" -> {
-   "built" -> "{2016, 12, 18, 20, 35, 8.1855269}", 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2016, 12, 18, 20, 35, 13.1468107}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
-    "Nounou W Guide", "language" -> "en", "paclet" -> "NounouW", "status" -> 
-    "None", "summary" -> "See the GitHub page on how to install NounouW", 
-    "synonyms" -> {}, "tabletags" -> 
-    DocumentationBuild`Make`Private`tabletaggingrules$2611, "title" -> 
-    "Installing NounouW", "titlemodifier" -> "", "windowtitle" -> 
-    "Installing NounouW", "type" -> "Guide", "uri" -> 
-    "NounouW/guide/Installing NounouW"}},
+    "Nounou W Symbol", "language" -> "en", "paclet" -> "NounouW", "status" -> 
+    "None", "summary" -> "NNReadPage[] NNReadPage", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "NNReadPage", "titlemodifier" -> "", 
+    "windowtitle" -> "NNReadPage", "type" -> "Symbol", "uri" -> 
+    "NounouW/ref/NNReadPage"}},
+CellContext->"Global`",
 FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
-StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.0 for Microsoft Windows (64-bit) (September 21, 2016)", 
+  StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
 
@@ -152,19 +151,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[590, 21, 2314, 53, 70, "AnchorBarGrid",
+Cell[582, 21, 2274, 53, 70, "AnchorBarGrid",
  CellID->1],
-Cell[CellGroupData[{
-Cell[2929, 78, 60, 1, 70, "GuideTitle",
- CellID->942062912],
-Cell[2992, 81, 286, 10, 70, "GuideAbstract",
- CellID->2001916300]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3315, 96, 257, 11, 70, "GuideReferenceSection"],
-Cell[3575, 109, 31, 0, 70, "SectionHeaderSpacer"]
-}, Open  ]],
-Cell[3621, 112, 23, 0, 70, "FooterCell"]
+Cell[2859, 76, 287, 11, 70, "ObjectNameGrid"],
+Cell[3149, 89, 341, 11, 70, "Usage",
+ CellID->982511436],
+Cell[3493, 102, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

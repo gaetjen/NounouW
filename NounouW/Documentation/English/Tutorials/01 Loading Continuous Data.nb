@@ -3,39 +3,37 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 9.0' *)
+(* CreatedBy='Mathematica 11.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[     20299,        621]
-NotebookOptionsPosition[     16202,        492]
-NotebookOutlinePosition[     18218,        543]
-CellTagsIndexPosition[     18175,        540]
-WindowTitle->01 Loading Continuous Data - Wolfram Mathematica
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20816,        632]
+NotebookOptionsPosition[     16254,        493]
+NotebookOutlinePosition[     18819,        556]
+CellTagsIndexPosition[     18776,        553]
+WindowTitle->01 Loading Continuous Data
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[" ", "TutorialColorBar",
- CellMargins->{{Inherited, Inherited}, {-5, 0}}],
-
-Cell[TextData[{
- ButtonBox["Mathematica",
-  BaseStyle->{"Link", "LinkTrail"},
-  ButtonData->"paclet:NounouW/guide/NounouW"],
- StyleBox[" > ", "LinkTrailSeparator"]
-}], "LinkTrail"],
-
 Cell[BoxData[GridBox[{
    {Cell["NOUNOU W TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
-      FrameBox["\<\"URL \[RightGuillemet]\"\>",
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
        StripOnInput->
         False], {"\<\"NounouW/tutorial/01 Loading Continuous Data\"\>":>
-      None, "\<\"Copy Mathematica url\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
@@ -44,7 +42,7 @@ Cell[BoxData[GridBox[{
         DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-      Delimiter, "\<\"Copy web url\"\>":>
+      Delimiter, "\<\"Copy web URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
@@ -52,21 +50,25 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/mathematica/NounouW/tutorial/01 \
+               "http://reference.wolfram.com/language/NounouW/tutorial/01 \
 Loading Continuous Data.html"], StandardForm]], "Input", TextClipboardType -> 
              "PlainText"]}, Visible -> False]]; 
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; 
-       Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
         NotebookLocate[{
           URL[
            StringJoin[
-           "http://reference.wolfram.com/mathematica/", 
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$7191], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
             "NounouW/tutorial/01 Loading Continuous Data", ".html"]], 
           None}]}]},
       Appearance->None,
-      MenuAppearance->Automatic]],
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
      LineSpacing->{1.4, 0}]], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
@@ -208,7 +210,7 @@ Cell[BoxData[
 07-07_15-10-56\\\\CSC15.ncs\"\>", 
    ",", "\<\"S:\\\\VSDdata\\\\proj.SPP\\\\data\\\\SPP.Nlx2\\\\SPP067\\\\2016-\
 07-07_15-10-56\\\\CSC16.ncs\"\>"}], "}"}]], "Output",
- ImageSize->{509, 63},
+ ImageSize->{443, 59},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  FontSize->9,
@@ -247,7 +249,7 @@ Cell[BoxData[
     "nounou", ".", "elements", ".", "data", ".", "NNDataChannelArray"}], 
     "]"}], "\[RightGuillemet]"}],
   JLink`Objects`vm1`JavaObject19154881273135105]], "Output",
- ImageSize->{489, 17},
+ ImageSize->{438, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[2]=",
@@ -272,7 +274,7 @@ Cell[BoxData["\<\"nounou.elements.traits.NNTiming(fs=32000.0, segmentCount=1, \
 1a58c41332)\\n==================================================\\nsegment\\\
 tsamples (  mm:ss  ) (    s   )\\t   start Ts  (  hh:mm )\\n   0\\t  61212160 \
 ( 31:52.88) (  1912.9)\\t  2984886413 ( 0:00.00)\"\>"], "Output",
- ImageSize->{501, 63},
+ ImageSize->{434, 59},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  FontSize->9,
@@ -300,7 +302,7 @@ Cell[BoxData["\<\"nounou.elements.traits.NNTiming(fs=32000.0, segmentCount=1, \
 1a58c41332)\\n==================================================\\nsegment\\\
 tsamples (  mm:ss  ) (    s   )\\t   start Ts  (  hh:mm )\\n   0\\t  61212160 \
 ( 31:52.88) (  1912.9)\\t  2984886413 ( 0:00.00)\"\>"], "Output",
- ImageSize->{501, 63},
+ ImageSize->{434, 59},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  FontSize->9,
@@ -337,14 +339,13 @@ Mathematica string. The same type of conversion is done for numerical values \
  ") and Arrays of numerical or string values (to Mathematica ",
  StyleBox["List[]", "Program"],
  " objects). See the ",
- ButtonBox["Mathematica JLink guide",
-  BaseStyle->"Hyperlink",
-  ButtonData->{
-    URL["https://reference.wolfram.com/language/JLink/tutorial/\
-CallingJavaFromTheWolframLanguage.html"], None},
-  ButtonNote->
-   "https://reference.wolfram.com/language/JLink/tutorial/\
-CallingJavaFromTheWolframLanguage.html"],
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Mathematica JLink guide"]],
+    "https://reference.wolfram.com/language/JLink/tutorial/\
+CallingJavaFromTheWolframLanguage.html"},
+   "WebLink",
+   BaseStyle->{"Text"}]]],
  " for the full syntax of calling JVM functions from Mathematica."
 }], "Text",
  CellID->280174873],
@@ -378,7 +379,7 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"4", ",", "11"}], "}"}]], "Output",
- ImageSize->{63, 17},
+ ImageSize->{59, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[8]=",
@@ -494,31 +495,42 @@ Saveable->False,
 ScreenStyleEnvironment->"Working",
 WindowSize->{725, 750},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"01 Loading Continuous Data - Wolfram Mathematica",
+WindowTitle->"01 Loading Continuous Data",
 TaggingRules->{
- "ModificationHighlight" -> False, 
-  "Metadata" -> {
-   "built" -> "{2016, 8, 4, 11, 16, 48.1618374}", "context" -> "NounouW`", 
-    "keywords" -> {}, "index" -> True, "label" -> "Nounou W Tutorial", 
-    "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NounouW/guide/NounouW", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2016, 12, 18, 20, 35, 17.3680521}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Nounou W Tutorial", "language" -> "en", "paclet" -> "NounouW", "status" -> 
+    "None", "summary" -> 
     "XXXX. Load Neuralynx ncs files HokahokaW` Thu 4 Aug 2016 10:52:14 \
 [Mathematica: 10.4.1 for Microsoft Windows (64-bit) (April 11, 2016)] \
 Artifact info as of: Tue 2 Aug 2016 08:45:33 Local repo path: \
 C:\\prog\\_w\\HokahokaW\\.git Current branch [hash]: dev \
 [ada9721f7ce16dc5c1a303a892475b6cbf3373e7] Remote: origin \
 (https://ktakagaki@github.com/ktakagaki/HokahokaW.git)", "synonyms" -> {}, 
-    "title" -> "01 Loading Continuous Data", "type" -> "Tutorial", "uri" -> 
-    "NounouW/tutorial/01 Loading Continuous Data"}, "LinkTrails" -> "", 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$7119, 
+    "title" -> "01 Loading Continuous Data", "titlemodifier" -> "", 
+    "windowtitle" -> "01 Loading Continuous Data", "type" -> "Tutorial", 
+    "uri" -> "NounouW/tutorial/01 Loading Continuous Data"}, 
   "SearchTextTranslated" -> ""},
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
     StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
    Cell[
-    StyleData["Input"], CellContext -> "Global`"], 
+    StyleData["Input"], CellContext -> Notebook], 
    Cell[
-    StyleData["Output"], CellContext -> "Global`"], 
+    StyleData["Output"], CellContext -> Notebook], 
    Cell[
     StyleData["TutorialMoreAboutSection"], 
     CellGroupingRules -> {"SectionGrouping", 30}], 
@@ -528,7 +540,8 @@ StyleDefinitions->Notebook[{
    Cell[
     StyleData["TutorialRelatedLinksSection"], 
     CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
-  FrontEndVersion -> "9.0 for Microsoft Windows (64-bit) (January 25, 2013)", 
+  FrontEndVersion -> 
+  "11.0 for Microsoft Windows (64-bit) (September 21, 2016)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -542,87 +555,85 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[619, 21, 78, 1, 70, "TutorialColorBar"],
-Cell[700, 24, 180, 5, 70, "LinkTrail"],
-Cell[883, 31, 1969, 44, 70, "AnchorBarGrid",
+Cell[598, 21, 2394, 56, 54, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2877, 79, 63, 1, 70, "Title",
+Cell[3017, 81, 63, 1, 55, "Title",
  CellID->509267359],
-Cell[2943, 82, 45, 1, 70, "Caption",
+Cell[3083, 84, 45, 1, 35, "Caption",
  CellID->1891092685],
-Cell[2991, 85, 67, 1, 70, "MathCaption",
+Cell[3131, 87, 67, 1, 35, "MathCaption",
  CellID->836781195],
-Cell[3061, 88, 96, 3, 70, "Input",
+Cell[3201, 90, 96, 3, 30, "Input",
  CellID->2058623809],
-Cell[3160, 93, 1055, 38, 70, "Text",
+Cell[3300, 95, 1055, 38, 210, "Text",
  CellID->155067522],
-Cell[4218, 133, 1052, 38, 70, "Text",
+Cell[4358, 135, 1052, 38, 236, "Text",
  CellID->19345781],
-Cell[5273, 173, 472, 8, 70, "Print",
+Cell[5413, 175, 472, 8, 167, "Print",
  CellID->278735313],
-Cell[5748, 183, 93, 1, 70, "Text",
+Cell[5888, 185, 93, 1, 70, "Text",
  CellID->540242572],
 Cell[CellGroupData[{
-Cell[5866, 188, 320, 10, 70, "Input",
+Cell[6006, 190, 320, 10, 70, "Input",
  CellID->226352429],
-Cell[6189, 200, 650, 15, 84, "Output",
+Cell[6329, 202, 650, 15, 80, "Output",
  CellID->148958703]
 }, Open  ]],
-Cell[6854, 218, 233, 5, 70, "Text",
+Cell[6994, 220, 233, 5, 70, "Text",
  CellID->869539933],
-Cell[7090, 225, 289, 6, 70, "Text",
+Cell[7230, 227, 289, 6, 70, "Text",
  CellID->85002631],
 Cell[CellGroupData[{
-Cell[7404, 235, 160, 4, 70, "Input",
+Cell[7544, 237, 160, 4, 70, "Input",
  CellID->729692899],
-Cell[7567, 241, 408, 12, 38, "Output",
+Cell[7707, 243, 408, 12, 39, "Output",
  CellID->347825936]
 }, Open  ]],
-Cell[7990, 256, 149, 4, 70, "Text",
+Cell[8130, 258, 149, 4, 70, "Text",
  CellID->480999311],
 Cell[CellGroupData[{
-Cell[8164, 264, 170, 4, 70, "Input",
+Cell[8304, 266, 170, 4, 70, "Input",
  CellID->363680526],
-Cell[8337, 270, 448, 9, 84, "Output",
+Cell[8477, 272, 448, 9, 80, "Output",
  CellID->141824148]
 }, Open  ]],
-Cell[8800, 282, 128, 4, 70, "Text",
+Cell[8940, 284, 128, 4, 70, "Text",
  CellID->733562366],
 Cell[CellGroupData[{
-Cell[8953, 290, 196, 6, 70, "Input",
+Cell[9093, 292, 196, 6, 70, "Input",
  CellID->104165434],
-Cell[9152, 298, 448, 9, 84, "Output",
+Cell[9292, 300, 448, 9, 80, "Output",
  CellID->219568796]
 }, Open  ]],
-Cell[9615, 310, 47, 1, 70, "Text",
+Cell[9755, 312, 47, 1, 70, "Text",
  CellID->2894472],
-Cell[9665, 313, 425, 12, 70, "Text",
+Cell[9805, 315, 425, 12, 70, "Text",
  CellID->678455],
-Cell[10093, 327, 858, 22, 70, "Text",
+Cell[10233, 329, 770, 21, 70, "Text",
  CellID->280174873],
-Cell[10954, 351, 117, 3, 70, "Text",
+Cell[11006, 352, 117, 3, 70, "Text",
  CellID->480493008],
 Cell[CellGroupData[{
-Cell[11096, 358, 611, 17, 70, "Input",
+Cell[11148, 359, 611, 17, 70, "Input",
  CellID->218736180],
-Cell[11710, 377, 204, 7, 38, "Output",
+Cell[11762, 378, 204, 7, 39, "Output",
  CellID->739367261]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11951, 389, 273, 7, 70, "Input",
+Cell[12003, 390, 273, 7, 70, "Input",
  CellID->246501619],
-Cell[12227, 398, 3189, 69, 141, "Output",
+Cell[12279, 399, 3189, 69, 141, "Output",
  CellID->111466104]
 }, Open  ]],
-Cell[15431, 470, 95, 1, 70, "Text",
+Cell[15483, 471, 95, 1, 70, "Text",
  CellID->947321068],
-Cell[15529, 473, 325, 6, 70, "Text",
+Cell[15581, 474, 325, 6, 70, "Text",
  CellID->197914190],
-Cell[15857, 481, 303, 6, 70, "Text",
+Cell[15909, 482, 303, 6, 70, "Text",
  CellID->622176659]
 }, Open  ]],
-Cell[16175, 490, 23, 0, 70, "FooterCell"]
+Cell[16227, 491, 23, 0, 70, "FooterCell"]
 }
 ]
 *)

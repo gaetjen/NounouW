@@ -3,38 +3,36 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 9.0' *)
+(* CreatedBy='Mathematica 11.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[      5162,        163]
-NotebookOptionsPosition[      3184,        102]
-NotebookOutlinePosition[      4763,        147]
-CellTagsIndexPosition[      4720,        144]
-WindowTitle->Test - Wolfram Mathematica
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5735,        173]
+NotebookOptionsPosition[      3325,        104]
+NotebookOutlinePosition[      5423,        159]
+CellTagsIndexPosition[      5380,        156]
+WindowTitle->Test
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[" ", "TutorialColorBar",
- CellMargins->{{Inherited, Inherited}, {-5, 0}}],
-
-Cell[TextData[{
- ButtonBox["Mathematica",
-  BaseStyle->{"Link", "LinkTrail"},
-  ButtonData->"paclet:NounouW/guide/NounouW"],
- StyleBox[" > ", "LinkTrailSeparator"]
-}], "LinkTrail"],
-
 Cell[BoxData[GridBox[{
    {Cell["NOUNOU W TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
      ActionMenuBox[
-      FrameBox["\<\"URL \[RightGuillemet]\"\>",
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
        StripOnInput->False], {"\<\"NounouW/tutorial/Test\"\>":>
-      None, "\<\"Copy Mathematica url\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
@@ -42,7 +40,7 @@ Cell[BoxData[GridBox[{
        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-      Delimiter, "\<\"Copy web url\"\>":>
+      Delimiter, "\<\"Copy web URL\"\>":>
       Module[{DocumentationSearch`Private`nb$}, 
        DocumentationSearch`Private`nb$ = NotebookPut[
           Notebook[{
@@ -50,20 +48,24 @@ Cell[BoxData[GridBox[{
              BoxData[
               MakeBoxes[
                Hyperlink[
-               "http://reference.wolfram.com/mathematica/NounouW/tutorial/\
-Test.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
-           Visible -> False]]; 
-       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+               "http://reference.wolfram.com/language/NounouW/tutorial/Test.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
        NotebookClose[DocumentationSearch`Private`nb$]; 
-       Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
         NotebookLocate[{
           URL[
            StringJoin[
-           "http://reference.wolfram.com/mathematica/", 
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$7722], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
             "NounouW/tutorial/Test", ".html"]], None}]}]},
       Appearance->None,
-      MenuAppearance->Automatic]],
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
      LineSpacing->{1.4, 0}]], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
@@ -90,7 +92,7 @@ Cell[BoxData["XXXX"], "Input",
  CellID->2058623809],
 
 Cell[BoxData["XXXX"], "Output",
- ImageSize->{40, 17},
+ ImageSize->{36, 18},
  ImageMargins->{{0, 0}, {0, 0}},
  ImageRegion->{{0, 1}, {0, 1}},
  CellLabel->"Out[1]=",
@@ -104,25 +106,34 @@ Saveable->False,
 ScreenStyleEnvironment->"Working",
 WindowSize->{725, 750},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-WindowTitle->"Test - Wolfram Mathematica",
+WindowTitle->"Test",
 TaggingRules->{
- "ModificationHighlight" -> False, 
-  "Metadata" -> {
-   "built" -> "{2016, 8, 4, 11, 16, 50.1199494}", "context" -> "NounouW`", 
-    "keywords" -> {}, "index" -> True, "label" -> "Nounou W Tutorial", 
-    "language" -> "en", "paclet" -> "NounouW", "status" -> "None", "summary" -> 
-    "dsfwe XXXX.", "synonyms" -> {}, "title" -> "Test", "type" -> "Tutorial", 
-    "uri" -> "NounouW/tutorial/Test"}, "LinkTrails" -> "", 
-  "SearchTextTranslated" -> ""},
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NounouW/guide/NounouW", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2016, 12, 18, 20, 35, 19.0881505}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Nounou W Tutorial", "language" -> "en", "paclet" -> "NounouW", "status" -> 
+    "None", "summary" -> "dsfwe XXXX.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$7671, "title" -> "Test",
+     "titlemodifier" -> "", "windowtitle" -> "Test", "type" -> "Tutorial", 
+    "uri" -> "NounouW/tutorial/Test"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[
     StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
    Cell[
-    StyleData["Input"], CellContext -> "Global`"], 
+    StyleData["Input"], CellContext -> Notebook], 
    Cell[
-    StyleData["Output"], CellContext -> "Global`"], 
+    StyleData["Output"], CellContext -> Notebook], 
    Cell[
     StyleData["TutorialMoreAboutSection"], 
     CellGroupingRules -> {"SectionGrouping", 30}], 
@@ -132,7 +143,8 @@ StyleDefinitions->Notebook[{
    Cell[
     StyleData["TutorialRelatedLinksSection"], 
     CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
-  FrontEndVersion -> "9.0 for Microsoft Windows (64-bit) (January 25, 2013)", 
+  FrontEndVersion -> 
+  "11.0 for Microsoft Windows (64-bit) (September 21, 2016)", 
   StyleDefinitions -> "Default.nb"]
 ]
 (* End of Notebook Content *)
@@ -146,25 +158,23 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[597, 21, 78, 1, 70, "TutorialColorBar"],
-Cell[678, 24, 180, 5, 70, "LinkTrail"],
-Cell[861, 31, 1846, 41, 70, "AnchorBarGrid",
+Cell[576, 21, 2272, 53, 54, "AnchorBarGrid",
  CellID->1],
 Cell[CellGroupData[{
-Cell[2732, 76, 41, 1, 70, "Title",
+Cell[2873, 78, 41, 1, 55, "Title",
  CellID->509267359],
-Cell[2776, 79, 42, 1, 70, "Text",
+Cell[2917, 81, 42, 1, 34, "Text",
  CellID->1534169418],
-Cell[2821, 82, 45, 1, 70, "Caption",
+Cell[2962, 84, 45, 1, 35, "Caption",
  CellID->1891092685],
 Cell[CellGroupData[{
-Cell[2891, 87, 74, 2, 70, "Input",
+Cell[3032, 89, 74, 2, 30, "Input",
  CellID->2058623809],
-Cell[2968, 91, 162, 5, 38, "Output",
+Cell[3109, 93, 162, 5, 39, "Output",
  CellID->1181321046]
 }, Open  ]]
 }, Open  ]],
-Cell[3157, 100, 23, 0, 70, "FooterCell"]
+Cell[3298, 102, 23, 0, 44, "FooterCell"]
 }
 ]
 *)
