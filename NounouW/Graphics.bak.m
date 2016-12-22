@@ -2,7 +2,9 @@
 
 (* Mathematica Package *)
 BeginPackage[ "NounouW`Graphics`", 
-{"HokahokaW`", "HokahokaW`Graphics`", "JLink`", "NounouW`","NounouW`Data`"}
+	{"HokahokaW`","HokahokaW`Graphics`",
+	"JLink`",
+	"NounouW`","NounouW`Data`"}
 ];
 
 
@@ -35,7 +37,8 @@ Options[NNDetectorPlot]=
 (*NNTraceOverviewPlot*)
 
 
-NNTraceOverviewPlot::usage="";
+NNTraceOverviewPlot::usage=
+"";
 
 
 NNTraceOverviewPlot$UniqueOptions = {
