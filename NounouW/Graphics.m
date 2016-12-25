@@ -2,7 +2,7 @@
 
 (* Mathematica Package *)
 BeginPackage[ "NounouW`Graphics`", 
-{"HokahokaW`", "HokahokaW`Graphics`", "JLink`", "NounouW`","NounouW`Data`"}
+	{"HokahokaW`", "HokahokaW`Graphics`", "JLink`", "NounouW`","NounouW`Data`"}
 ];
 
 
@@ -10,7 +10,7 @@ BeginPackage[ "NounouW`Graphics`",
 (*Declarations*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNDetectorPlot/NNDetectorInsetPlot*)
 
 
@@ -44,7 +44,7 @@ NNTraceOverviewPlot$UniqueOptions = {
 NNTraceOverviewPlot$OverrideOptions = {
 	AspectRatio -> 1/10, PlotStyle->{Opacity[0.5]}, AxesLabel->Automatic,
 	PlotRange->Automatic, ImageSize->10*72
-};
+};f
 
 Options[NNTraceOverviewPlot] = HHJoinOptionLists[ 
 	NNTraceOverviewPlot$UniqueOptions, NNTraceOverviewPlot$OverrideOptions,

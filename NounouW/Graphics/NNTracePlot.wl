@@ -252,13 +252,22 @@ Block[{
 			Row[{
 				Button["Print graph to notebook",
 					NotebookWrite[$NNTracePlotManipulate$Notebook,
+						TextCell[ "{ " <> ToString[start] <> " ;; " 
+									<> ToString[ start + $NNTracePlotManipulate$tempPlotRangeXFrames]
+									<> ", " <> ToString[segment] <> " }"
+						]
+					];
+					NotebookWrite[$NNTracePlotManipulate$Notebook,
 						Cell[ BoxData[ToBoxes[$NNTracePlotManipulate$Graphic]], "Output", CellTags-> {"testCT"}]
 					]
 				], 
 				Spacer[20],
 				Button["Print raster to notebook",
 					NotebookWrite[$NNTracePlotManipulate$Notebook,
-						TextCell[ "Hello" ]
+						TextCell[ "{ " <> ToString[start] <> " ;; " 
+									<> ToString[ start + $NNTracePlotManipulate$tempPlotRangeXFrames]
+									<> ", " <> ToString[segment] <> " }"
+						]
 					];
 					NotebookWrite[$NNTracePlotManipulate$Notebook,
 						Cell[ BoxData[ToBoxes[Rasterize[$NNTracePlotManipulate$Graphic]]], "Output", CellTags-> {"testCT"}]
@@ -277,7 +286,7 @@ Block[{
 		WindowTitle->"NNTracePlotManipulate: " <> dataObj@toString[]
 	];
 
-	Print["done"];
+	Print["Closed " <> DateString[]];
 	
 ];
 
