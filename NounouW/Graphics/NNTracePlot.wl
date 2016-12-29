@@ -198,6 +198,8 @@ $NNTracePlotManipulate$Notebook = None;
 $NNTracePlotManipulate$Graphic = None;
 $NNTracePlotManipulate$tempOpts = None;
 $NNTracePlotManipulate$tempPlotRangeXFrames = None;
+$NNTracePlotManipulate$tempSegmentList = None;
+$NNTracePlotManipulate$tempSegmentLengthList = None;
 (*$NNTracePlotManipulate$tempStackTable = None;
 $NNTracePlotManipulate$optAspectRatio = None;
 $NNTracePlotManipulate$optPlotRangeY = None;*)
@@ -221,11 +223,14 @@ NNTracePlotManipulate[
 		opts:OptionsPattern[]
 ]:= 
 Block[{
-	tempSegmentList, tempSegmentLengthsMax
+	tempSegmentCount(*tempSegmentLengthsMax*)
 	},
 	
-	tempSegmentList = Table[n, {n, 0, dataObj@timing[]@segmentCount[]-1}];
-	tempSegmentLengthsMax = Max[ dataObj@timing[]@segmentLengths[] ];
+	tempSegmentCount = dataObj@timing[]@segmentCount[];
+	$NNTracePlotManipulate$tempSegmentList = Table[n, {n, 0, tempSegmentCount-1}];
+	$NNTracePlotManipulate$tempSegmentLengthList = 
+		Table[dataObj@timing[]@segmentLength[n], {n, 0, tempSegmentCount-1}];
+	(*tempSegmentLengthsMax = Max[ dataObj@timing[]@segmentLengths[] ];*)
 	(*==========Handle time range options==========*)
 	$NNTracePlotManipulate$tempPlotRangeXFrames = Round[length];
 	$NNTracePlotManipulate$Notebook = SelectedNotebook[];
@@ -239,17 +244,18 @@ Block[{
 				Sequence@@$NNTracePlotManipulate$tempOpts
 			],
 			
-			Row[{
-				Control[{{segment, 0, "segment:"}, tempSegmentList, ControlType->PopupMenu}],
-				Control[{{start, 0, "trace start:"}, 
-					0, tempSegmentLengthsMax, $NNTracePlotManipulate$tempPlotRangeXFrames}]
-			}],
+			{{segment, 0, "segment: "}, $NNTracePlotManipulate$tempSegmentList, SetterBar},
+			{{start, 0, "trace start: "}, 
+				0, 
+				Dynamic[$NNTracePlotManipulate$tempSegmentLengthList[[segment + 1]]
+					 - $NNTracePlotManipulate$tempPlotRangeXFrames-1],
+				Appearance -> "Open"},
 			Row[{
 				Button["Print graph to notebook",
 					NotebookWrite[$NNTracePlotManipulate$Notebook,
-						Cell[ "NNRange[ " <> ToString[start] <> " ;; " <> 
-									ToString[ start + $NNTracePlotManipulate$tempPlotRangeXFrames] <> 
-									", " <> ToString[segment] <> " ]",
+						Cell[ "NNRange[ " <> IntegerString[Round[start]] <> " ;; " <> 
+									IntegerString[Round[ start + $NNTracePlotManipulate$tempPlotRangeXFrames]] <> 
+									", " <> IntegerString[segment] <> " ]",
 								"Output"
 						]
 					];
@@ -260,9 +266,9 @@ Block[{
 				Spacer[20],
 				Button["Print raster to notebook",
 					NotebookWrite[$NNTracePlotManipulate$Notebook,
-						Cell[ "NNRange[ " <> ToString[start] <> " ;; " <> 
-									ToString[ start + $NNTracePlotManipulate$tempPlotRangeXFrames] <> 
-									", " <> ToString[segment] <> " ]",
+						Cell[ "NNRange[ " <> IntegerString[Round[start]] <> " ;; " <> 
+									IntegerString[Round[ start + $NNTracePlotManipulate$tempPlotRangeXFrames]] <> 
+									", " <> IntegerString[segment] <> " ]",
 								"Output"
 						]
 					];
@@ -277,7 +283,7 @@ Block[{
 				Spacer[20],
 				DefaultButton[DialogReturn["Exit"]]
 			}],
-			ContinuousAction -> False
+			ContinuousAction -> True
 		](*Manipulate*)]
 		}, Modal->True, Background -> White,
 		WindowTitle->"NNTracePlotManipulate: " <> dataObj@toString[]
