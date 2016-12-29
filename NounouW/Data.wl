@@ -238,7 +238,7 @@ Ms[ something_ ]:= NNMillisecond[ something ];
 Ms[args___]:=Message[Ms::invalidArgs, {args}];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*$ToNNRangeSpecifier*)
 
 
@@ -268,7 +268,7 @@ $ToNNRangeSpecifier[ {Span[start_/;NumberQ[start], last_/;NumberQ[last], step_/;
 	NN`NNRange[Round[start], Round[last], Round[step], Round[segment]];
 
 
-(*  timestamp -> start;;last  *)
+(*  NNTimestamp[timestamp] -> start;;last  *)
 $ToNNRangeSpecifier[ 
 	Rule[ timestamp_NNTimestamp, 
 		  Span[   start_/;NumberQ[start], last_/;NumberQ[last] ]
@@ -300,6 +300,7 @@ $ToNNRangeSpecifier[
 
 (* All *)
 $ToNNRangeSpecifier[ {All, segment_Integer} ] := NN`NNRangeAll[1, segment];
+$ToNNRangeSpecifier[ NNRange[All, segment_Integer] ] := NN`NNRangeAll[1, segment];
 $ToNNRangeSpecifier[ {All, Rule[ NNSegment, segment_Integer]} ] := NN`NNRangeAll[1, segment];
 $ToNNRangeSpecifier[ All ] := NN`NNRangeAll[];
 
@@ -438,7 +439,7 @@ NNReadTimepoints[timingObj, $ToNNRangeSpecifier[range], rest];
 NNReadTimepoints[args___]:=Message[NNReadTimepoints::invalidArgs, {args}];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*NNReadTrace*)
 
 
@@ -509,7 +510,7 @@ NNReadPage[dataObj, Range[dataObj@getChannelCount[]]-1, range, opts];
 
 NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 			channels_List/;And@@(NumberQ/@channels), 
-			range_Rule, 
+			range_, 
 			opts:OptionsPattern[]]:= NNReadPage[dataObj, channels, $ToNNRangeSpecifier[range], opts];
 
 NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
@@ -527,16 +528,16 @@ NNReadPage[dataObj, channels, #, opts]& /@ rangeList;
 
 NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 			channels_List/;And@@(NumberQ/@channels), 
-			range_Rule, 
+			range_, 
 			opts:OptionsPattern[]]:= 
 NNReadPage[dataObj, channels, $ToNNRangeSpecifier[range], opts];
 
 
-NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+(*NNReadPage[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 			channels_List/;And@@(NumberQ/@channels), 
 			range_List/;(Head[range[[1]]===Span]), 
 			opts:OptionsPattern[]]:= 
-NNReadPage[dataObj, channels, $ToNNRangeSpecifier[range], opts];
+NNReadPage[dataObj, channels, $ToNNRangeSpecifier[range], opts];*)
 
 
 (*Main definition*)
@@ -640,6 +641,7 @@ NNFilterMedianSubtract[args___]:=Message[NNFilterMedianSubtract::invalidArgs, {a
 NNFilterFIR[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], {highPass_/;NumberQ[highPass], lowPass_/;NumberQ[lowPass]}, opts:OptionsPattern[]]:=
 Module[{tempret},
 	tempret=JavaNew[$NNJavaClass$NNFilterFIR, dataObj];
+	tempret@setTaps[ 32000 ];
 	tempret@setFilterHz[ highPass, lowPass ];
 	tempret
 ];
@@ -676,7 +678,7 @@ Module[{tempret},
 NNFilterTrodeNormalize[args___]:=Message[NNFilterTrodeNormalize::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNEvents Accessors*)
 
 

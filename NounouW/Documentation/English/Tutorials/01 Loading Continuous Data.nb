@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20816,        632]
+NotebookDataLength[     20814,        632]
 NotebookOptionsPosition[     16254,        493]
-NotebookOutlinePosition[     18819,        556]
-CellTagsIndexPosition[     18776,        553]
+NotebookOutlinePosition[     18817,        556]
+CellTagsIndexPosition[     18774,        553]
 WindowTitle->01 Loading Continuous Data
 WindowFrame->Normal*)
 
@@ -61,7 +61,7 @@ Loading Continuous Data.html"], StandardForm]], "Input", TextClipboardType ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$7191], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$7189], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "NounouW/tutorial/01 Loading Continuous Data", ".html"]], 
@@ -505,7 +505,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2016, 12, 18, 20, 35, 17.3680521}", 
+   "built" -> "{2016, 12, 27, 0, 4, 42.2563543}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "NounouW`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -517,7 +517,7 @@ Artifact info as of: Tue 2 Aug 2016 08:45:33 Local repo path: \
 C:\\prog\\_w\\HokahokaW\\.git Current branch [hash]: dev \
 [ada9721f7ce16dc5c1a303a892475b6cbf3373e7] Remote: origin \
 (https://ktakagaki@github.com/ktakagaki/HokahokaW.git)", "synonyms" -> {}, 
-    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$7119, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$7117, 
     "title" -> "01 Loading Continuous Data", "titlemodifier" -> "", 
     "windowtitle" -> "01 Loading Continuous Data", "type" -> "Tutorial", 
     "uri" -> "NounouW/tutorial/01 Loading Continuous Data"}, 
