@@ -34,13 +34,13 @@
 	<property name="app.name" value="NounouW"/>
 	<property name="pacletContainer" value="NounouW"/>
 	<property name="docInputDir" value="Documentation"/>
-	<property name="docOutputDir" value="NounouW\Documentation"/>
-	<property name="dist" value="${basedir}\build" />
+	<property name="docOutputDir" value="NounouW/Documentation"/>
+	<property name="dist" value="${basedir}/build" />
 	
 	<target name="clean">
 		<delete  dir="${dist}" />
-		<delete  dir="${basedir}\${pacletContainer}\${docInputDir}" />
-		<delete  dir="${basedir}\${pacletContainer}-HTML" />
+		<delete  dir="${basedir}/${pacletContainer}/${docInputDir}" />
+		<delete  dir="${basedir}/${pacletContainer}-HTML" />
 	</target>
 	
 	<target name="docbuild">
@@ -56,20 +56,20 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
  These need to be set appropriately for your build.
 -->		
 		<property name="appPath" value="${appPath.default}"/>
-		<property name="mathematicaInstallDir" value="C:\Program Files\Wolfram Research\Mathematica\10.4"/>
-		<property name="mathExe" value="C:\Program Files\Wolfram Research\Mathematica\10.4\MathKernel.exe"/>
+		<property name="mathematicaInstallDir" value="/usr/local/Wolfram/Mathematica/11.0"/>
+		<property name="mathExe" value="/usr/local/Wolfram/Mathematica/11.0/MathKernel"/>
 
 <!--
  If you move the build file, you need to change inputDir, outputDir, and logDir.
 -->
 
-		<property name="inputDir" value="${basedir}\${docInputDir}" />
-		<property name="outputDirNB" value="${dist}\${pacletContainer}/${docInputDir}" />
-		<property name="outputDirWeb" value="${dist}\${pacletContainer}-HTML" />
-		<!--property name="outputDirNB" value="${basedir}\${pacletContainer}/${docInputDir}" />
-		<property name="outputDirWeb" value="${basedir}\${pacletContainer}-HTML" / -->
-		<property name="logDir" value="${basedir}\log" />
-		<property name="jlinkpath" value="${mathematicaInstallDir}\SystemFiles\Links\JLink"/>
+		<property name="inputDir" value="${basedir}/${docInputDir}" />
+		<property name="outputDirNB" value="${basedir}/${pacletContainer}/${docInputDir}" />
+		<property name="outputDirWeb" value="${basedir}/${pacletContainer}-HTML" />
+		<!--property name="outputDirNB" value="${basedir}/${pacletContainer}/${docInputDir}" />
+		<property name="outputDirWeb" value="${basedir}/${pacletContainer}-HTML" / -->
+		<property name="logDir" value="${basedir}/log" />
+		<property name="jlinkpath" value="${mathematicaInstallDir}/SystemFiles/Links/JLink"/>
 
 		<echo message="DocumentationBuild: ${appPath}"/>
 		<echo message="Mathematica Install Dir: ${mathematicaInstallDir}"/>
@@ -84,8 +84,8 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
 
 	  	<path id="jlink.lib">
 	    	<fileset dir="${jlinkpath}">
-	      		<include name="**\JLink.jar"/>
-	      		<include name="**\SystemFiles\*"/>
+	      		<include name="**/JLink.jar"/>
+	      		<include name="**/SystemFiles/*"/>
 	    		</fileset>
 	  	</path>
 
@@ -97,7 +97,7 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
 
 		<property name="JLinkLoaded" value="true"/>
 		
-		<ant antfile="${appPath}\DocumentationBuild\SystemFiles\ant\Build\notebook.xml"
+		<ant antfile="${appPath}/DocumentationBuild/SystemFiles/ant/Build/notebook.xml"
 	           target="main">
 	    	<property name="outputDir" value="${outputDirNB}" />
 	        <property name="language" value="English" />
@@ -111,7 +111,7 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
 	</target>
 
 	<target name="createHTML" if="Mathematica.DocumentationBuild.createHTML">
-	    <ant antfile="${appPath}\DocumentationBuild\SystemFiles\ant\Build\html.xml"
+	    <ant antfile="${appPath}/DocumentationBuild/SystemFiles/ant/Build/html.xml"
 	           target="main">
 				<property name="local" value="True"/>
 				<property name="completeHTMLQ" value="True"/>
@@ -122,16 +122,16 @@ or set Mathematica.DocumentationBuild.createHTML.setting to Mathematica.Document
 	</target>
 	
 	<target name="setupPaclet" if="buildNBDocs">	
-		<!-- copy file="${basedir}\PacletInfo.m" todir="${dist}\${pacletContainer}" overwrite="true" / -->
-		<copy todir="${basedir}\${docOutputDir}" overwrite="true" >
-		<fileset dir="${basedir}\${docInputDir}">
-		    <exclude name="*\Guides\**"/>
-		    <exclude name="*\ReferencePages\**"/>
-	    	<exclude name="*\Tutorials\**"/>
+		<!-- copy file="${basedir}/PacletInfo.m" todir="${dist}/${pacletContainer}" overwrite="true" / -->
+		<copy todir="${basedir}/${docOutputDir}" overwrite="true" >
+		<fileset dir="${basedir}/${docInputDir}">
+		    <exclude name="*/Guides/**"/>
+		    <exclude name="*/ReferencePages/**"/>
+	    	<exclude name="*/Tutorials/**"/>
 		</fileset>
 		</copy>
-		<copy todir="${basedir}\${pacletName}" overwrite="true" >
-			<fileset dir="${basedir}\build\${pacletName}" />
+		<copy todir="${basedir}/${pacletName}" overwrite="true" >
+			<fileset dir="${basedir}/${pacletName}" />
 		</copy>
 		<mathematica exe="${mathExe}" quit="false" timeout="300" failonerror="False" timeoutproperty="limit_reached">
 		      <![CDATA[
