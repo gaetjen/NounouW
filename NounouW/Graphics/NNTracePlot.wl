@@ -80,6 +80,11 @@ Begin["`Private`"];
 (*Open up one-element lists*)
 NNTracePlot[{dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]}, rest___]:= 
 	NNTracePlot[dataObj, rest];
+(*Open up NNDataChannel objects*)
+NNTracePlot[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel], rest___]:= 
+	NNTracePlot[NNData[{dataChannelObj}], {0}, rest];
+NNTracePlot[{dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel]}, rest___]:= 
+	NNTracePlot[NNData[{dataChannelObj}], {0}, rest];
 
 
 (*This signature will reshape for all channels*)
