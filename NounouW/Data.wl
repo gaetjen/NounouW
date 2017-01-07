@@ -45,7 +45,7 @@ which may not be straight forward due to lack of zero padding. \
 For example, XXX\\CSC2.ncs => XXX\\CSC10.ncs => XXX\\CSC20.ncs";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
@@ -104,7 +104,7 @@ Options[NNReadTimestamps] = {
 };
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilter methods*)
 
 
@@ -113,7 +113,7 @@ NNFilterDecimate::usage="";
 NNFilterMedianSubtract::usage="";
 NNFilterFIR::usage="";
 NNFilterBuffer::usage="";
-NNFilterTrodeNormalize::usage="";
+NNFilterTrodeRereference::usage="";
 
 
 (* ::Subsection:: *)
@@ -584,7 +584,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilterXXX*)
 
 
@@ -670,12 +670,20 @@ NNFilterBuffer[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDat
 NNFilterBuffer[args___]:=Message[NNFilterBuffer::invalidArgs, {args}];
 
 
-NNFilterTrodeNormalize[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], opts:OptionsPattern[]]:=
+NNFilterTrodeRereference[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], opts:OptionsPattern[]]:=
 Module[{tempret},
-	JavaNew[$NNJavaClass$NNFilterTrodeNormalize, dataObj]
+	JavaNew[$NNJavaClass$NNFilterTrodeRereference, dataObj]
 ];
 
-NNFilterTrodeNormalize[args___]:=Message[NNFilterTrodeNormalize::invalidArgs, {args}];
+NNFilterTrodeRereference[
+	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
+	weights_List
+	]:=
+Module[{tempret},
+	JavaNew[$NNJavaClass$NNFilterTrodeRereference, dataObj, weights]
+];
+
+NNFilterTrodeRereference[args___]:=Message[NNFilterTrodeRereference::invalidArgs, {args}];
 
 
 (* ::Subsection::Closed:: *)
