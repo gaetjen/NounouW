@@ -53,7 +53,7 @@ $NNJavaClass$NNFilterDecimate        = "nounou.elements.data.filters.NNFilterDec
 $NNJavaClass$NNFilterMedianSubtract  = "nounou.elements.data.filters.NNFilterMedianSubtract";
 $NNJavaClass$NNFilterFIR             = "nounou.elements.data.filters.NNFilterFIR";
 $NNJavaClass$NNFilterBuffer          = "nounou.elements.data.filters.NNFilterBuffer";
-$NNJavaClass$NNFilterTrodeNormalize  = "nounou.elements.data.filters.NNFilterTrodeNormalize";
+$NNJavaClass$NNFilterTrodeRereference  = "nounou.elements.data.filters.NNFilterTrodeRereference";
 
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";

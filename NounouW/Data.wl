@@ -18,6 +18,10 @@ NNRange::usage="Marker for specifying data range and segment (e.g. NNRange[0 ;; 
 NNSegment::usage="Marker for a rule specifying the relevant data segment (e.g. NNSegment \[Rule] 0)"; 
 
 
+(* ::Subsection:: *)
+(*Data markers/specifier related converters*)
+
+
 NNConvert::usage="Converts between (time) units.";
 
 
@@ -45,7 +49,7 @@ which may not be straight forward due to lack of zero padding. \
 For example, XXX\\CSC2.ncs => XXX\\CSC10.ncs => XXX\\CSC20.ncs";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
@@ -64,6 +68,18 @@ NNReadInfo::usage =
 The following arguments can be given for what to read:\n          \
 + NNData: \"ChannelCount\", \"SegmentCount\"\n          \
 + NNLayout: \"ChannelCount\"";
+
+
+(* ::Subsection:: *)
+(*NNData and NNDataChannels*)
+
+
+NNData::usage =
+"Wrap an array of NNDataChannel object(s) to use (together) as a regular NNData object.";
+
+
+NNDataChannels::usage =
+"Decompose a NNData object to a List (Array) of NNDataChannel objects for individual use.";
 
 
 (* ::Subsubsection:: *)
@@ -87,7 +103,7 @@ NNReadPage::usage="";
 Options[NNReadPage] = {(*NNOptReturnTimepoints -> True*)};
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Discrete*)
 
 
@@ -104,7 +120,7 @@ Options[NNReadTimestamps] = {
 };
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilter methods*)
 
 
@@ -113,7 +129,7 @@ NNFilterDecimate::usage="";
 NNFilterMedianSubtract::usage="";
 NNFilterFIR::usage="";
 NNFilterBuffer::usage="";
-NNFilterTrodeNormalize::usage="";
+NNFilterTrodeRereference::usage="";
 
 
 (* ::Subsection:: *)
@@ -130,11 +146,11 @@ NNFilterTrodeNormalize::usage="";
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
-(*Data marker/specifier related converters*)
+(* ::Subsection::Closed:: *)
+(*Data markers/specifier related converters*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNConvert*)
 
 
@@ -171,7 +187,7 @@ NNConvert[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNTimingElement],
 NNConvert[args___]:=Message[NNConvert::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNTimestamp, Ts*)
 
 
@@ -210,7 +226,7 @@ Ts[ something_ ]:= NNTimestamp[ something ];
 Ts[args___]:=Message[Ts::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNMillisecond, Ms*)
 
 
@@ -238,7 +254,7 @@ Ms[ something_ ]:= NNMillisecond[ something ];
 Ms[args___]:=Message[Ms::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*$ToNNRangeSpecifier*)
 
 
@@ -367,11 +383,11 @@ NNFilenameSort[fileNames:{__String}]:=
 NNFilenameSort[args___]:=Message[NNFilenameSort::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNPrintInfo*)
 
 
@@ -439,7 +455,7 @@ NNReadTimepoints[timingObj, $ToNNRangeSpecifier[range], rest];
 NNReadTimepoints[args___]:=Message[NNReadTimepoints::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNReadTrace*)
 
 
@@ -496,7 +512,7 @@ NNReadTrace[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataCh
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNReadPage*)
 
 
@@ -582,6 +598,22 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 
 
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
+
+
+(* ::Subsection:: *)
+(*NNData and NNDataChannels*)
+
+
+NNData[{dataChannelObj__/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel]}]:=
+	JavaNew[$NNJavaClass$NNDataChannelArray, {dataChannelObj}];
+
+NNData[args___]:=Message[NNData::invalidArgs, {args}];
+
+
+NNDataChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]]:=
+	dataObj@extractNNDataChannels[];
+
+NNDataChannels[args___]:=Message[NNDataChannels::invalidArgs, {args}];
 
 
 (* ::Subsection::Closed:: *)
@@ -670,12 +702,20 @@ NNFilterBuffer[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDat
 NNFilterBuffer[args___]:=Message[NNFilterBuffer::invalidArgs, {args}];
 
 
-NNFilterTrodeNormalize[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], opts:OptionsPattern[]]:=
+NNFilterTrodeRereference[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], opts:OptionsPattern[]]:=
 Module[{tempret},
-	JavaNew[$NNJavaClass$NNFilterTrodeNormalize, dataObj]
+	JavaNew[$NNJavaClass$NNFilterTrodeRereference, dataObj]
 ];
 
-NNFilterTrodeNormalize[args___]:=Message[NNFilterTrodeNormalize::invalidArgs, {args}];
+NNFilterTrodeRereference[
+	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
+	weights_List
+	]:=
+Module[{tempret},
+	JavaNew[$NNJavaClass$NNFilterTrodeRereference, dataObj, weights]
+];
+
+NNFilterTrodeRereference[args___]:=Message[NNFilterTrodeRereference::invalidArgs, {args}];
 
 
 (* ::Subsection::Closed:: *)
