@@ -20,14 +20,14 @@ General::nullArgument="At least one of the required arguments is null!";
 HHPackageMessage["NounouW`"];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Load Static NN Object*)
 
 
 (*Convenience object for static methods*)
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
 NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
-(*NNOpt=LoadJavaClass["nounou.options.NNOpt", StaticsVisible->False, AllowShortContext->True];*)
+NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
 Print[NN`toString[]];
 
 
@@ -53,7 +53,11 @@ $NNJavaClass$NNFilterDecimate        = "nounou.elements.data.filters.NNFilterDec
 $NNJavaClass$NNFilterMedianSubtract  = "nounou.elements.data.filters.NNFilterMedianSubtract";
 $NNJavaClass$NNFilterFIR             = "nounou.elements.data.filters.NNFilterFIR";
 $NNJavaClass$NNFilterBuffer          = "nounou.elements.data.filters.NNFilterBuffer";
-$NNJavaClass$NNFilterTrodeRereference  = "nounou.elements.data.filters.NNFilterTrodeRereference";
+$NNJavaClass$NNFilterTrodeRereference = 
+									   "nounou.elements.data.filters.NNFilterTrodeRereference";
+$NNJavaClass$NNFilterMasked          = "nounou.elements.data.filters.NNFilterMasked";
+$NNJavaClass$NNFilterAppendCalculatedChannels =
+							           "nounou.elements.data.filters.NNFilterAppendCalculatedChannels";
 
 
 $NNJavaClass$NNDataChannel          = "nounou.elements.data.NNDataChannel";
@@ -70,6 +74,9 @@ $NNJavaClass$NNRangeEvent =     "nounou.ranges.NNRangeEvent";
 $NNJavaClass$NNRangeAll =       "nounou.ranges.NNRangeAll";
 $NNJavaClass$NNRangeTs =        "nounou.ranges.NNRangeTs";
 $NNJavaClass$NNRangeTsEvent =   "nounou.ranges.NNRangeTsEvent";
+
+
+$NNJavaClass$NNTimestampMask = "nounou.elements.mask.NNTimestampMask";
 
 
 (* ::Subsection:: *)

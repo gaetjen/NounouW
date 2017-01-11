@@ -3,7 +3,7 @@
 (* Mathematica Package *)
 BeginPackage["NounouW`Graphics`NNTracePlot`", 
 	{"HokahokaW`","HokahokaW`Graphics`","JLink`",
-	"NounouW`","NounouW`Data`"}
+	"NounouW`", "NounouW`Data`"}
 ];
 
 
@@ -13,9 +13,6 @@ BeginPackage["NounouW`Graphics`NNTracePlot`",
 
 (* ::Subsection:: *)
 (*Related options*)
-
-
-(*NNOptGridLines::usage="";*)
 
 
 (* ::Subsection:: *)
@@ -29,10 +26,10 @@ NNTracePlot[ <<JavaObject[nounou.DataReader]>> , channel_specification, frame_sp
 
 
 NNTracePlot$UniqueOptions = {
-	NNOptTimeUnit -> "ms", NNOptStack -> Automatic,
+	NNOptTimeUnit -> NNMillisecond(*"ms"*), NNOptStack -> Automatic,
 	NNOptAmplificationFactor -> 16,
-	(*NNOptGridLines -> {},*)
-	NNOptPlotLabel -> Automatic
+	NNOptPlotLabel -> Automatic,
+	NNOptMask -> None
 	(*NNValueUnit -> Absolute, ScaleBars->{None, None}, *)  
 	(*NNBaselineCorrection->Mean,*) (*Automatic*)
 	(*, NNMasking->False*)
@@ -108,7 +105,8 @@ NNTracePlot[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
 Block[{ optTimeUnit, 
 		tempData, tempDataUnit, tempTimepoints,
 		optGridLines, optStack, optPlotLabel,
-		tempgr},
+		tempgr, tempGrAbsolute,
+		optMask, tempMaskFrTs},
 
 	(*==========Handle unit options==========*)
 	optTimeUnit = OptionValue[ NNOptTimeUnit ];
@@ -122,12 +120,15 @@ Block[{ optTimeUnit,
 	optGridLines = OptionValue[GridLines];
 	optGridLines = Switch[ Head[optGridLines],
 		NNTimestamp,  {NNConvert[ dataObj, optGridLines, optTimeUnit ], None},
-		NNMillisecond, {NNConvert[ dataObj, optGridLines, optTimeUnit], None},
+		NNMillisecond, {NNConvert[ dataObj, optGridLines, optTimeUnit, 
+							NNSegment -> range@getInstantiatedSegment[dataObj]
+						], None},
 		List, optGridLines,
-		_, optGridLines(*Message[NNTracePlot::invalidOptionValue, "GridLines", optGridLines]; {}*)
+		_, optGridLines
+		(*Message[NNTracePlot::invalidOptionValue, "GridLines", optGridLines]; {}*)
 	];
 
-		(*==========Handle graphing options==========*)
+	(*==========Handle graphing options==========*)
 	optStack = OptionValue[NNOptStack];
 	If[ optStack === Automatic, 
 		optStack = (dataObj@scaling[]@maxValue[]- dataObj@scaling[]@minValue[])/2
@@ -142,10 +143,28 @@ Block[{ optTimeUnit,
 		Transpose[{tempTimepoints,#}]& /@ tempData, 
 		Sequence@@HHJoinOptionLists[ ListLinePlot,
 			{ GridLines -> optGridLines  },
-			{opts},
-			{  AxesLabel-> {optTimeUnit, tempDataUnit} },
+			{ opts },
+			{ AxesLabel-> {optTimeUnit, tempDataUnit} },
 			Options[NNTracePlot]
 		]
+	];
+	
+	(*==========Mask==========*)
+	optMask = OptionValue[NNOptMask];
+	tempgr = If[ NNJavaObjectQ[optMask, $NNJavaClass$NNTimestampMask],
+		tempMaskFrTs = Switch[ optTimeUnit,
+			NNTimestamp, optMask@readActiveMasks[ dataObj, range],
+			NNMillisecond, optMask@readActiveMaskMs[ dataObj, range],
+			NNFrame, optMask@readActiveMaskFrames[ dataObj, range]
+		];
+		tempGrAbsolute = AbsoluteOptions[tempgr, PlotRange][[1, 2]];
+		(*{PlotRange\[Rule]{{2.6189823`*^8,2.6199823`*^8},{-323.58204339666406`,37.96502691955084`}}}*)
+		Show[tempgr, 
+			Graphics[{Opacity[0.25, Black], 
+				Rectangle[{#[[1]], tempGrAbsolute[[2, 1]]},
+							{#[[2]], tempGrAbsolute[[2, 2]]}]& /@ tempMaskFrTs }]
+		],
+		tempgr
 	];
 	
 	If[ optPlotLabel === None, tempgr,
