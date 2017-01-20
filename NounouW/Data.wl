@@ -11,7 +11,7 @@ BeginPackage["NounouW`Data`", {"HokahokaW`", "JLink`", "NounouW`"}];
 NNOptMask::usage="Option for functions such as NNTracePlot, to specify area of masking.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Data related markers*)
 
 
@@ -21,7 +21,7 @@ NNRange::usage="Marker for specifying data range and segment (e.g. NNRange[0 ;; 
 NNSegment::usage="Marker for a rule specifying the relevant data segment (e.g. NNSegment \[Rule] 0)"; 
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Data markers/specifier related converters*)
 
 
@@ -44,7 +44,10 @@ $ToNNRangeSpecifier::usage =
 "Converts a Mathematica-style range specification to Nounou Java object. Returns $Failed if invalid.";
 
 
-(* ::Subsection::Closed:: *)
+NNTimeMarkerToString::usage = "Converts time markers to string.";
+
+
+(* ::Subsection:: *)
 (*File Access (NNLoad, NNSave, NNFilenameSort)*)
 
 
@@ -115,7 +118,7 @@ Options[NNReadTimestamps] = {
 };
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData and NNDataChannels*)
 
 
@@ -131,7 +134,7 @@ NNDataChannel::usage =
 "Extract a single specific NNDataChannel object from an NNData object.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNFilter methods*)
 
 
@@ -396,6 +399,19 @@ $ToNNRangeSpecifier[args___] := (Message[$ToNNRangeSpecifier::invalidArgs2, {arg
 $ToNNRangeSpecifier::invalidArgs2 = "`1` is not a correctly formatted span specification!";
 
 
+(* ::Subsubsection:: *)
+(*NNTimeMarkerToString*)
+
+
+NNTimeMarkerToString[NNMillisecond]:= "ms";
+NNTimeMarkerToString[NNTimestamp]:= "ts";
+NNTimeMarkerToString[NNFrame]:= "fr";
+NNTimeMarkerToString[string_String]:= $NNConvert$StringToUnitMarker[string];
+
+
+NNTimeMarkerToString[args___]:=Message[NNTimeMarkerToString::invalidArgs, {args}];
+
+
 (* ::Subsection:: *)
 (*File Access (NNLoad, NNSave, NNFilenameSort)*)
 
@@ -420,7 +436,7 @@ Module[{tempret, optSort},
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*NNSave*)
 
 
@@ -429,10 +445,13 @@ NNSave[fileName, {obj}, opts];
 
 
 NNSave[fileName_String, objList_List/;NNJavaObjectListQ[objList, $NNJavaClass$NNElement], opts:OptionsPattern[]]:=
-Module[{tempret},
-	(*optSort = OptionValue[NNOptFileNameSort];*)
-		
-	tempret = NN`save[fileName, objList]
+Module[{tempret, tempFileName},
+	(*If directory name is not given, go with current directory*)
+	tempFileName = If[ DirectoryName[fileName] == "", 
+		FileNameJoin[ {Directory[], fileName} ], 
+		fileName
+	];
+	tempret = NN`save[tempFileName, objList]
 ];
 
 
@@ -673,8 +692,8 @@ NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 (*NNData and NNDataChannels*)
 
 
-NNData[{dataChannelObj__/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel]}]:=
-	JavaNew[$NNJavaClass$NNDataChannelArray, {dataChannelObj}];
+NNData[dataChannelObjs_/;NNJavaObjectListQ[dataChannelObjs, $NNJavaClass$NNDataChannel]]:=
+	JavaNew[$NNJavaClass$NNDataChannelArray, dataChannelObjs];
 
 NNData[args___]:=Message[NNData::invalidArgs, {args}];
 

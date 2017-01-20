@@ -77,6 +77,8 @@ Begin["`Private`"];
 (*Open up one-element lists*)
 NNTracePlot[{dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]}, rest___]:= 
 	NNTracePlot[dataObj, rest];
+
+
 (*Open up NNDataChannel objects*)
 NNTracePlot[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel], rest___]:= 
 	NNTracePlot[NNData[{dataChannelObj}], {0}, rest];
@@ -136,7 +138,6 @@ Block[{ optTimeUnit,
 	If[ optStack =!= None && optStack =!= 0, 
 		tempData = HHStackLists[tempData, optStack/OptionValue[NNOptAmplificationFactor]];
 	];
-	optPlotLabel = OptionValue[NNOptPlotLabel];
 
 	(*==========Plot==========*)
 	tempgr = ListLinePlot[ 
@@ -144,7 +145,7 @@ Block[{ optTimeUnit,
 		Sequence@@HHJoinOptionLists[ ListLinePlot,
 			{ GridLines -> optGridLines  },
 			{ opts },
-			{ AxesLabel-> {optTimeUnit, tempDataUnit} },
+			{ AxesLabel-> {NNTimeMarkerToString[optTimeUnit], tempDataUnit} },
 			Options[NNTracePlot]
 		]
 	];
@@ -167,6 +168,7 @@ Block[{ optTimeUnit,
 		tempgr
 	];
 	
+	optPlotLabel = OptionValue[NNOptPlotLabel];
 	If[ optPlotLabel === None, tempgr,
 		If[Head[optPlotLabel]===String, 
 			HHLabelGraphics[ tempgr, optPlotLabel ],
@@ -201,9 +203,27 @@ NNTracePlot::dataWrongFormat = "Data `1` has wrong format!";
 (*NNTracePlotManipulate*)
 
 
+$NNTracePlotManipulate$Notebook = None;
+$NNTracePlotManipulate$Graphic = None;
+$NNTracePlotManipulate$tempOpts = None;
+$NNTracePlotManipulate$tempPlotRangeXFrames = None;
+$NNTracePlotManipulate$tempSegmentList = None;
+$NNTracePlotManipulate$tempSegmentLengthList = None;
+(*$NNTracePlotManipulate$tempStackTable = None;
+$NNTracePlotManipulate$optAspectRatio = None;
+$NNTracePlotManipulate$optPlotRangeY = None;*)
+
+
 (*Open up one-element lists*)
 NNTracePlotManipulate[{dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]}, rest___]:= 
 	NNTracePlotManipulate[dataObj, rest];
+
+
+(*Open up NNDataChannel objects*)
+NNTracePlotManipulate[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel], rest___]:= 
+	NNTracePlotManipulate[NNData[{dataChannelObj}], {0}, rest];
+NNTracePlotManipulate[{dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel]}, rest___]:= 
+	NNTracePlotManipulate[NNData[{dataChannelObj}], {0}, rest];
 
 
 (*This signature will reshape for all channels*)
@@ -216,17 +236,6 @@ NNTracePlotManipulate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData],
 NNTracePlotManipulate[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 			channel:Integer, 
 			rest___]:= NNTracePlotManipulate[dataObj, {channel}, rest];
-
-
-$NNTracePlotManipulate$Notebook = None;
-$NNTracePlotManipulate$Graphic = None;
-$NNTracePlotManipulate$tempOpts = None;
-$NNTracePlotManipulate$tempPlotRangeXFrames = None;
-$NNTracePlotManipulate$tempSegmentList = None;
-$NNTracePlotManipulate$tempSegmentLengthList = None;
-(*$NNTracePlotManipulate$tempStackTable = None;
-$NNTracePlotManipulate$optAspectRatio = None;
-$NNTracePlotManipulate$optPlotRangeY = None;*)
 
 
 NNTracePlotManipulate[

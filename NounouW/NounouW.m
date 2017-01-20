@@ -79,6 +79,9 @@ $NNJavaClass$NNRangeTsEvent =   "nounou.ranges.NNRangeTsEvent";
 $NNJavaClass$NNTimestampMask = "nounou.elements.mask.NNTimestampMask";
 
 
+$NNJavaClass$NNSpikes = "nounou.elements.spikes.NNSpikes";
+
+
 (* ::Subsection:: *)
 (*Package-wide markers*)
 
