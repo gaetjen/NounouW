@@ -21,7 +21,7 @@ NNRange::usage="Marker for specifying data range and segment (e.g. NNRange[0 ;; 
 NNSegment::usage="Marker for a rule specifying the relevant data segment (e.g. NNSegment \[Rule] 0)"; 
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Data markers/specifier related converters*)
 
 
@@ -47,7 +47,7 @@ $ToNNRangeSpecifier::usage =
 NNTimeMarkerToString::usage = "Converts time markers to string.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*File Access (NNLoad, NNSave, NNFilenameSort)*)
 
 
@@ -63,7 +63,7 @@ which may not be straight forward due to lack of zero padding. \
 For example, XXX\\CSC2.ncs => XXX\\CSC10.ncs => XXX\\CSC20.ncs";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNData Accessors*)
 
 
@@ -134,7 +134,7 @@ NNDataChannel::usage =
 "Extract a single specific NNDataChannel object from an NNData object.";
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilter methods*)
 
 
@@ -145,6 +145,7 @@ NNFilterFIR::usage="";
 NNFilterBuffer::usage="";
 NNFilterTrodeRereference::usage="";
 NNFilterMasked::usage="";
+NNFilterMean::usage="";
 NNFilterAppendCalculatedChannels::usage="";
 	NNOptAppendCalculationType::usage="";(*
 	Options[NNFilterAppendCalculatedChannels]={NNOptAppendCalculationType \[Rule] NNOpt`NNOptAppendAbsSum}*);
@@ -164,7 +165,7 @@ NNFilterAppendCalculatedChannels::usage="";
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Data markers/specifier related converters*)
 
 
@@ -412,7 +413,7 @@ NNTimeMarkerToString[string_String]:= $NNConvert$StringToUnitMarker[string];
 NNTimeMarkerToString[args___]:=Message[NNTimeMarkerToString::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*File Access (NNLoad, NNSave, NNFilenameSort)*)
 
 
@@ -436,7 +437,7 @@ Module[{tempret, optSort},
 NNLoad[args___]:=Message[NNLoad::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNSave*)
 
 
@@ -505,7 +506,7 @@ NNReadInfo[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], "SegmentCount"
 NNReadInfo[args___]:=Message[NNReadInfo::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNReadTimepoints*)
 
 
@@ -580,21 +581,15 @@ NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], All, rest___]
 
 (*Open up single channel to list*)
 NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], channel_Integer, rest___]:= 
-	NNReadTrace[dataObj, {channel}, rest];
+	NNReadTrace[dataObj, {channel}, rest][[1]];
 
 (*Open up Mathematica-style range specification*)
-NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], channels:{_Integer ..}, range_, opts:OptionsPattern[]]:= 
+NNReadTrace[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+			channels:{_Integer ..}, range_, opts:OptionsPattern[]]:= 
 	NNReadTrace[dataObj, channels, $ToNNRangeSpecifier[range], opts];
-NNReadTrace[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel], channels:{_Integer ..}, range_, opts:OptionsPattern[]]:= 
-	NNReadTrace[dataChannelObj, channels, $ToNNRangeSpecifier[range], opts];
-
-(*Block[{rangeSpecifier},
-	rangeSpecifier = $ToNNRangeSpecifier[range];
-	If[ rangeSpecifier === Null,
-		Message[NNReadTrace::invalidArgs, {data,  channel, range}]; Null,
-		NNReadTrace[data, channel, rangeSpecifier, opts]
-	]
-]; *)
+NNReadTrace[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataChannel], 
+			range_, opts:OptionsPattern[]]:= 
+	NNReadTrace[dataChannelObj, $ToNNRangeSpecifier[range], opts];
 
 
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
@@ -706,6 +701,8 @@ NNDataChannel[args___]:=Message[NNDataChannel::invalidArgs, {args}];
 
 NNDataChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]]:=
 	dataObj@extractNNDataChannels[];
+NNDataChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel]]:=
+	{dataObj};
 
 NNDataChannels[args___]:=Message[NNDataChannels::invalidArgs, {args}];
 
@@ -838,6 +835,15 @@ NNFilterMasked[
 NNFilterMasked[args___]:=Message[NNFilterMasked::invalidArgs, {args}];
 
 
+NNFilterMean[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]]:=
+JavaNew[$NNJavaClass$NNFilterMean, dataObj];
+
+NNFilterMean[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], channels_List/;(Depth[channels]==2)]:=
+JavaNew[$NNJavaClass$NNFilterMean, dataObj, channels];
+
+NNFilterAppendCalculatedChannels[args___]:=Message[NNFilterAppendCalculatedChannels::invalidArgs, {args}];
+
+
 NNFilterAppendCalculatedChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData](*, opts:OptionsPattern[]*)]:=
 Module[{tempret},
 	JavaNew[$NNJavaClass$NNFilterAppendCalculatedChannels, 
@@ -890,7 +896,7 @@ Module[{tempReturn},
 NNReadEvents[args___]:=Message[NNReadEvents::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNReadTimestamps*)
 
 

@@ -282,7 +282,7 @@ Block[{
 				0, 
 				Dynamic[$NNTracePlotManipulate$tempSegmentLengthList[[segment + 1]]
 					 - $NNTracePlotManipulate$tempPlotRangeXFrames-1],
-				Appearance -> "Open"},
+				Appearance -> {"Open", Full}},
 			Row[{
 				Button["Print graph to notebook",
 					NotebookWrite[$NNTracePlotManipulate$Notebook,

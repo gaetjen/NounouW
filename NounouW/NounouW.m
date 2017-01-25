@@ -28,6 +28,7 @@ HHPackageMessage["NounouW`"];
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
 NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
 NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
+NNSpikes=LoadJavaClass["nounou.elements.spikes.NNSpikes", StaticsVisible->False, AllowShortContext->True];
 Print[NN`toString[]];
 
 
@@ -56,6 +57,7 @@ $NNJavaClass$NNFilterBuffer          = "nounou.elements.data.filters.NNFilterBuf
 $NNJavaClass$NNFilterTrodeRereference = 
 									   "nounou.elements.data.filters.NNFilterTrodeRereference";
 $NNJavaClass$NNFilterMasked          = "nounou.elements.data.filters.NNFilterMasked";
+$NNJavaClass$NNFilterMean            = "nounou.elements.data.filters.NNFilterMean";
 $NNJavaClass$NNFilterAppendCalculatedChannels =
 							           "nounou.elements.data.filters.NNFilterAppendCalculatedChannels";
 
