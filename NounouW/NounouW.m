@@ -26,7 +26,7 @@ HHPackageMessage["NounouW`"];
 
 (*Convenience object for static methods*)
 NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
-NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];
+(*NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];*)
 NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
 NNSpikes=LoadJavaClass["nounou.elements.spikes.NNSpikes", StaticsVisible->False, AllowShortContext->True];
 Print[NN`toString[]];

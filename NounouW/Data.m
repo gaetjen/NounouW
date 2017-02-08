@@ -63,7 +63,7 @@ which may not be straight forward due to lack of zero padding. \
 For example, XXX\\CSC2.ncs => XXX\\CSC10.ncs => XXX\\CSC20.ncs";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData Accessors*)
 
 
@@ -134,7 +134,7 @@ NNDataChannel::usage =
 "Extract a single specific NNDataChannel object from an NNData object.";
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNFilter methods*)
 
 
@@ -149,6 +149,15 @@ NNFilterMean::usage="";
 NNFilterAppendCalculatedChannels::usage="";
 	NNOptAppendCalculationType::usage="";(*
 	Options[NNFilterAppendCalculatedChannels]={NNOptAppendCalculationType \[Rule] NNOpt`NNOptAppendAbsSum}*);
+
+
+(* ::Subsection:: *)
+(*NNReadSpikes*)
+
+
+NNReadSpikes::usage="Generates an NNSpikes Java object based on the given parameters. \
+This is mainly programmed in Mathematica instead of Java to make use of the cubic spline fitting
+and maximization functions, but it should be transitioned to Java once breeze has good cubic spline.";
 
 
 (* ::Subsection:: *)
@@ -683,7 +692,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData and NNDataChannels*)
 
 
@@ -707,7 +716,7 @@ NNDataChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel]]:=
 NNDataChannels[args___]:=Message[NNDataChannels::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNFilterXXX*)
 
 
@@ -896,7 +905,7 @@ Module[{tempReturn},
 NNReadEvents[args___]:=Message[NNReadEvents::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNReadTimestamps*)
 
 
@@ -925,6 +934,22 @@ Module[{tempTimestamps, tempTimestampsChecked, optDurationCheck},
 
 NNReadTimestamps::rejectDuration = "Some timestamps (n=`1`) rejected due to NNOptDurationCheck criteria";
 NNReadTimestamps[args___]:=Message[NNReadTimestamps::invalidArgs, {args}];
+
+
+(* ::Subsection:: *)
+(*NNReadSpikes*)
+
+
+NNReadSpikes[
+	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], 
+	NNTimestamp[timestamps_List],
+	opts:OptionsPattern[]]:=
+Module[{},
+
+Null
+];
+
+NNReadSpikes[args___]:=Message[NNReadSpikes::invalidArgs, {args}];
 
 
 (* ::Section:: *)
