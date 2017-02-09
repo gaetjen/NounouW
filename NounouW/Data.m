@@ -151,7 +151,7 @@ NNFilterAppendCalculatedChannels::usage="";
 	Options[NNFilterAppendCalculatedChannels]={NNOptAppendCalculationType \[Rule] NNOpt`NNOptAppendAbsSum}*);
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNReadSpikes*)
 
 
@@ -692,7 +692,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNData and NNDataChannels*)
 
 
@@ -704,6 +704,9 @@ NNData[args___]:=Message[NNData::invalidArgs, {args}];
 
 NNDataChannel[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], number_Integer]:=
 	dataObj@extractNNDataChannel[number];
+	
+NNDataChannel[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel], 0]:=
+	dataObj;
 
 NNDataChannel[args___]:=Message[NNDataChannel::invalidArgs, {args}];
 
@@ -847,6 +850,9 @@ NNFilterMasked[args___]:=Message[NNFilterMasked::invalidArgs, {args}];
 NNFilterMean[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData]]:=
 JavaNew[$NNJavaClass$NNFilterMean, dataObj];
 
+NNFilterMean[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel]]:=
+dataObj;
+
 NNFilterMean[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], channels_List/;(Depth[channels]==2)]:=
 JavaNew[$NNJavaClass$NNFilterMean, dataObj, channels];
 
@@ -936,7 +942,7 @@ NNReadTimestamps::rejectDuration = "Some timestamps (n=`1`) rejected due to NNOp
 NNReadTimestamps[args___]:=Message[NNReadTimestamps::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNReadSpikes*)
 
 
