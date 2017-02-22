@@ -151,13 +151,20 @@ NNFilterAppendCalculatedChannels::usage="";
 	Options[NNFilterAppendCalculatedChannels]={NNOptAppendCalculationType \[Rule] NNOpt`NNOptAppendAbsSum}*);
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNReadSpikes*)
 
 
 NNReadSpikes::usage="Generates an NNSpikes Java object based on the given parameters. \
 This is mainly programmed in Mathematica instead of Java to make use of the cubic spline fitting
 and maximization functions, but it should be transitioned to Java once breeze has good cubic spline.";
+
+
+NNOptReadSpikeUpsampleRate::usage="Realign (and upsample) spikes. \
+How to upsample spikes, default is 1.";
+Options[NNReadSpikes]={ 
+	(*NNOptReadSpikeRealign \[Rule] 1, *)NNOptReadSpikeUpsampleRate -> 1
+	};
 
 
 (* ::Subsection:: *)
@@ -942,20 +949,55 @@ NNReadTimestamps::rejectDuration = "Some timestamps (n=`1`) rejected due to NNOp
 NNReadTimestamps[args___]:=Message[NNReadTimestamps::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNReadSpikes*)
 
 
 NNReadSpikes[
-	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNEvents], 
-	NNTimestamp[timestamps_List],
+	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+	NNTimestamp[timestamps_List], {startOffset_Integer, lastOffset_Integer},
 	opts:OptionsPattern[]]:=
-Module[{},
-
-Null
+Module[{tempData, optRealign, optUpsampleRate},
+	optUpsampleRate = OptionValue[NNOptReadSpikeUpsampleRate];
+	
+	tempData = Block[{tempSpike}, 
+		tempSpike = 
+			NNReadPage[dataObj, All, 
+				NN`NNRangeTsEvent[#, Floor[startOffset/optUpsampleRate] - 2, 
+											Ceiling[lastOffset/optUpsampleRate] + 2, 1]
+			]; (*This range mirrored in NNReadSpikes$RealignUpsampleImpl*)
+		tempSpike = NNReadSpikes$RealignUpsampleImpl[
+			{tempSpike, {startOffset(* - 1*), lastOffset(* + 1*)}(*, -(startOffset-1)+1*)},
+			(*{-11, 20},*) optUpsampleRate
+		];
+		{Round[# + dataObj@timing[]@convertIntervalsFrToTs[tempSpike[[1]]]], tempSpike[[2]]}
+	]& /@ timestamps;
+	tempData = Transpose[tempData];
+	
+	NNSpikes`apply[
+		tempData[[1]], Table[0, {Length[tempData[[1]]]}], (Flatten /@ tempData[[2]]),
+		- startOffset + 1, dataObj@getChannelCount[](*trodicity*), 32000.*optUpsampleRate]
 ];
 
 NNReadSpikes[args___]:=Message[NNReadSpikes::invalidArgs, {args}];
+
+
+NNReadSpikes$RealignUpsampleImpl[
+	{data_List/;Depth[data]==3, {startOffset_Integer, lastOffset_Integer}(*{startFrame_Integer, lastFrame_Integer}, triggerFrame_Integer*)},
+	(*{startOffset_Integer, lastOffset_Integer},*)
+	upsampleRate_Integer
+	]:=
+Module[{tempRange,tempFuncs, tempMaxes},
+	tempRange = Range[Floor[startOffset/upsampleRate] - 2, Ceiling[lastOffset/upsampleRate] + 2]; (*This range mirrored in NNReadSpikes*)
+	tempFuncs = Interpolation[ Transpose[{tempRange, #}], InterpolationOrder -> 3 ]& /@ data;
+	(*Print[Plot[ #[x]& /@ tempFuncs, {x, -8, 25}, PlotRange\[Rule]All]];*)
+	tempMaxes = Quiet[ FindMaximum[ Abs[#[x]], {x, 0, - 1,  1} ]& /@ tempFuncs ];
+	(*Print[tempMaxes];*)
+	tempMaxes = TakeLargestBy[ tempMaxes, First, 1 ][[1, 2, 1, 2]]; (*{{30.26378832689694`,{x\[Rule]-0.14531411345638554`}}}*)
+	{tempMaxes, Transpose[Table[ (#[x/upsampleRate + tempMaxes]& /@ tempFuncs), {x, startOffset, lastOffset}]]}
+];
+
+NNReadSpikes$RealignUpsampleImpl[args___]:=Message[NNReadSpikes$RealignUpsampleImpl::invalidArgs, {args}];
 
 
 (* ::Section:: *)
