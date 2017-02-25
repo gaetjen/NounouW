@@ -167,6 +167,12 @@ Options[NNReadSpikes]={
 	};
 
 
+NNReadSpikeData::usage="";
+
+
+Options[NNReadSpikeData]=Options[NNReadSpikes];
+
+
 (* ::Subsection:: *)
 (*NNToList*)
 
@@ -490,7 +496,7 @@ NNFilenameSort[fileNames:{__String}]:=
 NNFilenameSort[args___]:=Message[NNFilenameSort::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNData Accessors*)
 
 
@@ -611,7 +617,7 @@ NNReadTrace[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataCh
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*NNReadPage*)
 
 
@@ -699,7 +705,7 @@ Module[{optTimepoints, tempTimepoints, tempTrace},
 NNReadPage[args___]:=Message[NNReadPage::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNData and NNDataChannels*)
 
 
@@ -950,17 +956,17 @@ NNReadTimestamps[args___]:=Message[NNReadTimestamps::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)
-(*NNReadSpikes*)
+(*NNReadSpikeData/NNReadSpikes*)
 
 
-NNReadSpikes[
+NNReadSpikeData[
 	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
 	NNTimestamp[timestamps_List], {startOffset_Integer, lastOffset_Integer},
 	opts:OptionsPattern[]]:=
-Module[{tempData, optRealign, optUpsampleRate},
+Block[{tempData, tempSpike, optRealign, optUpsampleRate},
 	optUpsampleRate = OptionValue[NNOptReadSpikeUpsampleRate];
 	
-	tempData = Block[{tempSpike}, 
+	tempData = (
 		tempSpike = 
 			NNReadPage[dataObj, All, 
 				NN`NNRangeTsEvent[#, Floor[startOffset/optUpsampleRate] - 2, 
@@ -970,13 +976,28 @@ Module[{tempData, optRealign, optUpsampleRate},
 			{tempSpike, {startOffset(* - 1*), lastOffset(* + 1*)}(*, -(startOffset-1)+1*)},
 			(*{-11, 20},*) optUpsampleRate
 		];
-		{Round[# + dataObj@timing[]@convertIntervalsFrToTs[tempSpike[[1]]]], tempSpike[[2]]}
-	]& /@ timestamps;
+		{Round[# + dataObj@timing[]@convertIntervalsFrToTs[ tempSpike[[1]] ]], 
+				tempSpike[[2]]}
+	)& /@ timestamps;
+	
+	tempData
+];
+
+NNReadSpikes[args___]:=Message[NNReadSpikes::invalidArgs, {args}];
+
+
+NNReadSpikes[
+	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+	NNTimestamp[timestamps_List], {startOffset_Integer, lastOffset_Integer},
+	opts:OptionsPattern[]]:=
+Block[{tempData},
+	
+	tempData = NNReadSpikeData[ dataObj, NNTimestamp[timestamps], {startOffset, lastOffset} ];
 	tempData = Transpose[tempData];
 	
 	NNSpikes`apply[
-		tempData[[1]], Table[0, {Length[tempData[[1]]]}], (Flatten /@ tempData[[2]]),
-		- startOffset + 1, dataObj@getChannelCount[](*trodicity*), 32000.*optUpsampleRate]
+		tempData[[1]], (*Table[*)0(*, {Length[tempData[[1]]]}]*), Flatten /@ tempData[[2]],
+		- startOffset + 1, dataObj@getChannelCount[](*trodicity*), 32000.*OptionValue[NNOptReadSpikeUpsampleRate]]
 ];
 
 NNReadSpikes[args___]:=Message[NNReadSpikes::invalidArgs, {args}];
@@ -987,14 +1008,14 @@ NNReadSpikes$RealignUpsampleImpl[
 	(*{startOffset_Integer, lastOffset_Integer},*)
 	upsampleRate_Integer
 	]:=
-Module[{tempRange,tempFuncs, tempMaxes},
+Block[{tempRange, tempFuncs, tempMaxes, tempReturn},
 	tempRange = Range[Floor[startOffset/upsampleRate] - 2, Ceiling[lastOffset/upsampleRate] + 2]; (*This range mirrored in NNReadSpikes*)
 	tempFuncs = Interpolation[ Transpose[{tempRange, #}], InterpolationOrder -> 3 ]& /@ data;
-	(*Print[Plot[ #[x]& /@ tempFuncs, {x, -8, 25}, PlotRange\[Rule]All]];*)
 	tempMaxes = Quiet[ FindMaximum[ Abs[#[x]], {x, 0, - 1,  1} ]& /@ tempFuncs ];
-	(*Print[tempMaxes];*)
-	tempMaxes = TakeLargestBy[ tempMaxes, First, 1 ][[1, 2, 1, 2]]; (*{{30.26378832689694`,{x\[Rule]-0.14531411345638554`}}}*)
-	{tempMaxes, Transpose[Table[ (#[x/upsampleRate + tempMaxes]& /@ tempFuncs), {x, startOffset, lastOffset}]]}
+	tempMaxes = TakeLargestBy[ tempMaxes, First, 1 ][[1, 2, 1, 2]];          (*{{30.26378832689694`,{x\[Rule]-0.14531411345638554`}}}*)
+	tempReturn = {tempMaxes, Transpose[Table[ (#[x/upsampleRate + tempMaxes]& /@ tempFuncs), {x, startOffset, lastOffset}]]};
+	Clear[tempFuncs];
+	tempReturn
 ];
 
 NNReadSpikes$RealignUpsampleImpl[args___]:=Message[NNReadSpikes$RealignUpsampleImpl::invalidArgs, {args}];
