@@ -118,7 +118,7 @@ Options[NNReadTimestamps] = {
 };
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNData and NNDataChannels*)
 
 
@@ -160,11 +160,19 @@ This is mainly programmed in Mathematica instead of Java to make use of the cubi
 and maximization functions, but it should be transitioned to Java once breeze has good cubic spline.";
 
 
+NNReadSpikeWaveforms::usage="";
+
+
 NNOptReadSpikeUpsampleRate::usage="Realign (and upsample) spikes. \
 How to upsample spikes, default is 1.";
+
+
 Options[NNReadSpikes]={ 
 	(*NNOptReadSpikeRealign \[Rule] 1, *)NNOptReadSpikeUpsampleRate -> 1
 	};
+
+
+Options[NNReadSpikeWaveforms] = { NNOptReadSpikeUpsampleRate -> 1 };
 
 
 NNReadSpikeData::usage="";
@@ -617,7 +625,7 @@ NNReadTrace[dataChannelObj_/;NNJavaObjectQ[dataChannelObj, $NNJavaClass$NNDataCh
 NNReadTrace[args___]:=Message[NNReadTrace::invalidArgs, {args}];
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NNReadPage*)
 
 
@@ -732,7 +740,7 @@ NNDataChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNDataChannel]]:=
 NNDataChannels[args___]:=Message[NNDataChannels::invalidArgs, {args}];
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNFilterXXX*)
 
 
@@ -869,7 +877,7 @@ dataObj;
 NNFilterMean[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], channels_List/;(Depth[channels]==2)]:=
 JavaNew[$NNJavaClass$NNFilterMean, dataObj, channels];
 
-NNFilterAppendCalculatedChannels[args___]:=Message[NNFilterAppendCalculatedChannels::invalidArgs, {args}];
+NNFilterMean[args___]:=Message[NNFilterMean::invalidArgs, {args}];
 
 
 NNFilterAppendCalculatedChannels[dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData](*, opts:OptionsPattern[]*)]:=
@@ -881,9 +889,6 @@ Module[{tempret},
 ];
 
 NNFilterAppendCalculatedChannels[args___]:=Message[NNFilterAppendCalculatedChannels::invalidArgs, {args}];
-
-
-NNFilterAppendCalculatedChannels
 
 
 (* ::Subsection::Closed:: *)
@@ -983,7 +988,7 @@ Block[{tempData, tempSpike, optRealign, optUpsampleRate},
 	tempData
 ];
 
-NNReadSpikes[args___]:=Message[NNReadSpikes::invalidArgs, {args}];
+NNReadSpikeData[args___]:=Message[NNReadSpikeData::invalidArgs, {args}];
 
 
 NNReadSpikes[
@@ -1019,6 +1024,23 @@ Block[{tempRange, tempFuncs, tempMaxes, tempReturn},
 ];
 
 NNReadSpikes$RealignUpsampleImpl[args___]:=Message[NNReadSpikes$RealignUpsampleImpl::invalidArgs, {args}];
+
+
+NNReadSpikeWaveforms[
+	dataObj_/;NNJavaObjectQ[dataObj, $NNJavaClass$NNData], 
+	NNTimestamp[timestamps_List], {startOffset_Integer, lastOffset_Integer},
+	opts:OptionsPattern[]]:=
+Block[{},
+
+	NNSpikeWaveform`apply[
+		dataObj, 
+		NN`NNRangeTsEvent[ #, startOffset, lastOffset, 1 ],
+		OptionValue[NNOptReadSpikeUpsampleRate]
+	]& /@ timestamps
+
+];
+
+NNReadSpikeWaveforms[args___]:=Message[NNReadSpikeWaveforms::invalidArgs, {args}];
 
 
 (* ::Section:: *)

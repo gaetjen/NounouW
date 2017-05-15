@@ -70,6 +70,10 @@ $NNJavaClass$NNTimestampMask = "nounou.elements.mask.NNTimestampMask";
 
 
 $NNJavaClass$NNSpikes = "nounou.elements.spikes.NNSpikes";
+$NNJavaClass$NNSpikeWaveform = "nounou.elements.spikes.NNSpikeWaveform";
+
+
+$NNJavaClass$NNSpikeDetect = "nounou.analysis.spikes.SpikeDetect";
 
 
 (* ::Subsection:: *)
@@ -81,7 +85,11 @@ NN=LoadJavaClass["nounou.NN", StaticsVisible->False, AllowShortContext->True];
 (*NNJ=LoadJavaClass["nounou.NNJ", StaticsVisible->False, AllowShortContext->True];*)
 NNOpt=LoadJavaClass["nounou.NNOpt", StaticsVisible->False, AllowShortContext->True];
 NNSpikes=LoadJavaClass[$NNJavaClass$NNSpikes, StaticsVisible->False, AllowShortContext->True];
+NNSpikeWaveform=LoadJavaClass[$NNJavaClass$NNSpikeWaveform, StaticsVisible->False, AllowShortContext->True];
 NNTimestampMask=LoadJavaClass[$NNJavaClass$NNTimestampMask, StaticsVisible->False, AllowShortContext->True];
+
+
+(*SpikeDetect =*)LoadJavaClass[$NNJavaClass$NNSpikeDetect, StaticsVisible->False, AllowShortContext->True];
 
 
 Print[NN`toString[]];
