@@ -194,7 +194,7 @@ Module[
 	layoutImg},
 	channelCount = layoutObj@getChannelCount[];
 	(*get the "default" channel coordinates*)
-	coords =  layout@getChannelCoordinates[#]& /@ (Range[channelCount] - 1);
+	coords =  layoutObj@getChannelCoordinates[#]& /@ (Range[channelCount] - 1);
 	(*set minimum x and y to 0*)
 	coords = # - Min /@ (coords\[Transpose])& /@ coords;
 	(*calculate distances between channels*)
@@ -212,11 +212,9 @@ Module[
 	bg =  Image[ConstantArray[0.95, Ceiling[maxc]]];
 
 	If[ channelCount < Length[pltLst],
-		Message[NNDetectorComposePlot::notEnoughChannels, channelCount, Length[pltLst]];
-		Null,
+		Message[NNDetectorComposePlot::notEnoughChannels, channelCount, Length[pltLst]],
 		If[ channelCount > Length[pltLst],
 			Message[NNDetectorComposePlot::insetsNotForAllChannels, channelCount, Length[pltLst]],
-			Null,
 			rtnImg= (*incrementally add the plot images at the correct coordinates to the background*)
 				Fold[ImageCompose[
 					#1,
@@ -228,7 +226,7 @@ Module[
 				{coords,pltLst}\[Transpose]
 				];
 			(*adding the channels layout in the upper left corner*)
-			layoutImg = Image[NNDetectorPlot[layout]];
+			layoutImg = Image[NNDetectorPlot[layoutObj]];
 			ImageCompose[rtnImg, {layoutImg, 0.3}, Scaled[{0, 1}], Scaled[{0, 1}]]
 		]
 	]
