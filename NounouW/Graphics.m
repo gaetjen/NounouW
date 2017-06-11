@@ -10,7 +10,7 @@ BeginPackage[ "NounouW`Graphics`",
 (*Declarations*)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*NNDetectorPlot/NNDetectorInsetPlot*)
 
 
@@ -32,6 +32,15 @@ Options[NNDetectorPlot]=
 
 
 (* ::Subsection:: *)
+(*NNDetectorComposePlot*)
+
+
+NNDetectorComposePlot::usage=
+"Takes a list of plots/images and a layout object and arranges the plots\
+according to the layout. Uses ImageCompose and returns an Image object.";
+
+
+(* ::Subsection::Closed:: *)
 (*NNTraceOverviewPlot*)
 
 
@@ -44,7 +53,7 @@ NNTraceOverviewPlot$UniqueOptions = {
 NNTraceOverviewPlot$OverrideOptions = {
 	AspectRatio -> 1/10, PlotStyle->{Opacity[0.5]}, AxesLabel->Automatic,
 	PlotRange->Automatic, ImageSize->10*72
-};f
+};
 
 Options[NNTraceOverviewPlot] = HHJoinOptionLists[ 
 	NNTraceOverviewPlot$UniqueOptions, NNTraceOverviewPlot$OverrideOptions,
@@ -59,7 +68,7 @@ Options[NNTraceOverviewPlot] = HHJoinOptionLists[
 Begin["`Private`"];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNDetectorPlot*)
 
 
@@ -128,7 +137,7 @@ NNHexagon[{x_, y_}, r_]:= Polygon[ Table[{x,y}+r*{Sin[theta], Cos[theta]},{theta
 NNHexagon[args___]:=Message[NNHexagon::invalidArgs, {args}];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*NNDetectorInsetPlot*)
 
 
@@ -169,6 +178,64 @@ NNDetectorInsetPlot[args___]:=Message[NNDetectorInsetPlot::invalidArgs, {args}];
 
 
 (* ::Subsection:: *)
+(*NNDetectorComposePlot*)
+
+
+NNDetectorComposePlot[pltLst_List,
+					layoutObj_/;HHJavaObjectQ[layoutObj, $NNJavaClass$NNLayoutSpatial]]:=
+Module[
+	{rtnImg, 
+	channelCount, channelRadius,
+	bg,
+	coords,
+	pltDim,
+	maxc,
+	xdist, ydist,
+	layoutImg},
+	channelCount = layoutObj@getChannelCount[];
+	(*get the "default" channel coordinates*)
+	coords =  layout@getChannelCoordinates[#]& /@ (Range[channelCount] - 1);
+	(*set minimum x and y to 0*)
+	coords = # - Min /@ (coords\[Transpose])& /@ coords;
+	(*calculate distances between channels*)
+	channelRadius = layoutObj@getChannelRadius[];
+	xdist = 2 * channelRadius;
+	ydist = Sqrt[xdist^2-channelRadius^2];
+	
+	coords = # / {xdist, ydist}& /@ coords;
+	(*determine plot image size*)
+	pltDim = (ImageData[Image[#]]& /* Dimensions /* Most /* Reverse )[pltLst[[1]]];
+	(*scale coordinates according to image*)
+	coords = Map[#* pltDim&, coords];
+	maxc = Max /@ (coords\[Transpose]) + pltDim ;
+	(*create the "canvas" on which to add the plots*)
+	bg =  Image[ConstantArray[0.95, Ceiling[maxc]]];
+
+	If[ channelCount < Length[pltLst],
+		Message[NNDetectorComposePlot::notEnoughChannels, channelCount, Length[pltLst]];
+		Null,
+		If[ channelCount > Length[pltLst],
+			Message[NNDetectorComposePlot::insetsNotForAllChannels, channelCount, Length[pltLst]],
+			Null,
+			rtnImg= (*incrementally add the plot images at the correct coordinates to the background*)
+				Fold[ImageCompose[
+					#1,
+					#2[[2]],
+					#2[[1]] ,
+					{0, 0}
+					]&,
+				bg,
+				{coords,pltLst}\[Transpose]
+				];
+			(*adding the channels layout in the upper left corner*)
+			layoutImg = Image[NNDetectorPlot[layout]];
+			ImageCompose[rtnImg, {layoutImg, 0.3}, Scaled[{0, 1}], Scaled[{0, 1}]]
+		]
+	]
+];
+
+
+(* ::Subsection::Closed:: *)
 (*NNTraceOverviewPlot*)
 
 
